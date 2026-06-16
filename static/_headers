@@ -1,0 +1,4 @@
+# Cloudflare Pages 응답 헤더
+# 검색엔진 색인 차단 (공개 준비되면 아래 블록 제거)
+/*
+  X-Robots-Tag: noindex, nofollow

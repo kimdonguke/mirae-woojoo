@@ -12,6 +12,9 @@ enableEmoji = true
 disableKinds = ["taxonomy", "term"]
 
 [params]
+  # 검색엔진 노출 차단 (공개 준비되면 false 로 바꾸고 static/_headers 도 함께 정리)
+  noindex = true
+
   # 사이트 전역 정보 (이 값들만 바꿔도 대부분 수정됩니다)
   description = "우주, 로켓, 위성을 함께 탐구하는 미래우주 공식 홈페이지"
   email = "contact@miraewooju.org"
