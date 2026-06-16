@@ -1,0 +1,18 @@
+<section class="section section-alt" id="activities">
+  <div class="container">
+    <header class="section-head reveal">
+      <span class="section-num">02</span>
+      <h2 class="section-title">활동 · 연구</h2>
+      <span class="section-kicker">Activities</span>
+    </header>
+    <div class="cards reveal">
+      {{ range .Site.Params.activities }}
+      <article class="card">
+        <div class="card-icon" aria-hidden="true">{{ partial "icon.html" .icon }}</div>
+        <h3 class="card-title">{{ .title }}</h3>
+        <p class="card-desc">{{ .desc }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>

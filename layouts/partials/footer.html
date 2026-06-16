@@ -1,0 +1,37 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <span class="brand-mark" aria-hidden="true">◉</span>
+        <span>{{ .Site.Title }}</span>
+      </div>
+      <p class="footer-desc">{{ .Site.Params.description }}</p>
+    </div>
+
+    <nav class="footer-col" aria-label="바로가기">
+      <h3 class="footer-h">바로가기</h3>
+      <ul>
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+
+    <div class="footer-col">
+      <h3 class="footer-h">연락</h3>
+      <ul>
+        <li><a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></li>
+        {{ with .Site.Params.github }}
+        <li><a href="{{ . }}" target="_blank" rel="noopener">GitHub</a></li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <div class="container footer-bar-inner">
+      <span>© {{ now.Year }} {{ .Site.Title }}{{ with .Site.Params.nameEn }} ({{ . }}){{ end }}. All rights reserved.</span>
+      <span class="footer-tag">우주 · 로켓 · 위성</span>
+    </div>
+  </div>
+</footer>

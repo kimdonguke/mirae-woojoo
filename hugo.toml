@@ -1,0 +1,59 @@
+# ─────────────────────────────────────────────
+# 미래우주 홈페이지 - Hugo 사이트 설정
+# 배포(Cloudflare Pages) 시 baseURL을 실제 도메인으로 바꾸세요.
+# ─────────────────────────────────────────────
+baseURL = "https://miraewooju.pages.dev/"
+locale = "ko-KR"
+defaultContentLanguage = "ko"
+title = "미래우주"
+enableRobotsTXT = true
+enableEmoji = true
+# 사용하지 않는 분류(taxonomy) 페이지 생성 비활성화
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  # 사이트 전역 정보 (이 값들만 바꿔도 대부분 수정됩니다)
+  description = "우주, 로켓, 위성을 함께 탐구하는 학회 미래우주의 공식 홈페이지"
+  email = "contact@miraewooju.org"
+  github = ""          # 예: "https://github.com/your-org"
+  nameEn = "Future Space"   # 푸터 영문 병기 (필요 없으면 비우세요)
+
+  # Hero(첫 화면) 문구
+  [params.hero]
+    title = "우주를 향한 미래, 미래우주"
+    slogan = "로켓과 위성, 그리고 우주 탐사를 함께 연구하는 학회입니다."
+
+  # 활동 카드 (필요한 만큼 추가/삭제하세요)
+  # icon 값은 rocket / satellite / orbit 중 하나 (layouts/partials/icon.html 참고)
+  [[params.activities]]
+    icon = "rocket"
+    title = "로켓"
+    desc = "발사체 설계와 추진 시스템을 공부하고, 모형 로켓 제작·발사 프로젝트를 진행합니다."
+
+  [[params.activities]]
+    icon = "satellite"
+    title = "위성"
+    desc = "큐브샛과 위성 통신, 궤도 역학을 학습하며 소형 위성 프로젝트에 도전합니다."
+
+  [[params.activities]]
+    icon = "orbit"
+    title = "우주 탐사"
+    desc = "행성 탐사와 우주 임무 사례를 함께 분석하고 세미나·스터디를 운영합니다."
+
+# 상단 내비게이션 (원페이지 앵커)
+[menu]
+  [[menu.main]]
+    name = "소개"
+    url = "#about"
+    weight = 10
+  [[menu.main]]
+    name = "활동"
+    url = "#activities"
+    weight = 20
+  [[menu.main]]
+    name = "연락처"
+    url = "#contact"
+    weight = 30
+
+[markup.goldmark.renderer]
+  unsafe = true

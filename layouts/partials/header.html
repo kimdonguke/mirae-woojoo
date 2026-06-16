@@ -1,0 +1,20 @@
+<header class="site-header" id="site-header">
+  <div class="container nav-inner">
+    <a class="brand" href="#hero">
+      <span class="brand-mark" aria-hidden="true">◉</span>
+      <span class="brand-text">{{ .Site.Title }}</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="primary-nav" aria-label="주 메뉴">
+      <ul>
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</header>

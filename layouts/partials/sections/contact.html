@@ -1,0 +1,16 @@
+<section class="section" id="contact">
+  <div class="container">
+    <header class="section-head reveal">
+      <span class="section-num">03</span>
+      <h2 class="section-title">연락처</h2>
+      <span class="section-kicker">Contact</span>
+    </header>
+    <p class="contact-lead reveal">미래우주와 함께하고 싶으신가요? 아래로 연락 주세요.</p>
+    <div class="contact-links reveal">
+      <a class="btn btn-primary" href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+      {{ with .Site.Params.github }}
+      <a class="btn btn-ghost" href="{{ . }}" target="_blank" rel="noopener">GitHub</a>
+      {{ end }}
+    </div>
+  </div>
+</section>
