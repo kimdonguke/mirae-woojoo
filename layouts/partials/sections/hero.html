@@ -1,11 +1,37 @@
-<section class="hero" id="hero">
-  <div class="container hero-inner reveal">
-    <p class="hero-eyebrow">{{ .Site.Title }} — 우주 · 로켓 · 위성</p>
-    <h1 class="hero-title">{{ .Site.Params.hero.title }}</h1>
-    <p class="hero-slogan">{{ .Site.Params.hero.slogan }}</p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="#about">학회 둘러보기</a>
-      <a class="btn btn-ghost" href="#contact">문의하기</a>
+<section class="hero" id="hero" aria-roledescription="carousel" aria-label="메인 배너">
+  <div class="hero-viewport">
+    {{ $total := len site.Data.hero }}
+    {{ range $i, $s := site.Data.hero }}
+    <div class="hero-slide hero-theme-{{ $s.theme | default "a" }}{{ if eq $i 0 }} is-active{{ end }}"
+         role="group" aria-roledescription="슬라이드" aria-label="{{ add $i 1 }} / {{ $total }}">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <p class="hero-eyebrow">미래우주 · FUTURE SPACE</p>
+        <h2 class="hero-title">{{ $s.title }}</h2>
+        {{ with $s.desc }}<p class="hero-desc">{{ . }}</p>{{ end }}
+        {{ with $s.cta }}<a class="btn btn-hero" href="{{ .url }}">{{ .label }}</a>{{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+
+  <button class="hero-arrow hero-prev" type="button" aria-label="이전 슬라이드">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+  </button>
+  <button class="hero-arrow hero-next" type="button" aria-label="다음 슬라이드">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+  </button>
+
+  <div class="hero-controls">
+    <div class="container hero-controls-inner">
+      <div class="hero-dots" role="tablist" aria-label="슬라이드 선택">
+        {{ range $i, $s := site.Data.hero }}
+        <button class="hero-dot{{ if eq $i 0 }} is-active{{ end }}" type="button"
+                data-index="{{ $i }}" role="tab" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}"
+                aria-label="{{ add $i 1 }}번 슬라이드"></button>
+        {{ end }}
+      </div>
+      <button class="hero-play" type="button" aria-label="슬라이드 일시정지" data-playing="true">❚❚</button>
     </div>
   </div>
 </section>

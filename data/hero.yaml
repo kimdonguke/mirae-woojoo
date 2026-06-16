@@ -1,0 +1,14 @@
+# 메인 히어로 슬라이더 (이미지 없이 그라디언트 배경으로 시작 — 추후 이미지 교체 가능)
+# theme: a / b / c 로 배경 색조 변경
+- title: 우주를 향한 미래, 미래우주
+  desc: 로켓과 위성, 그리고 우주 탐사를 함께 연구합니다.
+  theme: a
+  cta: { label: 단체 소개, url: "#about" }
+- title: 직접 만들고, 쏘아 올리다
+  desc: 모형 로켓 제작·발사와 큐브샛 프로젝트에 도전합니다.
+  theme: b
+  cta: { label: 활동·연구 보기, url: "#activities" }
+- title: 함께 배우는 우주
+  desc: 정기 세미나와 스터디로 우주 기술을 깊이 탐구합니다.
+  theme: c
+  cta: { label: 가입 문의, url: "#contact" }

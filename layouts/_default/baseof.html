@@ -4,11 +4,17 @@
   {{ partial "head.html" . }}
 </head>
 <body>
+  <a class="skip-link" href="#mainContent">본문 바로가기</a>
+  <a class="skip-link" href="#primary-nav">주메뉴 바로가기</a>
+
   {{ partial "header.html" . }}
-  <main>
+
+  <main id="mainContent">
     {{ block "main" . }}{{ end }}
   </main>
+
   {{ partial "footer.html" . }}
+  {{ partial "floating.html" . }}
 
   {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
   <script src="{{ $js.RelPermalink }}" defer></script>

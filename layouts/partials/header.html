@@ -1,20 +1,55 @@
-<header class="site-header" id="site-header">
-  <div class="container nav-inner">
-    <a class="brand" href="#hero">
-      <span class="brand-mark" aria-hidden="true">◉</span>
-      <span class="brand-text">{{ .Site.Title }}</span>
-    </a>
-
-    <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="primary-nav">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav class="nav" id="primary-nav" aria-label="주 메뉴">
-      <ul>
-        {{ range .Site.Menus.main }}
-        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-        {{ end }}
+<header class="site-header">
+  <!-- 상단 유틸리티 바 -->
+  <div class="util-bar">
+    <div class="container util-inner">
+      <ul class="util-links">
+        <li><a href="#contact">가입 문의</a></li>
+        {{ with .Site.Params.github }}<li><a href="{{ . }}" target="_blank" rel="noopener">GitHub</a></li>{{ end }}
       </ul>
-    </nav>
+      <div class="util-right">
+        <form class="util-search" role="search" onsubmit="return false;">
+          <input type="search" placeholder="통합검색" aria-label="통합검색">
+          <button type="submit" aria-label="검색">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+        </form>
+        <div class="util-lang" aria-label="언어 선택">
+          <a class="is-active" href="#" aria-current="page">KOR</a>
+          <span aria-hidden="true">·</span>
+          <a href="#" aria-disabled="true">ENG</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 메인 바: 로고 + GNB -->
+  <div class="main-bar">
+    <div class="container main-inner">
+      <a class="brand" href="#hero">
+        <span class="brand-mark" aria-hidden="true">◉</span>
+        <span class="brand-text">{{ .Site.Title }}</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="전체 메뉴" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="gnb" id="primary-nav" aria-label="주 메뉴">
+        <ul>
+          {{ range site.Data.gnb }}
+          <li class="gnb-item">
+            <a href="{{ .url }}">{{ .name }}</a>
+            {{ with .sub }}
+            <div class="gnb-panel">
+              <ul>
+                {{ range . }}<li><a href="{{ .url }}">{{ .name }}</a></li>{{ end }}
+              </ul>
+            </div>
+            {{ end }}
+          </li>
+          {{ end }}
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
