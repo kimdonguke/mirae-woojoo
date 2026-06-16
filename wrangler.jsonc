@@ -1,9 +1,7 @@
 {
-  // Cloudflare Workers 정적 자산 배포 설정
-  // 배포: 먼저 `hugo --gc --minify` 로 빌드한 뒤 `npx wrangler deploy`
+  // Cloudflare Pages 설정
+  // 수동 배포: hugo --gc --minify 후 npx wrangler pages deploy
+  // 자동 배포: .github/workflows/deploy.yml (push 시 GitHub Actions가 빌드·배포)
   "name": "mirae-woojoo",
-  "compatibility_date": "2026-06-16",
-  "assets": {
-    "directory": "./public"
-  }
+  "pages_build_output_dir": "./public"
 }
