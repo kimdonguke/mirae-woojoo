@@ -1,0 +1,9 @@
+{
+  // Cloudflare Workers 정적 자산 배포 설정
+  // 배포: 먼저 `hugo --gc --minify` 로 빌드한 뒤 `npx wrangler deploy`
+  "name": "mirae-woojoo",
+  "compatibility_date": "2026-06-16",
+  "assets": {
+    "directory": "./public"
+  }
+}
