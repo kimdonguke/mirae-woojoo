@@ -13,3 +13,8 @@ Thumbs.db
 
 # Node (사용 시)
 node_modules/
+
+# Wrangler / Cloudflare 로컬 상태
+.wrangler/
+.dev.vars
+.dev.vars.*
