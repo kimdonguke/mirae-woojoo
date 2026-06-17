@@ -9,10 +9,6 @@
         <p class="hero-eyebrow">미래우주 · FUTURE SPACE</p>
         <h2 class="hero-title">{{ $s.title }}</h2>
         {{ with $s.desc }}<p class="hero-desc">{{ . }}</p>{{ end }}
-        <div class="hero-actions">
-          <a class="btn btn-hero" href="/about/#contact">단원 모집</a>
-          <a class="btn btn-hero-ghost" href="mailto:{{ $.Site.Params.email }}">문의</a>
-        </div>
       </div>
     </div>
     {{ end }}

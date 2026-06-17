@@ -133,8 +133,6 @@ ul { list-style: none; }
 .btn-primary:hover { background: var(--primary-strong); border-color: var(--primary-strong); }
 .btn-ghost { background: #fff; color: var(--ink); border-color: var(--border-strong); }
 .btn-ghost:hover { border-color: var(--primary); color: var(--primary); }
-.btn-hero { background: #fff; color: var(--ink); border-color: #fff; padding: 13px 26px; }
-.btn-hero:hover { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .7); }
 
 /* ── 히어로 슬라이더 ── */
 .hero { position: relative; min-height: clamp(420px, 64vh, 580px); background: #0f1b33; color: #fff; overflow: hidden; }
@@ -156,7 +154,7 @@ ul { list-style: none; }
 .hero-inner { position: relative; z-index: 1; padding-top: 60px; padding-bottom: 60px; max-width: 720px; }
 .hero-eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .14em; color: #9fc0ff; margin: 0 0 16px; }
 .hero-title { font-size: clamp(2rem, 4.6vw, 3rem); line-height: 1.18; font-weight: 800; letter-spacing: -0.025em; margin: 0 0 16px; }
-.hero-desc { font-size: clamp(1rem, 1.8vw, 1.18rem); color: #d3dceb; margin: 0 0 30px; }
+.hero-desc { font-size: clamp(1rem, 1.8vw, 1.18rem); color: #d3dceb; margin: 0; }
 
 .hero-arrow {
   position: absolute; top: 50%; transform: translateY(-50%); z-index: 3;
@@ -459,10 +457,6 @@ ul { list-style: none; }
 /* ── 접근성: 키보드 포커스 표시 ── */
 :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 2px; }
 .hero :focus-visible, .site-footer :focus-visible, .page-hero :focus-visible { outline-color: #9fc0ff; }
-
-/* ── 히어로 보조 CTA (고스트) ── */
-.btn-hero-ghost { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .6); }
-.btn-hero-ghost:hover { background: rgba(255, 255, 255, .14); border-color: #fff; color: #fff; }
 
 /* ── 푸터 CTA + SNS ── */
 .footer-cta { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; padding: 9px 16px; font-size: .9rem; font-weight: 700; color: #fff; border: 1.5px solid rgba(255, 255, 255, .35); border-radius: var(--radius); }
