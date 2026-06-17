@@ -75,15 +75,18 @@ hugo --gc --minify   # 프로덕션 빌드 → public/
 | 공지·뉴스·활동·행사 글 | `/admin` (CMS) 또는 `content/<분류>/*.md` |
 | 색상·디자인 | `assets/css/main.css` (상단 `:root`) |
 
-## 배포 — GitHub Actions → Cloudflare Pages
+## 배포 — Cloudflare Pages (Git 연동)
 
-`main` 에 push하면 **GitHub Actions**(`.github/workflows/deploy.yml`)가 Hugo(0.163.2 extended)를 빌드해 Cloudflare Pages로 배포합니다.
+GitHub 레포가 Cloudflare Pages에 연결되어 있어, `main` 에 push하면 **Cloudflare가 Hugo를 빌드해 자동 배포**합니다. (별도 CI·시크릿 불필요)
 
-**1회 설정**
-1. GitHub 레포 → Settings → Secrets and variables → Actions 에 시크릿 2개:
-   - `CLOUDFLARE_API_TOKEN` — Cloudflare → My Profile → API Tokens → Create Token → 권한 `Account › Cloudflare Pages › Edit`
-   - `CLOUDFLARE_ACCOUNT_ID` — Cloudflare 대시보드의 Account ID
-2. Cloudflare Pages 프로젝트의 **Git 연동 해제**(Settings → Builds & deployments) — 중복/실패 빌드 방지. 배포는 Actions가 담당.
+**1회 설정** (Cloudflare 대시보드 → 프로젝트 → Settings → Builds & deployments → Build configuration)
+
+| 항목 | 값 |
+| --- | --- |
+| Framework preset | Hugo |
+| Build command | `hugo --gc --minify` |
+| Build output directory | `public` |
+| 환경 변수 | `HUGO_VERSION` = `0.163.2` |
 
 수동 배포도 가능:
 
