@@ -3,7 +3,7 @@
   <div class="util-bar">
     <div class="container util-inner">
       <ul class="util-links">
-        <li><a href="#contact">가입 문의</a></li>
+        <li><a href="/about/#contact">가입 문의</a></li>
         {{ with .Site.Params.github }}<li><a href="{{ . }}" target="_blank" rel="noopener">GitHub</a></li>{{ end }}
       </ul>
       <div class="util-right">
@@ -16,7 +16,7 @@
         <div class="util-lang" aria-label="언어 선택">
           <a class="is-active" href="#" aria-current="page">KOR</a>
           <span aria-hidden="true">·</span>
-          <a href="#" aria-disabled="true">ENG</a>
+          <a href="#" aria-disabled="true" data-todo="영문(ENG) 페이지는 아직 준비 중입니다.">ENG</a>
         </div>
       </div>
     </div>
@@ -25,7 +25,7 @@
   <!-- 메인 바: 로고 + GNB -->
   <div class="main-bar">
     <div class="container main-inner">
-      <a class="brand" href="#hero">
+      <a class="brand" href="/">
         <span class="brand-mark" aria-hidden="true">◉</span>
         <span class="brand-text">{{ .Site.Title }}</span>
       </a>
@@ -39,13 +39,6 @@
           {{ range site.Data.gnb }}
           <li class="gnb-item">
             <a href="{{ .url }}">{{ .name }}</a>
-            {{ with .sub }}
-            <div class="gnb-panel">
-              <ul>
-                {{ range . }}<li><a href="{{ .url }}">{{ .name }}</a></li>{{ end }}
-              </ul>
-            </div>
-            {{ end }}
           </li>
           {{ end }}
         </ul>

@@ -10,34 +10,19 @@ enableRobotsTXT = true
 enableEmoji = true
 # 사용하지 않는 분류(taxonomy) 페이지 생성 비활성화
 disableKinds = ["taxonomy", "term"]
+# 미래 날짜 글(예: 예정된 행사일정)도 빌드에 포함
+buildFuture = true
 
 [params]
   # 검색엔진 노출 차단 (공개 준비되면 false 로 바꾸고 static/_headers 도 함께 정리)
   noindex = true
 
   # 사이트 전역 정보 (이 값들만 바꿔도 대부분 수정됩니다)
-  description = "우주, 로켓, 위성을 함께 탐구하는 미래우주 공식 홈페이지"
+  description = "다양한 활동과 연구로 우주 기술에 도전하는 미래우주 공식 홈페이지"
   email = "contact@miraewooju.org"
   github = ""          # 예: "https://github.com/your-org"
   nameEn = "Future Space"   # 푸터 영문 병기 (필요 없으면 비우세요)
   # familySites = [{ name = "GNSS LAB", url = "https://..." }]  # 푸터 패밀리사이트 (비우면 자동 숨김)
-
-  # 활동 카드 (필요한 만큼 추가/삭제하세요)
-  # icon 값은 rocket / satellite / orbit 중 하나 (layouts/partials/icon.html 참고)
-  [[params.activities]]
-    icon = "rocket"
-    title = "로켓"
-    desc = "발사체 설계와 추진 시스템을 공부하고, 모형 로켓 제작·발사 프로젝트를 진행합니다."
-
-  [[params.activities]]
-    icon = "satellite"
-    title = "위성"
-    desc = "큐브샛과 위성 통신, 궤도 역학을 학습하며 소형 위성 프로젝트에 도전합니다."
-
-  [[params.activities]]
-    icon = "orbit"
-    title = "우주 탐사"
-    desc = "행성 탐사와 우주 임무 사례를 함께 분석하고 세미나·스터디를 운영합니다."
 
 # 상단 메뉴(GNB)·히어로 슬라이드·소식 보드는 data/ 폴더에서 관리합니다.
 #   - data/gnb.yaml   : 상단 메뉴 + 하위 메뉴

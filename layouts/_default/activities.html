@@ -1,0 +1,27 @@
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+<section class="section">
+  <div class="container">
+    {{ with .Content }}<div class="prose" style="margin-bottom:32px">{{ . }}</div>{{ end }}
+
+    <div class="subtabs" role="tablist" aria-label="활동·연구 분야">
+      <button class="subtab is-active" type="button" role="tab" aria-selected="true" data-tab="r1">연구과제 1</button>
+      <button class="subtab" type="button" role="tab" aria-selected="false" data-tab="r2">연구과제 2</button>
+      <button class="subtab" type="button" role="tab" aria-selected="false" data-tab="r3">연구과제 3</button>
+    </div>
+
+    <div class="subpanel is-active" data-tab="r1" role="tabpanel">
+      <h2 class="page-h2">연구과제 1</h2>
+      <p class="page-empty">연구과제 내용을 소개하는 공간입니다. 내용은 준비 중입니다.</p>
+    </div>
+    <div class="subpanel" data-tab="r2" role="tabpanel">
+      <h2 class="page-h2">연구과제 2</h2>
+      <p class="page-empty">연구과제 내용을 소개하는 공간입니다. 내용은 준비 중입니다.</p>
+    </div>
+    <div class="subpanel" data-tab="r3" role="tabpanel">
+      <h2 class="page-h2">연구과제 3</h2>
+      <p class="page-empty">연구과제 내용을 소개하는 공간입니다. 내용은 준비 중입니다.</p>
+    </div>
+  </div>
+</section>
+{{ end }}

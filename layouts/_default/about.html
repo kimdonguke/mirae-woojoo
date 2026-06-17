@@ -1,0 +1,34 @@
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+<section class="section">
+  <div class="container narrow">
+    <div id="intro" class="page-section">
+      <h2 class="page-h2">단체 소개</h2>
+      <div class="prose">{{ .Content }}</div>
+    </div>
+
+    <div id="vision" class="page-section">
+      <h2 class="page-h2">비전·목표</h2>
+      <p class="page-empty">미래우주의 비전과 목표를 소개하는 공간입니다. 내용은 준비 중입니다.</p>
+    </div>
+
+    <div id="history" class="page-section">
+      <h2 class="page-h2">연혁</h2>
+      <p class="page-empty">미래우주의 발자취를 정리하는 공간입니다. 아직 등록된 연혁이 없습니다.</p>
+    </div>
+
+    <div id="org" class="page-section">
+      <h2 class="page-h2">조직·운영진</h2>
+      <p class="page-empty">운영진과 팀 구성을 소개하는 공간입니다. 내용은 준비 중입니다.</p>
+    </div>
+
+    <div id="contact" class="page-section">
+      <h2 class="page-h2">오시는 길·연락</h2>
+      <div class="prose">
+        <p>이메일 · <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></p>
+        <p class="page-empty">오시는 길(주소·약도)은 준비 중입니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

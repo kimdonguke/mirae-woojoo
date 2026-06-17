@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article class="section">
+  <div class="container narrow">
+    <p class="post-back">
+      {{ with .CurrentSection }}<a href="{{ .RelPermalink }}">← {{ .Title }} 목록</a>{{ end }}
+    </p>
+    <h1 class="post-h1">{{ .Title }}</h1>
+    <div class="post-meta">
+      <time>{{ .Date.Format "2006-01-02" }}</time>
+      {{ with .Params.author }}<span>· {{ . }}</span>{{ end }}
+      {{ with .Params.location }}<span>· 장소: {{ . }}</span>{{ end }}
+    </div>
+    <div class="prose post-body">{{ .Content }}</div>
+  </div>
+</article>
+{{ end }}

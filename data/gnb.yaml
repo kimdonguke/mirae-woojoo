@@ -1,43 +1,27 @@
-# 상단 GNB(글로벌 내비게이션) 메뉴 + 하위 메뉴
-# url 이 "#" 인 항목은 아직 페이지가 없는 placeholder 입니다.
+# 상단 GNB(글로벌 내비게이션) — 4개 탭. 클릭 시 해당 페이지로 이동.
 - name: 소개
-  url: "#about"
+  url: "/about/"
   sub:
-    - { name: 단체 소개, url: "#about" }
-    - { name: 비전·목표, url: "#about" }
-    - { name: 연혁, url: "#" }
-    - { name: 조직·운영진, url: "#" }
-    - { name: 찾아오시는 길, url: "#contact" }
+    - { name: 단체 소개, url: "/about/#intro" }
+    - { name: 비전·목표, url: "/about/#vision" }
+    - { name: 연혁, url: "/about/#history" }
+    - { name: 조직·운영진, url: "/about/#org" }
+    - { name: 오시는 길·연락, url: "/about/#contact" }
 - name: 활동·연구
-  url: "#activities"
+  url: "/activities/"
   sub:
-    - { name: 정기 세미나·스터디, url: "#activities" }
-    - { name: 프로젝트, url: "#activities" }
-    - { name: 연구 분야, url: "#activities" }
-    - { name: 갤러리, url: "#" }
-- name: 위성·로켓
-  url: "#activities"
-  sub:
-    - { name: 로켓(발사체·추진), url: "#" }
-    - { name: 위성(큐브샛·통신), url: "#" }
-    - { name: 궤도·우주탐사, url: "#" }
-    - { name: 기술 노트, url: "#" }
+    - { name: 연구과제 1, url: "/activities/#r1" }
+    - { name: 연구과제 2, url: "/activities/#r2" }
+    - { name: 연구과제 3, url: "/activities/#r3" }
 - name: 소식
-  url: "#news"
+  url: "/notice/"
   sub:
-    - { name: 공지사항, url: "#news" }
-    - { name: 뉴스·활동소식, url: "#news" }
-    - { name: 행사 일정, url: "#news" }
-    - { name: 미디어·영상, url: "#" }
+    - { name: 공지사항, url: "/notice/" }
+    - { name: 뉴스, url: "/news/" }
+    - { name: 행사일정, url: "/event/" }
 - name: 자료실
-  url: "#"
+  url: "/resources/"
   sub:
-    - { name: 발표자료·문서, url: "#" }
-    - { name: 스터디 아카이브, url: "#" }
-    - { name: 추천자료·FAQ, url: "#" }
-- name: 연락처
-  url: "#contact"
-  sub:
-    - { name: 가입 안내, url: "#contact" }
-    - { name: 문의하기, url: "#contact" }
-    - { name: 후원·협력, url: "#" }
+    - { name: 발표자료·문서, url: "/resources/" }
+    - { name: 스터디 아카이브, url: "/resources/" }
+    - { name: 추천자료·FAQ, url: "/resources/" }

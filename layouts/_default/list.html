@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+<section class="section">
+  <div class="container">
+    {{ $boards := slice "notice" "news" "event" }}
+    {{ if in $boards .Section }}
+    <nav class="board-nav" aria-label="소식 분류">
+      <a href="/notice/"{{ if eq .Section "notice" }} class="is-active"{{ end }}>공지사항</a>
+      <a href="/news/"{{ if eq .Section "news" }} class="is-active"{{ end }}>뉴스</a>
+      <a href="/event/"{{ if eq .Section "event" }} class="is-active"{{ end }}>행사일정</a>
+    </nav>
+    {{ end }}
+
+    {{ with .Content }}<div class="prose" style="margin-bottom:24px">{{ . }}</div>{{ end }}
+
+    <ul class="post-list">
+      {{ range .Pages.ByDate.Reverse }}
+      <li class="post-row">
+        <a href="{{ .RelPermalink }}">
+          <span class="post-title">{{ .Title }}</span>
+          <time class="post-date">{{ .Date.Format "2006-01-02" }}</time>
+        </a>
+      </li>
+      {{ else }}
+      <li class="post-empty">아직 등록된 글이 없습니다.</li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}

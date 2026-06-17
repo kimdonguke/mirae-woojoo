@@ -1,0 +1,22 @@
+# 홈 요약 카드 (탭별). 좌우 번갈아 배치, 한쪽 텍스트·반대쪽 이미지(그라데이션 페이드).
+# image 를 채우면 그라데이션 대신 실제 사진이 표시됩니다. 예: image: /uploads/about.jpg
+- title: 소개
+  desc: 미래우주의 비전과 활동을 소개합니다.
+  url: /about/
+  theme: a
+  # image:
+- title: 활동·연구
+  desc: 미래우주가 진행하는 다양한 연구과제와 활동을 살펴보세요.
+  url: /activities/
+  theme: b
+  # image:
+- title: 소식
+  desc: 공지사항 · 뉴스 · 행사일정 등 미래우주의 최신 소식을 확인하세요.
+  url: /notice/
+  theme: c
+  # image:
+- title: 자료실
+  desc: 발표자료 · 문서 · 스터디 아카이브를 한곳에서 제공합니다.
+  url: /resources/
+  theme: d
+  # image:

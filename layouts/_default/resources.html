@@ -1,0 +1,9 @@
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+<section class="section">
+  <div class="container narrow">
+    {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+    <p class="post-empty">자료실은 준비 중입니다. 발표자료·문서·스터디 아카이브·추천자료가 곧 제공됩니다.</p>
+  </div>
+</section>
+{{ end }}

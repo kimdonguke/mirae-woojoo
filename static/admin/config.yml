@@ -1,0 +1,67 @@
+# ─────────────────────────────────────────────
+# Sveltia CMS 설정 (Decap 호환)
+# 로컬 모드: `hugo server` 실행 후 http://localhost:1313/admin/ 접속 →
+#            "Work with Local Repository" 버튼으로 이 프로젝트 폴더 선택 (Chrome/Edge)
+# 온라인 모드(나중에): GitHub OAuth 앱 + 인증 Worker 설정 후 GitHub 로그인으로 작성
+# ─────────────────────────────────────────────
+backend:
+  name: github
+  repo: kimdonguke/mirae-woojoo
+  branch: main
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+locale: ko
+
+collections:
+  - name: notice
+    label: 공지사항
+    label_singular: 공지
+    folder: content/notice
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { name: title, label: 제목, widget: string }
+      - { name: date, label: 작성일, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { name: author, label: 작성자, widget: string, required: false }
+      - { name: draft, label: 임시저장(숨김), widget: boolean, default: false, required: false }
+      - { name: body, label: 본문, widget: markdown }
+
+  - name: news
+    label: 뉴스·활동소식
+    label_singular: 뉴스
+    folder: content/news
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { name: title, label: 제목, widget: string }
+      - { name: date, label: 작성일, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { name: author, label: 작성자, widget: string, required: false }
+      - { name: draft, label: 임시저장(숨김), widget: boolean, default: false, required: false }
+      - { name: body, label: 본문, widget: markdown }
+
+  - name: activity
+    label: 활동·연구
+    label_singular: 활동
+    folder: content/activity
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { name: title, label: 제목, widget: string }
+      - { name: date, label: 작성일, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { name: author, label: 작성자, widget: string, required: false }
+      - { name: draft, label: 임시저장(숨김), widget: boolean, default: false, required: false }
+      - { name: body, label: 본문, widget: markdown }
+
+  - name: event
+    label: 행사일정
+    label_singular: 행사
+    folder: content/event
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { name: title, label: 행사명, widget: string }
+      - { name: date, label: 행사일, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { name: location, label: 장소, widget: string, required: false }
+      - { name: draft, label: 임시저장(숨김), widget: boolean, default: false, required: false }
+      - { name: body, label: 안내, widget: markdown }

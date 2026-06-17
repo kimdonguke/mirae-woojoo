@@ -25,6 +25,14 @@
     });
   });
 
+  // 하위메뉴 링크 클릭 시 모바일 전체메뉴 닫기
+  document.querySelectorAll('.gnb-panel a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      document.body.classList.remove('nav-open');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
   // 헤더 스크롤 그림자
   var header = document.querySelector('.site-header');
   if (header) {
@@ -77,6 +85,11 @@
     }
     hero.addEventListener('mouseenter', stop);
     hero.addEventListener('mouseleave', start);
+    // 모션 최소화 설정 시 자동 전환 끔 (접근성)
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      playing = false;
+      if (playBtn) { playBtn.setAttribute('data-playing', 'false'); playBtn.textContent = '▶'; playBtn.setAttribute('aria-label', '슬라이드 재생'); }
+    }
     start();
   })();
 
@@ -85,7 +98,7 @@
     var board = document.querySelector('.board');
     if (!board) return;
     var tabs = [].slice.call(board.querySelectorAll('.board-tab'));
-    var panels = [].slice.call(board.querySelectorAll('.board-list'));
+    var panels = [].slice.call(board.querySelectorAll('.board-panel'));
     tabs.forEach(function (tab) {
       tab.addEventListener('click', function () {
         var key = tab.dataset.panel;
@@ -111,6 +124,58 @@
       onScroll();
       window.addEventListener('scroll', onScroll, { passive: true });
     }
+  })();
+
+  // 미구현 항목(ENG·정책 링크·검색 등) 클릭 시 안내 토스트
+  (function () {
+    var toast;
+    function show(msg) {
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.setAttribute('role', 'status');
+        document.body.appendChild(toast);
+      }
+      toast.textContent = msg;
+      toast.classList.add('is-show');
+      clearTimeout(toast._t);
+      toast._t = setTimeout(function () { toast.classList.remove('is-show'); }, 2600);
+    }
+    document.querySelectorAll('[data-todo]').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        show(el.getAttribute('data-todo') || '아직 미구현된 항목입니다.');
+      });
+    });
+    var search = document.querySelector('.util-search');
+    if (search) search.addEventListener('submit', function (e) { e.preventDefault(); show('검색 기능은 아직 준비 중입니다.'); });
+  })();
+
+  // 활동·연구 세부탭 (위성/로켓/심우주) + URL 해시 연동
+  (function () {
+    var wrap = document.querySelector('.subtabs');
+    if (!wrap) return;
+    var btns = [].slice.call(wrap.querySelectorAll('.subtab'));
+    var panels = [].slice.call(document.querySelectorAll('.subpanel'));
+    function has(key) { return btns.some(function (b) { return b.dataset.tab === key; }); }
+    function activate(key) {
+      if (!has(key)) return;
+      btns.forEach(function (b) { var on = b.dataset.tab === key; b.classList.toggle('is-active', on); b.setAttribute('aria-selected', String(on)); });
+      panels.forEach(function (p) { p.classList.toggle('is-active', p.dataset.tab === key); });
+    }
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        activate(b.dataset.tab);
+        if (history.replaceState) history.replaceState(null, '', '#' + b.dataset.tab);
+      });
+    });
+    function fromHash() {
+      var h = (location.hash || '').replace('#', '');
+      if (h) activate(h);
+    }
+    // 같은 페이지에서 내비 하위메뉴(#deepspace 등)를 눌러 해시가 바뀔 때도 탭 전환
+    window.addEventListener('hashchange', fromHash);
+    fromHash();
   })();
 
   // 등장 애니메이션
