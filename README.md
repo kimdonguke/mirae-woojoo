@@ -70,22 +70,22 @@ hugo --gc --minify   # 프로덕션 빌드 → public/
 | 검색엔진 노출 차단 해제 | `hugo.toml` `noindex = false` (+ `static/_headers` 정리) |
 | 상단 메뉴(GNB) | `data/gnb.yaml` |
 | 히어로 슬라이드 | `data/hero.yaml` |
-| 활동 카드(로켓/위성/탐사) | `hugo.toml` `[[params.activities]]` |
-| 소개 본문 | `content/_index.md` |
+| 둘러보기 카드(홈) | `data/highlights.yaml` |
+| 소개 본문 | `content/about.md` |
 | 공지·뉴스·활동·행사 글 | `/admin` (CMS) 또는 `content/<분류>/*.md` |
 | 색상·디자인 | `assets/css/main.css` (상단 `:root`) |
 
-## Cloudflare Pages 배포
+## 배포 — GitHub Actions → Cloudflare Pages
 
-GitHub 레포지토리(`kimdonguke/mirae-woojoo`)에 연결되어 있으며, **`git push` 하면 자동 빌드·배포**됩니다.
+`main` 에 push하면 **GitHub Actions**(`.github/workflows/deploy.yml`)가 Hugo(0.163.2 extended)를 빌드해 Cloudflare Pages로 배포합니다.
 
-| 항목 | 값 |
-| --- | --- |
-| Build command | `hugo --gc --minify` |
-| Build output directory | `public` |
-| 환경 변수 | `HUGO_VERSION` = `0.163.2` |
+**1회 설정**
+1. GitHub 레포 → Settings → Secrets and variables → Actions 에 시크릿 2개:
+   - `CLOUDFLARE_API_TOKEN` — Cloudflare → My Profile → API Tokens → Create Token → 권한 `Account › Cloudflare Pages › Edit`
+   - `CLOUDFLARE_ACCOUNT_ID` — Cloudflare 대시보드의 Account ID
+2. Cloudflare Pages 프로젝트의 **Git 연동 해제**(Settings → Builds & deployments) — 중복/실패 빌드 방지. 배포는 Actions가 담당.
 
-수동 배포(직접 업로드)도 가능합니다:
+수동 배포도 가능:
 
 ```powershell
 hugo --gc --minify
