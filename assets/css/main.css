@@ -493,16 +493,18 @@ ul { list-style: none; }
 .section-foot a { font-weight: 700; color: inherit; }
 
 /* ── 연구 페이지 ── */
-.subprojects { display: grid; gap: 16px; }
-.subproject { padding: 22px 24px; background: #fff; border: 1px solid var(--border); border-radius: 14px; transition: border-color .18s ease; }
-.subproject:hover { border-color: var(--primary); }
-.sp-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-.sp-num { font-size: .82rem; font-weight: 800; color: var(--primary); letter-spacing: .02em; }
-.sp-org { font-size: .72rem; font-weight: 700; color: var(--text-muted); background: var(--bg-alt); border: 1px solid var(--border); border-radius: 999px; padding: 2px 10px; }
-.sp-title { margin: 0 0 12px; font-size: 1.12rem; font-weight: 800; color: var(--ink); line-height: 1.42; }
-.sp-keywords { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.subprojects { display: grid; }
+.subproject { display: grid; grid-template-columns: 56px 1fr; gap: 22px; padding: 26px 0; border-bottom: 1px solid var(--border); }
+.subproject:first-child { padding-top: 6px; }
+.subproject:last-child { border-bottom: none; padding-bottom: 0; }
+.sp-num { font-size: 2.1rem; font-weight: 800; line-height: 1; color: rgba(30,58,138,.22); font-variant-numeric: tabular-nums; }
+.sp-meta { margin: 0 0 6px; font-size: .78rem; font-weight: 700; letter-spacing: .02em; color: var(--primary); }
+.sp-meta .sp-org { color: var(--text-muted); }
+.sp-title { margin: 0 0 12px; font-size: 1.15rem; font-weight: 800; color: var(--ink); line-height: 1.42; }
+.sp-keywords { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-bottom: 12px; }
 .sp-chip { font-size: .74rem; font-weight: 600; color: var(--primary); background: rgba(30,58,138,.06); border-radius: 6px; padding: 3px 9px; }
-.sp-summary { margin: 0; font-size: .94rem; line-height: 1.68; color: var(--text); }
+.sp-summary { margin: 0; font-size: .94rem; line-height: 1.7; color: var(--text-muted); }
+@media (max-width: 560px) { .subproject { grid-template-columns: 1fr; gap: 6px; padding: 22px 0; } .sp-num { font-size: 1.5rem; } }
 .ach-list { list-style: none; margin: 0; padding: 0; }
 .ach-row { display: grid; grid-template-columns: 58px 64px 1fr; gap: 12px; align-items: baseline; padding: 13px 4px; border-bottom: 1px solid var(--border); }
 .ach-year { font-weight: 800; color: var(--primary); font-variant-numeric: tabular-nums; }

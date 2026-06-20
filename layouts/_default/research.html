@@ -9,17 +9,17 @@
       <div class="subprojects">
         {{ range $i, $sp := site.Data.subprojects.items }}
         <div class="subproject">
-          <div class="sp-head">
-            <span class="sp-num">제{{ add $i 1 }}세부</span>
-            {{ with $sp.org }}<span class="sp-org">{{ . }}</span>{{ end }}
+          <span class="sp-num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
+          <div class="sp-body">
+            <p class="sp-meta">제{{ add $i 1 }}세부{{ with $sp.org }} · <span class="sp-org">{{ . }}</span>{{ end }}</p>
+            <h3 class="sp-title">{{ $sp.title }}</h3>
+            {{ with $sp.keywords }}
+            <div class="sp-keywords">
+              {{ range . }}<span class="sp-chip">{{ . }}</span>{{ end }}
+            </div>
+            {{ end }}
+            <p class="sp-summary">{{ $sp.summary }}</p>
           </div>
-          <h3 class="sp-title">{{ $sp.title }}</h3>
-          {{ with $sp.keywords }}
-          <div class="sp-keywords">
-            {{ range . }}<span class="sp-chip">{{ . }}</span>{{ end }}
-          </div>
-          {{ end }}
-          <p class="sp-summary">{{ $sp.summary }}</p>
         </div>
         {{ end }}
       </div>
