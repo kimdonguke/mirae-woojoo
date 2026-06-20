@@ -1,0 +1,14 @@
+{{- /* 모션 슬롯: 현재는 정적 플레이스홀더. 후속에서 주제 맞춤 2.5D로 교체.
+       호출: {{ partial "motion-slot.html" (dict "variant" "network") }}
+       variant: network(연구) | beacon(국제동향) | orbit(기본) */ -}}
+{{- $variant := .variant | default "orbit" -}}
+<div class="motion-slot" data-variant="{{ $variant }}" aria-hidden="true">
+  <!-- TODO(2.5D): 연구 주제 리스트 확정 후 {{ $variant }} 모션그래픽으로 교체 -->
+  <svg viewBox="0 0 220 160" class="motion-ph">
+    <ellipse cx="110" cy="84" rx="80" ry="40" fill="none" stroke="currentColor" stroke-dasharray="4 8" opacity=".35"/>
+    <ellipse cx="110" cy="84" rx="48" ry="24" fill="none" stroke="currentColor" stroke-dasharray="3 9" opacity=".25"/>
+    <circle cx="110" cy="84" r="11" fill="currentColor" opacity=".5"/>
+    <circle cx="30" cy="84" r="3.5" fill="currentColor" opacity=".6"/>
+    <circle cx="190" cy="84" r="3" fill="currentColor" opacity=".45"/>
+  </svg>
+</div>

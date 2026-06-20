@@ -465,3 +465,9 @@ ul { list-style: none; }
 .footer-social a { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .18); color: #aab4c2; transition: color .15s ease, border-color .15s ease; }
 .footer-social a:hover { color: #fff; border-color: rgba(255, 255, 255, .45); }
 .footer-social svg { width: 18px; height: 18px; }
+
+/* ── 모션 슬롯 (정적 플레이스홀더 · 후속 2.5D 교체) ── */
+.motion-slot { color: #3b82f6; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+.motion-slot .motion-ph { width: 100%; max-width: 260px; height: auto; }
+.section-dark .motion-slot { color: #93b4f5; }
+@media (prefers-reduced-motion: reduce) { .motion-slot { opacity: .8; } }
