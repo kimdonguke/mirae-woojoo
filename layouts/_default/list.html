@@ -2,10 +2,11 @@
 {{ partial "page-hero.html" . }}
 <section class="section">
   <div class="container">
-    {{ $boards := slice "notice" "news" "event" }}
+    {{ $boards := slice "notice" "seminar" "news" "event" }}
     {{ if in $boards .Section }}
     <nav class="board-nav" aria-label="소식 분류">
       <a href="/notice/"{{ if eq .Section "notice" }} class="is-active"{{ end }}>공지사항</a>
+      <a href="/seminar/"{{ if eq .Section "seminar" }} class="is-active"{{ end }}>세미나·교육</a>
       <a href="/news/"{{ if eq .Section "news" }} class="is-active"{{ end }}>뉴스</a>
       <a href="/event/"{{ if eq .Section "event" }} class="is-active"{{ end }}>행사일정</a>
     </nav>
