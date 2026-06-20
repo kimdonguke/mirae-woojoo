@@ -616,8 +616,9 @@ body.lb-lock { overflow: hidden; }
 }
 
 /* ── 국제 동향 지도 ── */
-.trends-intro { color: var(--text-muted); margin: 0 0 22px; font-size: .98rem; }
-.worldmap { position: relative; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 14px; padding: 12px; }
+.trends-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; letter-spacing: -.02em; color: var(--ink); margin: 0 0 8px; }
+.trends-intro { color: var(--text-muted); margin: 0 0 20px; font-size: .98rem; }
+.worldmap { position: relative; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 14px; padding: 12px; max-width: 112vh; margin-left: auto; margin-right: auto; }
 .worldmap svg { width: 100%; height: auto; display: block; }
 .worldmap svg path { fill: #c3cee0 !important; stroke: #fff !important; stroke-width: .4 !important; }
 .map-marker { position: absolute; transform: translate(-50%, -50%); z-index: 2; }
