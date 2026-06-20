@@ -1,27 +1,11 @@
-# 상단 GNB(글로벌 내비게이션) — 4개 탭. 클릭 시 해당 페이지로 이동.
+# 상단 GNB(글로벌 내비게이션) — 5개 탭. 클릭 시 해당 페이지로 이동.
 - name: 소개
   url: "/about/"
-  sub:
-    - { name: 단체 소개, url: "/about/#intro" }
-    - { name: 비전·목표, url: "/about/#vision" }
-    - { name: 연혁, url: "/about/#history" }
-    - { name: 조직·운영진, url: "/about/#org" }
-    - { name: 오시는 길·연락, url: "/about/#contact" }
-- name: 활동·연구
-  url: "/activities/"
-  sub:
-    - { name: 연구과제 1, url: "/activities/#r1" }
-    - { name: 연구과제 2, url: "/activities/#r2" }
-    - { name: 연구과제 3, url: "/activities/#r3" }
+- name: 연구
+  url: "/research/"
 - name: 소식
   url: "/notice/"
-  sub:
-    - { name: 공지사항, url: "/notice/" }
-    - { name: 뉴스, url: "/news/" }
-    - { name: 행사일정, url: "/event/" }
+- name: 갤러리·미디어
+  url: "/gallery/"
 - name: 자료실
   url: "/resources/"
-  sub:
-    - { name: 발표자료·문서, url: "/resources/" }
-    - { name: 스터디 아카이브, url: "/resources/" }
-    - { name: 추천자료·FAQ, url: "/resources/" }
