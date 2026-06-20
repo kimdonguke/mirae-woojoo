@@ -265,24 +265,43 @@
     });
   })();
 
-  // 국제 동향 지도: 마커 클릭 → 말풍선 팝업
+  // 국제 동향 지도: 마커 클릭 → 말풍선 팝업 + 해당 국가 강조 + 좌하단 정보 토글
   (function () {
     var map = document.getElementById('agencyMap');
     if (!map) return;
+    var svg = map.querySelector('.worldmap-img svg');
     var markers = [].slice.call(map.querySelectorAll('.map-marker'));
-    function closeAll(except) { markers.forEach(function (m) { if (m !== except) m.classList.remove('is-open'); }); }
+    var info = map.querySelector('.map-info');
+    var infoBtn = info && info.querySelector('.map-info-btn');
+    var infoPanel = info && info.querySelector('.map-info-panel');
+    // data-agency 인덱스 → 나라 path id (agencies.yaml 항목 순서와 일치)
+    var COUNTRY = ['usa', 'france', 'italy', 'honshu', 'south korea', 'india', 'emirates', 'china', 'russia'];
+    function clearCountry() { if (svg) [].forEach.call(svg.querySelectorAll('path.is-active'), function (p) { p.classList.remove('is-active'); }); }
+    function activateCountry(idx) { if (!svg) return; var id = COUNTRY[idx]; if (!id) return; var p = svg.querySelector('[id="' + id + '"]'); if (p) p.classList.add('is-active'); }
+    function closeMarkers(except) { markers.forEach(function (m) { if (m !== except) m.classList.remove('is-open'); }); }
+    function closeInfo() { if (info) { info.classList.remove('is-open'); if (infoBtn) infoBtn.setAttribute('aria-expanded', 'false'); } }
+    function closeAll() { closeMarkers(null); closeInfo(); clearCountry(); }
     markers.forEach(function (m) {
       var btn = m.querySelector('.marker-btn');
       var pop = m.querySelector('.map-popup');
       if (btn) btn.addEventListener('click', function (e) {
         e.stopPropagation();
         var open = m.classList.contains('is-open');
-        closeAll(m);
+        closeMarkers(m); closeInfo(); clearCountry();
         m.classList.toggle('is-open', !open);
+        if (!open) activateCountry(parseInt(m.getAttribute('data-agency'), 10));
       });
       if (pop) pop.addEventListener('click', function (e) { e.stopPropagation(); });
     });
-    document.addEventListener('click', function () { closeAll(null); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAll(null); });
+    if (infoBtn) infoBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = info.classList.contains('is-open');
+      closeMarkers(null); clearCountry();
+      info.classList.toggle('is-open', !open);
+      infoBtn.setAttribute('aria-expanded', String(!open));
+    });
+    if (infoPanel) infoPanel.addEventListener('click', function (e) { e.stopPropagation(); });
+    document.addEventListener('click', function () { closeAll(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAll(); });
   })();
 })();

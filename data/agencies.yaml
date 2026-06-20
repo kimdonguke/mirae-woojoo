@@ -4,7 +4,6 @@
 items:
   - name: NASA
     country: 미국
-    tag: NASA·ESA 진영
     x: 21.7
     y: 33.6
     desc: "달 통신·항법의 상호운용 표준인 LunaNet(LNIS)을 ESA와 공동으로 주도합니다. 이를 실제 서비스할 중계·항법 위성 인프라(LCRNS)를 조달하고, LuGRE 실험으로 달 거리·표면에서 지구 GNSS 신호 수신·측위를 입증했습니다."
@@ -14,24 +13,21 @@ items:
       - { label: LuGRE, url: "https://esc.gsfc.nasa.gov/projects/LuGRE" }
   - name: ESA
     country: 유럽
-    tag: NASA·ESA 진영
     x: 48.2
     y: 31.1
-    desc: "달 주변에 통신·항법 위성군을 구축하는 Moonlight 프로그램을 추진하며 남극 지역 커버리지를 우선합니다. Lunar Pathfinder 위성의 NaviMoon 수신기로 약 40만 km 거리에서 지구 GNSS 약신호 측위를 실증합니다."
+    desc: "달 주변에 통신·항법 위성군을 구축하는 Moonlight 프로그램을 추진하며 남극 지역 커버리지를 우선합니다. Lunar Pathfinder 위성의 NaviMoon 수신기로 약 40만 km 거리에서 지구 GNSS 약신호 측위를 실증할 예정입니다."
     links:
       - { label: Moonlight, url: "https://www.esa.int/Applications/Connectivity_and_Secure_Communications/Moonlight" }
       - { label: Lunar Pathfinder, url: "https://bsgn.esa.int/service/lunar-pathfinder/" }
   - name: ASI
     country: 이탈리아
-    tag: NASA·ESA 진영
     x: 51.2
     y: 33.5
-    desc: "LuGRE 페이로드를 NASA와 공동 개발한 국가로, 달 통신·항법 분야에 적극적으로 참여하고 있습니다."
+    desc: "LuGRE 페이로드를 NASA와 공동 개발한 국가로, 달 통신·항법 분야에 참여하고 있습니다."
     links:
       - { label: ASI, url: "https://www.asi.it/en/" }
   - name: JAXA
     country: 일본
-    tag: NASA·ESA 진영
     x: 86
     y: 32.5
     desc: "LunaNet 참여 기관이자 아르테미스 협정 서명국으로, 자체 달 항법(LNSS) 개념 연구와 SLIM 착륙선 등 달 인프라를 추진합니다."
@@ -39,7 +35,6 @@ items:
       - { label: JAXA, url: "https://global.jaxa.jp/" }
   - name: KASA
     country: 대한민국
-    tag: 신흥·지역 우주국
     x: 83.2
     y: 33.2
     desc: "다누리(KPLO) 달 궤도선 운용에 이어, 우주항공청(KASA) 출범 후 후속 달 탐사와 한국형 위성항법(KPS)을 추진하고 있습니다."
@@ -47,7 +42,6 @@ items:
       - { label: KASA, url: "https://www.kasa.go.kr/" }
   - name: ISRO
     country: 인도
-    tag: 신흥·지역 우주국
     x: 71
     y: 42.5
     desc: "Chandrayaan-3의 달 남극 착륙 성공 이후 달 인프라와 후속 임무를 확대하고 있으며, 지구 항법 시스템 NavIC 운용 경험을 보유합니다."
@@ -55,15 +49,13 @@ items:
       - { label: ISRO, url: "https://www.isro.gov.in/" }
   - name: MBRSC
     country: UAE
-    tag: 신흥·지역 우주국
     x: 63.3
     y: 42.8
-    desc: "달 로버 라시드(Rashid) 등으로 달 탐사에 참여하는 신흥 우주개발 주자입니다."
+    desc: "달 로버 라시드(Rashid) 등으로 달 탐사에 참여하는 신흥 우주개발 참여국입니다."
     links:
       - { label: MBRSC, url: "https://www.mbrsc.ae/" }
   - name: CNSA
     country: 중국
-    tag: 중국·러시아 진영(ILRS)
     x: 78.3
     y: 31.6
     desc: "췌차오(Queqiao) 통신·항법 위성을 운용하며, 국제달연구기지(ILRS)를 위한 달 통신·항법 위성군을 단계적으로 구축할 계획입니다."
@@ -71,7 +63,6 @@ items:
       - { label: CNSA, url: "https://www.cnsa.gov.cn/english/" }
   - name: Roscosmos
     country: 러시아
-    tag: 중국·러시아 진영(ILRS)
     x: 59
     y: 25
     desc: "중국과 함께 국제달연구기지(ILRS)를 공동 주도하며, 루나(Luna) 시리즈로 달 탐사에 참여합니다."
