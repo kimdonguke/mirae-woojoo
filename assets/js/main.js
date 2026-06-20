@@ -190,4 +190,52 @@
   } else {
     reveals.forEach(function (el) { el.classList.add('is-visible'); });
   }
+
+  // 사진 라이트박스 (.js-lightbox 앵커)
+  (function () {
+    var links = [].slice.call(document.querySelectorAll('a.js-lightbox'));
+    if (!links.length) return;
+    var box = null, imgEl, capEl, curList = links, curIdx = 0;
+
+    function build() {
+      box = document.createElement('div');
+      box.className = 'lightbox';
+      box.setAttribute('role', 'dialog');
+      box.setAttribute('aria-modal', 'true');
+      box.innerHTML =
+        '<button class="lb-close" aria-label="닫기">✕</button>' +
+        '<button class="lb-nav lb-prev" aria-label="이전">‹</button>' +
+        '<figure class="lb-figure"><img alt=""><figcaption></figcaption></figure>' +
+        '<button class="lb-nav lb-next" aria-label="다음">›</button>';
+      document.body.appendChild(box);
+      imgEl = box.querySelector('img');
+      capEl = box.querySelector('figcaption');
+      box.querySelector('.lb-close').addEventListener('click', close);
+      box.querySelector('.lb-prev').addEventListener('click', function (e) { e.stopPropagation(); go(-1); });
+      box.querySelector('.lb-next').addEventListener('click', function (e) { e.stopPropagation(); go(1); });
+      box.addEventListener('click', function (e) { if (e.target === box) close(); });
+    }
+    function open(i) {
+      if (!box) build();
+      curIdx = i;
+      var a = curList[curIdx];
+      imgEl.src = a.getAttribute('href');
+      capEl.textContent = a.getAttribute('data-caption') || '';
+      box.classList.add('is-open');
+      document.body.classList.add('lb-lock');
+      box.querySelector('.lb-close').focus();
+    }
+    function close() { if (box) { box.classList.remove('is-open'); document.body.classList.remove('lb-lock'); } }
+    function go(d) { open((curIdx + d + curList.length) % curList.length); }
+
+    links.forEach(function (a, i) {
+      a.addEventListener('click', function (e) { e.preventDefault(); curList = links; open(i); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (!box || !box.classList.contains('is-open')) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') go(-1);
+      else if (e.key === 'ArrowRight') go(1);
+    });
+  })();
 })();
