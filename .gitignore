@@ -18,3 +18,6 @@ node_modules/
 .wrangler/
 .dev.vars
 .dev.vars.*
+
+# 브레인스토밍 비주얼 컴패니언 (로컬 목업)
+.superpowers/
