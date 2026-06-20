@@ -1,0 +1,23 @@
+{{ $photos := slice }}
+{{ range site.Data.albums }}{{ range .photos }}{{ $photos = $photos | append . }}{{ end }}{{ end }}
+{{ if $photos }}
+<section class="section" id="gallery-preview">
+  <div class="container">
+    <header class="section-head reveal">
+      <span class="section-num">·</span>
+      <h2 class="section-title">갤러리</h2>
+      <span class="section-kicker">Gallery</span>
+    </header>
+    <div class="gallery-grid reveal">
+      {{ range first 6 $photos }}
+      <figure class="gallery-figure">
+        <a class="js-lightbox" href="{{ .src }}" data-caption="{{ .caption }}">
+          <img src="{{ .src }}" alt="{{ .caption }}" loading="lazy">
+        </a>
+      </figure>
+      {{ end }}
+    </div>
+    <p class="section-foot"><a href="/gallery/">갤러리 더보기 →</a></p>
+  </div>
+</section>
+{{ end }}
