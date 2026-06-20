@@ -1,5 +1,5 @@
 {{ $photos := slice }}
-{{ range site.Data.albums }}{{ range .photos }}{{ $photos = $photos | append . }}{{ end }}{{ end }}
+{{ range site.Data.albums.items }}{{ range .photos }}{{ $photos = $photos | append . }}{{ end }}{{ end }}
 {{ if $photos }}
 <section class="section" id="gallery-preview">
   <div class="container">

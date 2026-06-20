@@ -8,7 +8,7 @@
 
     <div class="hl-with-motion reveal">
       <div class="highlights">
-        {{ range site.Data.research }}
+        {{ range site.Data.research.items }}
         <a class="hl-card hl-{{ .theme | default "a" }}" href="{{ .url }}">
           <div class="hl-text">
             {{ with .tag }}<span class="hl-tag">{{ . }}</span>{{ end }}

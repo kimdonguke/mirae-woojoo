@@ -5,7 +5,7 @@
     {{ with .Content }}<div class="prose" style="margin-bottom:28px">{{ . }}</div>{{ end }}
 
     <div id="photos" class="page-section">
-      {{ range site.Data.albums }}
+      {{ range site.Data.albums.items }}
       <div class="album">
         <h2 class="page-h2">{{ .title }} <span class="album-date">{{ .date }}</span></h2>
         <div class="gallery-grid">

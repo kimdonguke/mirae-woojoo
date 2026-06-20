@@ -7,7 +7,7 @@
     <div id="fields" class="page-section">
       <h2 class="page-h2">연구 분야</h2>
       <div class="field-grid">
-        {{ range site.Data.research }}
+        {{ range site.Data.research.items }}
         <div class="field-card">
           {{ with .tag }}<span class="field-tag">{{ . }}</span>{{ end }}
           <h3 class="field-title">{{ .title }}</h3>
@@ -19,7 +19,7 @@
 
     <div id="achievements" class="page-section">
       <h2 class="page-h2">연구 실적</h2>
-      {{ $items := sort site.Data.achievements "year" "desc" }}
+      {{ $items := sort site.Data.achievements.items "year" "desc" }}
       {{ if $items }}
       <ul class="ach-list">
         {{ range $items }}

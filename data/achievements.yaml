@@ -1,7 +1,8 @@
 # 연구 실적 — /research/ 목록 + 홈 지표 스트립 집계 소스.
 # type: 논문 | 프로젝트 | 발표 | 특허
-- { year: 2026, type: 논문,   title: "도심 환경 GNSS 다중경로 완화 기법", venue: 한국항법학회지, url: "" }
-- { year: 2026, type: 발표,   title: "달 표면 PNT 상호운용 시나리오", venue: 항법학회 춘계학술대회, url: "" }
-- { year: 2025, type: 프로젝트, title: "다중센서 융합 측위 시작품 개발", venue: 정부 R&D, url: "" }
-- { year: 2025, type: 논문,   title: "항법 무결성 감시 알고리즘", venue: 국제학술지, url: "" }
-- { year: 2024, type: 특허,   title: "이상신호 검출 장치 및 방법", venue: 등록특허, url: "" }
+items:
+  - { year: 2026, type: 논문,   title: "도심 환경 GNSS 다중경로 완화 기법", venue: 한국항법학회지, url: "" }
+  - { year: 2026, type: 발표,   title: "달 표면 PNT 상호운용 시나리오", venue: 항법학회 춘계학술대회, url: "" }
+  - { year: 2025, type: 프로젝트, title: "다중센서 융합 측위 시작품 개발", venue: 정부 R&D, url: "" }
+  - { year: 2025, type: 논문,   title: "항법 무결성 감시 알고리즘", venue: 국제학술지, url: "" }
+  - { year: 2024, type: 특허,   title: "이상신호 검출 장치 및 방법", venue: 등록특허, url: "" }

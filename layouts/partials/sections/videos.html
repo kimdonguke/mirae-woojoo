@@ -1,5 +1,5 @@
 {{- $heading := .heading | default "동영상" -}}
-{{- $items := site.Data.videos -}}
+{{- $items := site.Data.videos.items -}}
 {{- if $items -}}
 <section class="section" id="videos">
   <div class="container">

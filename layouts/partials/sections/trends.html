@@ -1,6 +1,6 @@
 {{- $heading := .heading | default "국제 동향" -}}
 {{- $limit := .limit | default 0 -}}
-{{- $items := site.Data.trends -}}
+{{- $items := site.Data.trends.items -}}
 {{- if gt $limit 0 }}{{ $items = first $limit $items }}{{ end -}}
 {{- if $items -}}
 <section class="section trends-section{{ if .background }} section-dark{{ end }}" id="trends">
