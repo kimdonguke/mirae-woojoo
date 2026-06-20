@@ -1,8 +1,8 @@
 # ─────────────────────────────────────────────
 # 미래우주 홈페이지 - Hugo 사이트 설정
-# 배포(Cloudflare Pages) 시 baseURL을 실제 도메인으로 바꾸세요.
+# 배포 도메인(Cloudflare Pages). 커스텀 도메인 적용 시 이 값을 교체하세요.
 # ─────────────────────────────────────────────
-baseURL = "https://miraewooju.pages.dev/"
+baseURL = "https://mirae-woojoo.pages.dev/"
 locale = "ko-KR"
 defaultContentLanguage = "ko"
 title = "미래우주"
