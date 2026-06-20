@@ -1,0 +1,22 @@
+# 연구 분야 — 홈 "연구 하이라이트" 카드 + /research/ 분야 목록 공용.
+# theme: a~d (카드 색), url: 연구 페이지 내 앵커.
+- title: 위성항법(GNSS) 신호처리
+  summary: GNSS 신호 수신·처리와 측위 정확도 향상을 다룹니다.
+  url: /research/#fields
+  theme: a
+  tag: GNSS
+- title: 우주 PNT·심우주 항법
+  summary: 달·심우주 환경의 위치·항법·시각(PNT) 기술을 탐구합니다.
+  url: /research/#fields
+  theme: b
+  tag: PNT
+- title: 다중센서 융합 측위
+  summary: GNSS와 관성·영상 센서를 융합한 견고한 측위를 연구합니다.
+  url: /research/#fields
+  theme: c
+  tag: Fusion
+- title: 무결성·이상검출
+  summary: 항법 신뢰성을 위한 무결성 감시와 이상 검출을 다룹니다.
+  url: /research/#fields
+  theme: d
+  tag: Integrity
