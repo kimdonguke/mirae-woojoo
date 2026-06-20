@@ -186,6 +186,10 @@ ul { list-style: none; }
 .prose strong { color: var(--ink); font-weight: 700; }
 .prose p { margin: 0 0 1.1rem; }
 .prose p:last-child { margin-bottom: 0; }
+.prose ul { margin: 0 0 1.1rem; padding-left: 0; display: grid; gap: 8px; }
+.prose ul:last-child { margin-bottom: 0; }
+.prose li { position: relative; padding-left: 18px; line-height: 1.6; }
+.prose li::before { content: ""; position: absolute; left: 2px; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); }
 
 /* ── 활동 카드 ── */
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--bg); }
@@ -579,18 +583,23 @@ body.lb-lock { overflow: hidden; }
 .org-tasks li::before { content: ""; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--primary); }
 .org-branch { height: 26px; position: relative; }
 .org-branch::before { content: ""; position: absolute; left: 50%; top: 0; width: 2px; height: 100%; background: var(--border-strong); transform: translateX(-50%); }
-.org-children { display: flex; gap: 18px; }
+.org-children { display: flex; gap: 18px; position: relative; }
 .org-node { flex: 1 1 0; min-width: 0; position: relative; padding-top: 26px; }
 .org-node .org-card { height: 100%; }
 /* 가로 버스: 각 노드가 양옆 간격의 절반까지 선을 그어 이웃과 이어짐(간격 무관하게 연결) */
 .org-node::before { content: ""; position: absolute; top: 0; left: -9px; right: -9px; height: 2px; background: var(--border-strong); }
 .org-node:first-child::before { left: 50%; }
 .org-node:last-child::before { right: 50%; }
-/* 세로 드롭: 버스에서 각 카드로 */
+/* 세로 드롭(바깥 카드): 버스에서 각 카드로 */
 .org-node::after { content: ""; position: absolute; top: 0; left: 50%; width: 2px; height: 26px; background: var(--border-strong); transform: translateX(-50%); }
+/* 가운데 세로선은 컨테이너 기준 50%로 그려 주관기관 세로선과 완전 일직선(노드폭 반올림에 의한 단차 제거) */
+.org-node:nth-child(2)::after { display: none; }
+.org-children::after { content: ""; position: absolute; top: 0; left: 50%; width: 2px; height: 26px; background: var(--border-strong); transform: translateX(-50%); }
 @media (max-width: 760px) {
   .org-children { flex-direction: column; gap: 30px; }
   .org-node { padding-top: 20px; }
   .org-node::before { display: none; }
   .org-node::after { height: 20px; }
+  .org-node:nth-child(2)::after { display: block; }
+  .org-children::after { display: none; }
 }
