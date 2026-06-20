@@ -1,0 +1,44 @@
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+<section class="section">
+  <div class="container narrow">
+    {{ with .Content }}<div class="prose" style="margin-bottom:28px">{{ . }}</div>{{ end }}
+
+    <div id="fields" class="page-section">
+      <h2 class="page-h2">연구 분야</h2>
+      <div class="field-grid">
+        {{ range site.Data.research }}
+        <div class="field-card">
+          {{ with .tag }}<span class="field-tag">{{ . }}</span>{{ end }}
+          <h3 class="field-title">{{ .title }}</h3>
+          <p class="field-desc">{{ .summary }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+    <div id="achievements" class="page-section">
+      <h2 class="page-h2">연구 실적</h2>
+      {{ $items := sort site.Data.achievements "year" "desc" }}
+      {{ if $items }}
+      <ul class="ach-list">
+        {{ range $items }}
+        <li class="ach-row">
+          <span class="ach-year">{{ .year }}</span>
+          <span class="ach-type">{{ .type }}</span>
+          <span class="ach-main">
+            {{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}
+            {{ with .venue }}<span class="ach-venue">· {{ . }}</span>{{ end }}
+          </span>
+        </li>
+        {{ end }}
+      </ul>
+      {{ else }}
+      <p class="page-empty">등록된 실적이 아직 없습니다.</p>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ partial "sections/trends.html" (dict "heading" "국제 동향" "background" false) }}
+{{ end }}
