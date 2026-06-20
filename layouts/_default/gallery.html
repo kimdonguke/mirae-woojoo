@@ -1,0 +1,28 @@
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+<section class="section">
+  <div class="container">
+    {{ with .Content }}<div class="prose" style="margin-bottom:28px">{{ . }}</div>{{ end }}
+
+    <div id="photos" class="page-section">
+      {{ range site.Data.albums }}
+      <div class="album">
+        <h2 class="page-h2">{{ .title }} <span class="album-date">{{ .date }}</span></h2>
+        <div class="gallery-grid">
+          {{ range .photos }}
+          <figure class="gallery-figure">
+            <a class="js-lightbox" href="{{ .src }}" data-caption="{{ .caption }}">
+              <img src="{{ .src }}" alt="{{ .caption }}" loading="lazy">
+            </a>
+            {{ with .caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+          </figure>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ partial "sections/videos.html" (dict "heading" "동영상") }}
+{{ end }}

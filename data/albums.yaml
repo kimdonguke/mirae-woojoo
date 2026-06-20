@@ -1,0 +1,15 @@
+# 사진 앨범 — 현장 실무교육·행사. 이미지는 static/uploads/gallery/ 에 업로드.
+- slug: field-training-2026
+  title: 현장 실무교육
+  date: 2026-05
+  photos:
+    - { src: /uploads/gallery/sample-1.jpg, caption: "장비 실습" }
+    - { src: /uploads/gallery/sample-2.jpg, caption: "현장 측정" }
+    - { src: /uploads/gallery/sample-3.jpg, caption: "데이터 분석 실습" }
+- slug: symposium-2026
+  title: 주요 행사
+  date: 2026-04
+  photos:
+    - { src: /uploads/gallery/sample-4.jpg, caption: "학술 심포지엄" }
+    - { src: /uploads/gallery/sample-5.jpg, caption: "포스터 세션" }
+    - { src: /uploads/gallery/sample-6.jpg, caption: "단체 사진" }

@@ -529,4 +529,14 @@ ul { list-style: none; }
 .news-col-head h3 { margin: 0; font-size: 1.02rem; font-weight: 800; color: var(--ink); }
 .news-more { font-size: .82rem; font-weight: 700; color: var(--text-muted); }
 .news-more:hover { color: var(--primary); }
+
+/* ── 갤러리 ── */
+.album { margin-bottom: 40px; }
+.album-date { font-size: .85rem; font-weight: 600; color: var(--text-muted); margin-left: 8px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.gallery-figure { margin: 0; }
+.gallery-figure a { display: block; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 10px; background: var(--bg-alt); }
+.gallery-figure img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .25s ease; }
+.gallery-figure a:hover img { transform: scale(1.05); }
+.gallery-figure figcaption { font-size: .82rem; color: var(--text-muted); margin-top: 6px; }
 @media (max-width: 860px){ .news-cols { grid-template-columns: 1fr; gap: 20px; } }
