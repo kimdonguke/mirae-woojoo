@@ -176,6 +176,7 @@ ul { list-style: none; }
 
 /* ── 섹션 공통 ── */
 .section { padding: 96px 0; }
+.section-tight { padding: 16px 0 40px; }
 .section-alt { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .section-head { display: flex; align-items: baseline; gap: 16px; padding-bottom: 18px; margin-bottom: 38px; border-bottom: 1px solid var(--border-strong); }
 .section-title { font-size: clamp(1.5rem, 3.4vw, 2rem); font-weight: 800; letter-spacing: -0.02em; color: var(--ink); margin: 0; margin-right: auto; }
