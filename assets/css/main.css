@@ -535,6 +535,7 @@ body.lb-lock { overflow: hidden; }
 @media (max-width: 560px){ .lb-nav { width: 40px; height: 40px; } .lightbox { padding: 16px; } }
 
 /* ── 동영상 ── */
+#videos { padding-top: 0; }   /* 갤러리 섹션과 상·하 패딩 중복 → 위 패딩 제거(하나만 남김) */
 .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
 .video-item { margin: 0; }
 .video-facade, .video-self, .video-frame { width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; display: block; border: 0; }
