@@ -1,0 +1,36 @@
+{{ $cols := slice
+  (dict "title" "공지사항" "url" "/notice/" "pages" (where site.RegularPages "Section" "notice"))
+  (dict "title" "세미나·교육" "url" "/seminar/" "pages" (where site.RegularPages "Section" "seminar"))
+  (dict "title" "행사일정" "url" "/event/" "pages" (where site.RegularPages "Section" "event"))
+}}
+<section class="section" id="news-latest">
+  <div class="container">
+    <header class="section-head reveal">
+      <span class="section-num">·</span>
+      <h2 class="section-title">최근 소식</h2>
+      <span class="section-kicker">News</span>
+    </header>
+    <div class="news-cols reveal">
+      {{ range $cols }}
+      <div class="news-col">
+        <div class="news-col-head">
+          <h3>{{ .title }}</h3>
+          <a href="{{ .url }}" class="news-more">더보기</a>
+        </div>
+        <ul class="post-list">
+          {{ range first 4 (.pages.ByDate.Reverse) }}
+          <li class="post-row">
+            <a href="{{ .RelPermalink }}">
+              <span class="post-title">{{ .Title }}</span>
+              <time class="post-date">{{ .Date.Format "2006-01-02" }}</time>
+            </a>
+          </li>
+          {{ else }}
+          <li class="post-empty">아직 등록된 글이 없습니다.</li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

@@ -522,3 +522,11 @@ ul { list-style: none; }
 .ach-main { color: var(--ink); line-height: 1.5; }
 .ach-venue { color: var(--text-muted); font-size: .9rem; }
 @media (max-width: 560px){ .ach-row { grid-template-columns: 48px 56px 1fr; } }
+
+/* ── 홈 최근 소식(3열) ── */
+.news-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.news-col-head { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 2px solid var(--ink); padding-bottom: 8px; margin-bottom: 6px; }
+.news-col-head h3 { margin: 0; font-size: 1.02rem; font-weight: 800; color: var(--ink); }
+.news-more { font-size: .82rem; font-weight: 700; color: var(--text-muted); }
+.news-more:hover { color: var(--primary); }
+@media (max-width: 860px){ .news-cols { grid-template-columns: 1fr; gap: 20px; } }
