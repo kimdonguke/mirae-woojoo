@@ -1,9 +1,54 @@
 {{ define "main" }}
 {{ partial "page-hero.html" . }}
-{{ partial "sections/trends.html" (dict "noheader" true) }}
-<section class="section section-tight">
-  <div class="container narrow">
-    {{ with .Content }}<div class="prose">{{ . }}</div>{{ else }}<p class="page-empty">세부 내용은 준비 중입니다.</p>{{ end }}
+<section class="section">
+  <div class="container">
+    <p class="trends-intro">달 통신·항법(PNT)을 둘러싼 주요 우주국·진영의 동향입니다. 지도의 마커를 클릭하면 상세 내용이 표시됩니다.</p>
+
+    <div class="trends-map-wrap" id="agencyMap">
+      <div class="worldmap reveal">
+        {{ with resources.Get "img/world.svg" }}{{ .Content | safeHTML }}{{ end }}
+        {{ range $i, $a := site.Data.agencies.items }}
+        <button class="map-marker{{ if eq $i 0 }} is-active{{ end }}" type="button" data-agency="{{ $i }}" style="left:{{ $a.x }}%;top:{{ $a.y }}%" aria-label="{{ $a.name }} ({{ $a.country }})">
+          <span class="marker-dot"></span><span class="marker-name">{{ $a.name }}</span>
+        </button>
+        {{ end }}
+      </div>
+      <aside class="map-panel">
+        {{ range $i, $a := site.Data.agencies.items }}
+        <div class="agency-detail{{ if eq $i 0 }} is-active{{ end }}" data-agency="{{ $i }}">
+          {{ with $a.tag }}<span class="ad-tag">{{ . }}</span>{{ end }}
+          <h3 class="ad-name">{{ $a.name }}<span class="ad-country"> · {{ $a.country }}</span></h3>
+          <p class="ad-desc">{{ $a.desc }}</p>
+          {{ with $a.links }}
+          <ul class="ad-links">
+            {{ range . }}<li><a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }} ↗</a></li>{{ end }}
+          </ul>
+          {{ end }}
+        </div>
+        {{ end }}
+      </aside>
+    </div>
+
+    <div class="trends-extra">
+      <div class="trends-block prose">
+        <h2 class="page-h2">국제 협력·표준화</h2>
+        <p>LunaNet은 NASA–ESA 공동 규격이며 JAXA(일본)·ASI(이탈리아) 등이 참여합니다. 거버넌스·표준 논의는 다음 두 채널이 핵심입니다.</p>
+        <ul>
+          <li><strong>IOAG</strong> (Interagency Operations Advisory Group) — 우주기관 간 통신·항법 아키텍처 조율. <a href="https://www.ioag.org/" target="_blank" rel="noopener">ioag.org ↗</a></li>
+          <li><strong>ICG</strong> (International Committee on GNSS, UN OOSA 산하) — 달 PNT 표준 논의. <a href="https://www.unoosa.org/oosa/en/ourwork/icg/icg.html" target="_blank" rel="noopener">unoosa.org ↗</a></li>
+        </ul>
+      </div>
+      <div class="trends-block prose">
+        <h2 class="page-h2">상업 사업자 (Commercial Lunar PNT)</h2>
+        <ul>
+          <li><strong>Crescent Space</strong> (Lockheed Martin) — Parsec 달 통신·항법 위성군을 상업 서비스로 구축. <a href="https://crescentspace.com/" target="_blank" rel="noopener">crescentspace.com ↗</a></li>
+          <li><strong>Intuitive Machines</strong> — NASA Near Space Network 중계·항법 계약 수주, 자체 착륙선(IM 시리즈) 운용. <a href="https://www.intuitivemachines.com/" target="_blank" rel="noopener">intuitivemachines.com ↗</a></li>
+          <li><strong>Nokia</strong> — 달 표면 4G/LTE 네트워크 실증(통신 인프라, LunaNet 생태계의 일부). <a href="https://www.bell-labs.com/" target="_blank" rel="noopener">bell-labs.com ↗</a></li>
+        </ul>
+      </div>
+    </div>
+
+    {{ with .Content }}<div class="prose" style="margin-top:24px">{{ . }}</div>{{ end }}
   </div>
 </section>
 {{ end }}

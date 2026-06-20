@@ -264,4 +264,19 @@
       });
     });
   })();
+
+  // 국제 동향 지도: 우주국 마커 클릭 → 설명 패널
+  (function () {
+    var map = document.getElementById('agencyMap');
+    if (!map) return;
+    var markers = [].slice.call(map.querySelectorAll('.map-marker'));
+    var details = [].slice.call(map.querySelectorAll('.agency-detail'));
+    function activate(idx) {
+      markers.forEach(function (m) { m.classList.toggle('is-active', m.dataset.agency === idx); });
+      details.forEach(function (d) { d.classList.toggle('is-active', d.dataset.agency === idx); });
+    }
+    markers.forEach(function (m) {
+      m.addEventListener('click', function () { activate(m.dataset.agency); });
+    });
+  })();
 })();

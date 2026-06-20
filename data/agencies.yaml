@@ -1,0 +1,78 @@
+# 국제 동향 — 우주국 마커(지도) + 설명. x/y는 지도(950x620) 위 백분율 위치.
+# 출처: docs/ref/space_center_list.txt
+items:
+  - name: NASA
+    country: 미국
+    tag: NASA·ESA 진영
+    x: 21
+    y: 34
+    desc: "LunaNet — 달 통신·항법의 상호운용 표준(LNIS)으로 ESA와 공동 발전, 사실상 '달의 인터넷+GPS 표준'. LCRNS(LunaNet 호환 중계·항법 위성 인프라 조달, Goddard 주관), LuGRE(달 거리·표면에서 지구 GPS/Galileo 수신·측위에 성공한 이정표, ASI 공동)."
+    links:
+      - { label: LunaNet, url: "https://www.nasa.gov/communicating-with-missions/space-communications-navigation-program/lunanet/" }
+      - { label: LCRNS, url: "https://esc.gsfc.nasa.gov/projects/LCRNS" }
+      - { label: LuGRE, url: "https://www.nasa.gov/general/lugre/" }
+  - name: ESA
+    country: 유럽
+    tag: NASA·ESA 진영
+    x: 48
+    y: 28
+    desc: "Moonlight Initiative — 달 주변 통신·항법 위성군(LCNS) 구축(Telespazio 컨소시엄), 남극 커버리지 우선. Lunar Pathfinder — NaviMoon 수신기로 약 40만 km 거리에서 지구 GNSS 약신호 측위 실증(LuGRE의 후속·확장)."
+    links:
+      - { label: Moonlight, url: "https://www.esa.int/Applications/Connectivity_and_Secure_Communications/Moonlight" }
+      - { label: Lunar Pathfinder, url: "https://www.esa.int/Enabling_Support/Preparing_for_the_Future/Discovery_and_Preparation/Lunar_Pathfinder" }
+  - name: ASI
+    country: 이탈리아
+    tag: NASA·ESA 진영
+    x: 50
+    y: 33
+    desc: "LuGRE 페이로드의 공동 개발국으로, 달 통신·항법에 적극적입니다. (제안서의 토리노대 파견과도 연결)"
+    links:
+      - { label: ASI, url: "https://www.asi.it/en/" }
+  - name: JAXA
+    country: 일본
+    tag: NASA·ESA 진영
+    x: 84
+    y: 37
+    desc: "LunaNet 참여 기관이자 아르테미스 협정 서명국. 자체 달 항법(LNSS) 개념 연구와 SLIM 착륙선 등 달 인프라를 추진합니다."
+    links:
+      - { label: "JAXA 달 항법", url: "https://global.jaxa.jp/projects/aerospace_tech/lnav/" }
+  - name: KASA
+    country: 대한민국
+    tag: 신흥·지역 우주국
+    x: 80
+    y: 38
+    desc: "2022년 다누리(KPLO) 달 궤도선을 성공적으로 운용했고, 2024년 우주항공청(KASA) 출범 이후 후속 달 탐사·KPS(한국형 위성항법)를 추진합니다. 본 연구센터가 정확히 이 흐름 위에 있습니다."
+    links:
+      - { label: KASA, url: "https://www.kasa.go.kr/" }
+  - name: ISRO
+    country: 인도
+    tag: 신흥·지역 우주국
+    x: 69
+    y: 47
+    desc: "Chandrayaan-3 남극 착륙 성공 이후 달 인프라·후속 임무를 확대하고 있으며, NavIC(지구 항법) 운용 경험을 보유합니다."
+    links:
+      - { label: ISRO, url: "https://www.isro.gov.in/" }
+  - name: MBRSC
+    country: UAE
+    tag: 신흥·지역 우주국
+    x: 60
+    y: 43
+    desc: "달 로버(Rashid) 등으로 참여하는 신흥 주자입니다."
+    links:
+      - { label: MBRSC, url: "https://www.mbrsc.ae/" }
+  - name: CNSA
+    country: 중국
+    tag: 중국·러시아 진영(ILRS)
+    x: 77
+    y: 35
+    desc: "달 뒷면 통신용 췌차오(Queqiao-1)와 통신·항법 기능을 갖춘 췌차오-2(Queqiao-2)를 운용 중이며, 국제달연구기지(ILRS)를 위한 달 통신·항법 위성군을 단계적으로 구축할 계획입니다. 사실상 ESA Moonlight의 경쟁 진영."
+    links:
+      - { label: CNSA, url: "https://www.cnsa.gov.cn/english/" }
+  - name: Roscosmos
+    country: 러시아
+    tag: 중국·러시아 진영(ILRS)
+    x: 58
+    y: 24
+    desc: "중국과 ILRS를 공동 주도하며 Luna 시리즈로 참여합니다."
+    links:
+      - { label: Roscosmos, url: "https://www.roscosmos.ru/" }
