@@ -5,8 +5,9 @@
   sub:
     - { name: 단체 소개, url: "/about/#intro" }
     - { name: 비전·목표, url: "/about/#vision" }
+    - { name: 추진전략, url: "/about/#strategy" }
     - { name: 연혁, url: "/about/#history" }
-    - { name: 조직·운영진, url: "/about/#org" }
+    - { name: 연구팀 편성, url: "/about/#org" }
 - name: 연구
   url: "/research/"
   sub:
