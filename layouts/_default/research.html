@@ -5,16 +5,21 @@
     {{ with .Content }}<div class="prose" style="margin-bottom:28px">{{ . }}</div>{{ end }}
 
     <div id="fields" class="page-section">
-      <h2 class="page-h2">연구 분야</h2>
-      <div class="field-grid">
-        {{ range $i, $f := site.Data.research.items }}
-        <div class="field-card">
-          <div class="field-head">
-            <span class="field-num">{{ printf "%02d" (add $i 1) }}</span>
-            {{ with $f.tag }}<span class="field-tag">{{ . }}</span>{{ end }}
+      <h2 class="page-h2">세부 연구과제</h2>
+      <div class="subprojects">
+        {{ range $i, $sp := site.Data.subprojects.items }}
+        <div class="subproject">
+          <div class="sp-head">
+            <span class="sp-num">제{{ add $i 1 }}세부</span>
+            {{ with $sp.org }}<span class="sp-org">{{ . }}</span>{{ end }}
           </div>
-          <h3 class="field-title">{{ $f.title }}</h3>
-          <p class="field-desc">{{ $f.summary }}</p>
+          <h3 class="sp-title">{{ $sp.title }}</h3>
+          {{ with $sp.keywords }}
+          <div class="sp-keywords">
+            {{ range . }}<span class="sp-chip">{{ . }}</span>{{ end }}
+          </div>
+          {{ end }}
+          <p class="sp-summary">{{ $sp.summary }}</p>
         </div>
         {{ end }}
       </div>
