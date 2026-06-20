@@ -566,8 +566,8 @@ body.lb-lock { overflow: hidden; }
 /* ── 소개: 연구팀 편성(트리) ── */
 .org-tree { margin-top: 10px; }
 .org-lead { display: flex; justify-content: center; }
-.org-card { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; }
-.org-card-lead { border: 1.5px solid var(--primary); max-width: 560px; width: 100%; }
+.org-card { background: #fff; border: 2px solid var(--border); border-radius: 14px; padding: 18px 20px; }
+.org-card-lead { border: 2px solid var(--primary); max-width: 560px; width: 100%; }
 .org-role { display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .04em; color: var(--primary); background: var(--bg-alt); border-radius: 999px; padding: 3px 11px; margin-bottom: 9px; }
 .org-card-lead .org-role { color: #fff; background: var(--primary); }
 .org-name { margin: 0 0 6px; font-size: 1.06rem; font-weight: 800; color: var(--ink); }
@@ -579,13 +579,18 @@ body.lb-lock { overflow: hidden; }
 .org-tasks li::before { content: ""; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--primary); }
 .org-branch { height: 26px; position: relative; }
 .org-branch::before { content: ""; position: absolute; left: 50%; top: 0; width: 2px; height: 100%; background: var(--border-strong); transform: translateX(-50%); }
-.org-children { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; position: relative; }
-.org-children::before { content: ""; position: absolute; top: -26px; left: 16.66%; right: 16.66%; height: 2px; background: var(--border-strong); }
-.org-children .org-card { position: relative; }
-.org-children .org-card::before { content: ""; position: absolute; top: -26px; left: 50%; width: 2px; height: 26px; background: var(--border-strong); transform: translateX(-50%); }
+.org-children { display: flex; gap: 18px; }
+.org-node { flex: 1 1 0; min-width: 0; position: relative; padding-top: 26px; }
+.org-node .org-card { height: 100%; }
+/* 가로 버스: 각 노드가 양옆 간격의 절반까지 선을 그어 이웃과 이어짐(간격 무관하게 연결) */
+.org-node::before { content: ""; position: absolute; top: 0; left: -9px; right: -9px; height: 2px; background: var(--border-strong); }
+.org-node:first-child::before { left: 50%; }
+.org-node:last-child::before { right: 50%; }
+/* 세로 드롭: 버스에서 각 카드로 */
+.org-node::after { content: ""; position: absolute; top: 0; left: 50%; width: 2px; height: 26px; background: var(--border-strong); transform: translateX(-50%); }
 @media (max-width: 760px) {
-  .org-children { grid-template-columns: 1fr; gap: 30px; }
-  .org-children::before { display: none; }
-  .org-children .org-card::before { top: -20px; height: 20px; }
-  .org-branch { height: 20px; }
+  .org-children { flex-direction: column; gap: 30px; }
+  .org-node { padding-top: 20px; }
+  .org-node::before { display: none; }
+  .org-node::after { height: 20px; }
 }
