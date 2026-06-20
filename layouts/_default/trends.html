@@ -1,0 +1,9 @@
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+{{ partial "sections/trends.html" (dict "noheader" true) }}
+<section class="section section-tight">
+  <div class="container narrow">
+    {{ with .Content }}<div class="prose">{{ . }}</div>{{ else }}<p class="page-empty">세부 내용은 준비 중입니다.</p>{{ end }}
+  </div>
+</section>
+{{ end }}

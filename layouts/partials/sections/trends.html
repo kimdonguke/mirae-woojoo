@@ -5,10 +5,12 @@
 {{- if $items -}}
 <section class="section trends-section{{ if .background }} section-dark{{ end }}" id="trends">
   <div class="container">
+    {{ if not .noheader }}
     <header class="section-head reveal">
       <h2 class="section-title">{{ $heading }}</h2>
       <span class="section-kicker">Global · LunaNet</span>
     </header>
+    {{ end }}
 
     <ul class="trend-cards reveal">
       {{ range $items }}
@@ -23,7 +25,7 @@
       </li>
       {{ end }}
     </ul>
-    {{ if gt $limit 0 }}<p class="section-foot"><a href="/research/#trends">국제 동향 더보기 →</a></p>{{ end }}
+    {{ if .morelink }}<p class="section-foot"><a href="/trends/">국제 동향 자세히 →</a></p>{{ end }}
   </div>
 </section>
 {{- end -}}
