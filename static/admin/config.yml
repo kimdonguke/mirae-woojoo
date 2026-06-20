@@ -40,16 +40,17 @@ collections:
       - { name: draft, label: 임시저장(숨김), widget: boolean, default: false, required: false }
       - { name: body, label: 본문, widget: markdown }
 
-  - name: activity
-    label: 활동·연구
-    label_singular: 활동
-    folder: content/activity
+  - name: seminar
+    label: 세미나·교육
+    label_singular: 세미나
+    folder: content/seminar
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { name: title, label: 제목, widget: string }
       - { name: date, label: 작성일, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
-      - { name: author, label: 작성자, widget: string, required: false }
+      - { name: category, label: 분류, widget: select, options: ["세미나", "현장교육", "워크숍"], default: "세미나" }
+      - { name: location, label: 장소, widget: string, required: false }
       - { name: draft, label: 임시저장(숨김), widget: boolean, default: false, required: false }
       - { name: body, label: 본문, widget: markdown }
 
@@ -65,3 +66,79 @@ collections:
       - { name: location, label: 장소, widget: string, required: false }
       - { name: draft, label: 임시저장(숨김), widget: boolean, default: false, required: false }
       - { name: body, label: 안내, widget: markdown }
+
+  # ── 데이터 파일 컬렉션(목록형) ──
+  - name: data
+    label: 데이터(목록)
+    files:
+      - name: research
+        label: 연구 분야
+        file: data/research.yaml
+        fields:
+          - name: items
+            label: 분야
+            widget: list
+            fields:
+              - { name: title, label: 제목, widget: string }
+              - { name: summary, label: 설명, widget: text }
+              - { name: url, label: 링크, widget: string, default: "/research/#fields" }
+              - { name: theme, label: 색(a~d), widget: select, options: ["a","b","c","d"], default: "a" }
+              - { name: tag, label: 태그, widget: string, required: false }
+      - name: achievements
+        label: 연구 실적
+        file: data/achievements.yaml
+        fields:
+          - name: items
+            label: 실적
+            widget: list
+            fields:
+              - { name: year, label: 연도, widget: number, value_type: int }
+              - { name: type, label: 유형, widget: select, options: ["논문","프로젝트","발표","특허"] }
+              - { name: title, label: 제목, widget: string }
+              - { name: venue, label: 게재/발표처, widget: string, required: false }
+              - { name: url, label: 링크, widget: string, required: false }
+      - name: trends
+        label: 국제 동향
+        file: data/trends.yaml
+        fields:
+          - name: items
+            label: 동향
+            widget: list
+            fields:
+              - { name: title, label: 제목, widget: string }
+              - { name: summary, label: 요약, widget: text }
+              - { name: source, label: 출처, widget: string, required: false }
+              - { name: url, label: 링크, widget: string, required: false }
+              - { name: tag, label: 태그, widget: string, required: false }
+      - name: videos
+        label: 동영상
+        file: data/videos.yaml
+        fields:
+          - name: items
+            label: 영상
+            widget: list
+            fields:
+              - { name: title, label: 제목, widget: string }
+              - { name: kind, label: 종류, widget: select, options: ["embed","self"], default: "embed" }
+              - { name: provider, label: 임베드 제공자, widget: select, options: ["youtube","vimeo"], default: "youtube", required: false }
+              - { name: id, label: 영상 ID(임베드), widget: string, required: false }
+              - { name: file, label: 파일(self), widget: file, required: false }
+              - { name: poster, label: 썸네일, widget: image, required: false }
+              - { name: desc, label: 설명, widget: string, required: false }
+      - name: albums
+        label: 사진 앨범
+        file: data/albums.yaml
+        fields:
+          - name: items
+            label: 앨범
+            widget: list
+            fields:
+              - { name: slug, label: 슬러그, widget: string }
+              - { name: title, label: 앨범명, widget: string }
+              - { name: date, label: 날짜, widget: string }
+              - name: photos
+                label: 사진
+                widget: list
+                fields:
+                  - { name: src, label: 이미지, widget: image }
+                  - { name: caption, label: 캡션, widget: string, required: false }
