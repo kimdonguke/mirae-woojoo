@@ -195,17 +195,18 @@
   (function () {
     var links = [].slice.call(document.querySelectorAll('a.js-lightbox'));
     if (!links.length) return;
-    var box = null, imgEl, capEl, curList = links, curIdx = 0;
+    var box = null, imgEl, capEl, curList = links, curIdx = 0, openerEl = null;
 
     function build() {
       box = document.createElement('div');
       box.className = 'lightbox';
       box.setAttribute('role', 'dialog');
       box.setAttribute('aria-modal', 'true');
+      box.setAttribute('aria-labelledby', 'lb-cap');
       box.innerHTML =
         '<button class="lb-close" aria-label="닫기">✕</button>' +
         '<button class="lb-nav lb-prev" aria-label="이전">‹</button>' +
-        '<figure class="lb-figure"><img alt=""><figcaption></figcaption></figure>' +
+        '<figure class="lb-figure"><img alt=""><figcaption id="lb-cap"></figcaption></figure>' +
         '<button class="lb-nav lb-next" aria-label="다음">›</button>';
       document.body.appendChild(box);
       imgEl = box.querySelector('img');
@@ -214,6 +215,14 @@
       box.querySelector('.lb-prev').addEventListener('click', function (e) { e.stopPropagation(); go(-1); });
       box.querySelector('.lb-next').addEventListener('click', function (e) { e.stopPropagation(); go(1); });
       box.addEventListener('click', function (e) { if (e.target === box) close(); });
+      // 포커스 트랩 (모달 내 Tab 순환)
+      box.addEventListener('keydown', function (e) {
+        if (e.key !== 'Tab') return;
+        var f = [].slice.call(box.querySelectorAll('button'));
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      });
     }
     function open(i) {
       if (!box) build();
@@ -225,11 +234,11 @@
       document.body.classList.add('lb-lock');
       box.querySelector('.lb-close').focus();
     }
-    function close() { if (box) { box.classList.remove('is-open'); document.body.classList.remove('lb-lock'); } }
+    function close() { if (box) { box.classList.remove('is-open'); document.body.classList.remove('lb-lock'); if (openerEl) { openerEl.focus(); openerEl = null; } } }
     function go(d) { open((curIdx + d + curList.length) % curList.length); }
 
     links.forEach(function (a, i) {
-      a.addEventListener('click', function (e) { e.preventDefault(); curList = links; open(i); });
+      a.addEventListener('click', function (e) { e.preventDefault(); openerEl = a; curList = links; open(i); });
     });
     document.addEventListener('keydown', function (e) {
       if (!box || !box.classList.contains('is-open')) return;

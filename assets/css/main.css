@@ -566,3 +566,9 @@ body.lb-lock { overflow: hidden; }
 .video-cap { margin-top: 10px; display: flex; flex-direction: column; gap: 2px; }
 .video-cap strong { color: var(--ink); font-size: .98rem; }
 .video-cap span { color: var(--text-muted); font-size: .86rem; }
+
+/* ── 갤러리 호버 줌: 모션 최소화 존중 ── */
+@media (prefers-reduced-motion: reduce) {
+  .gallery-figure img { transition: none; }
+  .gallery-figure a:hover img { transform: none; }
+}
