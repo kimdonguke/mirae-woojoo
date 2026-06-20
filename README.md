@@ -40,19 +40,19 @@ hugo --gc --minify   # 프로덕션 빌드 → public/
 
 ```
 .
-├── hugo.toml                 # 사이트 설정 (제목·설명·연락처·활동카드·noindex 등)
+├── hugo.toml                 # 사이트 설정 (제목·설명·연락처·noindex 등)
 ├── data/
-│   ├── gnb.yaml              # 상단 메뉴(GNB) + 하위 메뉴
-│   └── hero.yaml             # 메인 히어로 슬라이더
+│   ├── gnb.yaml · hero.yaml  # 상단 메뉴 · 히어로 슬라이더
+│   └── research · achievements · trends · albums · videos.yaml  # 연구·실적·동향·갤러리·동영상
 ├── content/
 │   ├── _index.md             # 홈 "소개" 본문
-│   ├── notice/ news/ activity/ event/   # 분류별 글(.md)
+│   ├── notice/ seminar/ news/ event/   # 분류별 글(.md)
 │   └── …
 ├── layouts/
 │   ├── _default/baseof.html · list.html · single.html
 │   └── partials/
 │       ├── head · header · footer · floating · icon
-│       └── sections/         # hero · about · activities · news · contact
+│       └── sections/         # hero · research-highlights · stats-strip · trends · gallery-preview · videos · news-latest
 ├── assets/css/main.css       # 스타일 (:root 변수)
 ├── assets/js/main.js         # 인터랙션 (슬라이더·탭·메뉴)
 ├── static/
