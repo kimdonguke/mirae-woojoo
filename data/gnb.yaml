@@ -25,8 +25,3 @@
   sub:
     - { name: 사진 갤러리, url: "/gallery/#photos" }
     - { name: 동영상, url: "/gallery/#videos" }
-- name: 자료실
-  url: "/resources/"
-  sub:
-    - { name: 발표자료·문서, url: "/resources/" }
-    - { name: 스터디 아카이브, url: "/resources/" }
