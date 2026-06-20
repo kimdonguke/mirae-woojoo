@@ -8,9 +8,9 @@ items:
     y: 34
     desc: "달 통신·항법의 상호운용 표준인 LunaNet(LNIS)을 ESA와 공동으로 주도합니다. 이를 실제 서비스할 중계·항법 위성 인프라(LCRNS)를 조달하고, LuGRE 실험으로 달 거리·표면에서 지구 GNSS 신호 수신·측위를 입증했습니다."
     links:
-      - { label: LunaNet, url: "https://www.nasa.gov/communicating-with-missions/space-communications-navigation-program/lunanet/" }
+      - { label: LunaNet, url: "https://esc.gsfc.nasa.gov/projects/lunanet" }
       - { label: LCRNS, url: "https://esc.gsfc.nasa.gov/projects/LCRNS" }
-      - { label: LuGRE, url: "https://www.nasa.gov/general/lugre/" }
+      - { label: LuGRE, url: "https://esc.gsfc.nasa.gov/projects/LuGRE" }
   - name: ESA
     country: 유럽
     tag: NASA·ESA 진영
@@ -19,7 +19,7 @@ items:
     desc: "달 주변에 통신·항법 위성군을 구축하는 Moonlight 프로그램을 추진하며 남극 지역 커버리지를 우선합니다. Lunar Pathfinder 위성의 NaviMoon 수신기로 약 40만 km 거리에서 지구 GNSS 약신호 측위를 실증합니다."
     links:
       - { label: Moonlight, url: "https://www.esa.int/Applications/Connectivity_and_Secure_Communications/Moonlight" }
-      - { label: Lunar Pathfinder, url: "https://www.esa.int/Enabling_Support/Preparing_for_the_Future/Discovery_and_Preparation/Lunar_Pathfinder" }
+      - { label: Lunar Pathfinder, url: "https://bsgn.esa.int/service/lunar-pathfinder/" }
   - name: ASI
     country: 이탈리아
     tag: NASA·ESA 진영
@@ -35,7 +35,7 @@ items:
     y: 37
     desc: "LunaNet 참여 기관이자 아르테미스 협정 서명국으로, 자체 달 항법(LNSS) 개념 연구와 SLIM 착륙선 등 달 인프라를 추진합니다."
     links:
-      - { label: "JAXA 달 항법", url: "https://global.jaxa.jp/projects/aerospace_tech/lnav/" }
+      - { label: JAXA, url: "https://global.jaxa.jp/" }
   - name: KASA
     country: 대한민국
     tag: 신흥·지역 우주국
