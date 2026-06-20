@@ -567,7 +567,7 @@ body.lb-lock { overflow: hidden; }
 .org-tree { margin-top: 10px; }
 .org-lead { display: flex; justify-content: center; }
 .org-card { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; }
-.org-card-lead { border-color: var(--primary); border-top: 3px solid var(--primary); max-width: 560px; width: 100%; box-shadow: var(--shadow); }
+.org-card-lead { border: 1.5px solid var(--primary); max-width: 560px; width: 100%; }
 .org-role { display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .04em; color: var(--primary); background: var(--bg-alt); border-radius: 999px; padding: 3px 11px; margin-bottom: 9px; }
 .org-card-lead .org-role { color: #fff; background: var(--primary); }
 .org-name { margin: 0 0 6px; font-size: 1.06rem; font-weight: 800; color: var(--ink); }
