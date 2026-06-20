@@ -8,23 +8,6 @@
       {{ with .Site.Params.nameEn }}<p class="footer-en">{{ . }}</p>{{ end }}
       <p class="footer-desc">{{ .Site.Params.description }}</p>
       <p class="footer-contact">이메일 <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></p>
-      <div class="footer-social" aria-label="소셜 채널">
-        <a href="#" data-todo="인스타그램은 아직 준비 중입니다." aria-label="Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a href="#" data-todo="유튜브는 아직 준비 중입니다." aria-label="YouTube">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="6" width="19" height="12" rx="3.5"/><path d="M10 9.3l5 2.7-5 2.7z" fill="currentColor" stroke="none"/></svg>
-        </a>
-        {{ with .Site.Params.github }}
-        <a href="{{ . }}" target="_blank" rel="noopener" aria-label="GitHub">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
-        </a>
-        {{ else }}
-        <a href="#" data-todo="GitHub는 아직 준비 중입니다." aria-label="GitHub">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
-        </a>
-        {{ end }}
-      </div>
     </div>
 
     <nav class="footer-sitemap" aria-label="사이트맵">
@@ -37,24 +20,6 @@
       </div>
       {{ end }}
     </nav>
-  </div>
-
-  <div class="footer-policy">
-    <div class="container footer-policy-inner">
-      <ul class="footer-links">
-        <li><a href="#" data-todo="개인정보처리방침은 아직 준비 중입니다."><strong>개인정보처리방침</strong></a></li>
-        <li><a href="#" data-todo="아직 미구현된 항목입니다.">이메일무단수집거부</a></li>
-        <li><a href="#" data-todo="사이트맵 페이지는 아직 준비 중입니다.">사이트맵</a></li>
-      </ul>
-      {{ with .Site.Params.familySites }}
-      <div class="footer-family">
-        <select aria-label="패밀리 사이트" onchange="if(this.value){window.open(this.value,'_blank','noopener');this.selectedIndex=0;}">
-          <option value="">패밀리 사이트</option>
-          {{ range . }}<option value="{{ .url }}">{{ .name }}</option>{{ end }}
-        </select>
-      </div>
-      {{ end }}
-    </div>
   </div>
 
   <div class="footer-bar">

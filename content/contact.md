@@ -1,5 +1,5 @@
 ---
-title: "연락처"
+title: "Contact"
 kicker: "CONTACT"
 layout: contact
 ---
