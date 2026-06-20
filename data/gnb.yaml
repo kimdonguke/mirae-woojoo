@@ -7,7 +7,6 @@
     - { name: 비전·목표, url: "/about/#vision" }
     - { name: 연혁, url: "/about/#history" }
     - { name: 조직·운영진, url: "/about/#org" }
-    - { name: 오시는 길·연락, url: "/about/#contact" }
 - name: 연구
   url: "/research/"
   sub:

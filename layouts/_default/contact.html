@@ -1,0 +1,12 @@
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+<section class="section">
+  <div class="container narrow">
+    {{ with .Content }}<div class="prose" style="margin-bottom:24px">{{ . }}</div>{{ end }}
+    <div class="prose">
+      <p><strong>이메일</strong> · <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></p>
+      <p class="page-empty">오시는 길(주소·약도)은 준비 중입니다.</p>
+    </div>
+  </div>
+</section>
+{{ end }}
