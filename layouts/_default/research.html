@@ -11,7 +11,7 @@
         <div class="subproject">
           <span class="sp-num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
           <div class="sp-body">
-            <p class="sp-meta">제{{ add $i 1 }}세부{{ with $sp.org }} · <span class="sp-org">{{ . }}</span>{{ end }}</p>
+            {{ with $sp.org }}<p class="sp-meta">{{ . }}</p>{{ end }}
             <h3 class="sp-title">{{ $sp.title }}</h3>
             {{ with $sp.keywords }}
             <div class="sp-keywords">

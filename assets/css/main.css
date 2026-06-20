@@ -497,9 +497,9 @@ ul { list-style: none; }
 .subproject { display: grid; grid-template-columns: 56px 1fr; gap: 22px; padding: 26px 0; border-bottom: 1px solid var(--border); }
 .subproject:first-child { padding-top: 6px; }
 .subproject:last-child { border-bottom: none; padding-bottom: 0; }
-.sp-num { font-size: 2.1rem; font-weight: 800; line-height: 1; color: rgba(30,58,138,.22); font-variant-numeric: tabular-nums; }
-.sp-meta { margin: 0 0 6px; font-size: .78rem; font-weight: 700; letter-spacing: .02em; color: var(--primary); }
-.sp-meta .sp-org { color: var(--text-muted); }
+.sp-num { font-size: 2.1rem; font-weight: 800; line-height: 1; color: rgba(30,58,138,.22); font-variant-numeric: tabular-nums; transition: color .2s ease; }
+.subproject:hover .sp-num { color: var(--primary); }
+.sp-meta { margin: 0 0 6px; font-size: .8rem; font-weight: 700; letter-spacing: .02em; color: var(--text-muted); }
 .sp-title { margin: 0 0 12px; font-size: 1.15rem; font-weight: 800; color: var(--ink); line-height: 1.42; }
 .sp-keywords { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-bottom: 12px; }
 .sp-chip { font-size: .74rem; font-weight: 600; color: var(--primary); background: rgba(30,58,138,.06); border-radius: 6px; padding: 3px 9px; }
