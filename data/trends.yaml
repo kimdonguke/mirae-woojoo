@@ -1,0 +1,16 @@
+# 국제 동향 — 우주 PNT 국제 프로그램 카드.
+- title: "LunaNet — 달 통신·항법 아키텍처"
+  summary: 달 표면·궤도에서의 PNT·통신 상호운용 프레임워크.
+  source: NASA / ESA
+  url: "https://www.nasa.gov/communicating-with-missions/lunanet/"
+  tag: 달 PNT
+- title: "Moonlight — 달 통신·항법 이니셔티브"
+  summary: 달 임무를 위한 통신·항법 인프라 구축 프로그램.
+  source: ESA
+  url: "https://www.esa.int"
+  tag: 달 인프라
+- title: "고궤도 GNSS 활용(SSV)"
+  summary: 정지궤도 이상 고도에서의 GNSS 신호 활용 표준화 동향.
+  source: 국제 표준
+  url: ""
+  tag: 우주 GNSS

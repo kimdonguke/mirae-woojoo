@@ -484,3 +484,24 @@ ul { list-style: none; }
 .stat { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 18px 12px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 14px; }
 .stat-num { font-size: 1.9rem; font-weight: 800; color: var(--primary); font-variant-numeric: tabular-nums; }
 .stat-label { font-size: .85rem; color: var(--text-muted); font-weight: 600; }
+
+/* ── 국제 동향 ── */
+.section-dark { background: var(--ink); color: #cbd5e6; }
+.section-dark .section-title { color: #fff; }
+.trends-wrap { position: relative; }
+.trends-wrap .motion-slot { position: absolute; top: -70px; right: 6px; width: 180px; opacity: .5; }
+@media (max-width: 900px){ .trends-wrap .motion-slot { display: none; } }
+.trend-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
+.trend-card { display: flex; flex-direction: column; gap: 10px; padding: 22px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; }
+.section:not(.section-dark) .trend-card { background: #fff; border-color: var(--border); }
+.trend-tag { align-self: flex-start; font-size: .72rem; font-weight: 700; color: #93b4f5; background: rgba(147,180,245,.12); border-radius: 999px; padding: 2px 10px; }
+.section:not(.section-dark) .trend-tag { color: var(--primary); background: var(--bg-alt); }
+.trend-title { margin: 0; font-size: 1.05rem; font-weight: 700; color: inherit; }
+.section-dark .trend-title { color: #fff; }
+.trend-desc { margin: 0; flex: 1; font-size: .92rem; line-height: 1.6; color: inherit; opacity: .9; }
+.trend-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: .82rem; }
+.trend-source { color: inherit; opacity: .7; font-weight: 600; }
+.trend-link { color: #93b4f5; font-weight: 700; }
+.section:not(.section-dark) .trend-link { color: var(--primary); }
+.section-foot { margin: 22px 0 0; text-align: right; }
+.section-foot a { font-weight: 700; color: inherit; }
