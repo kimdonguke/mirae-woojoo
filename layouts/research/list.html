@@ -7,20 +7,21 @@
     <div id="fields" class="page-section">
       <h2 class="page-h2">세부 연구과제</h2>
       <div class="subprojects">
-        {{ range $i, $sp := site.Data.subprojects.items }}
-        <div class="subproject">
+        {{ range $i, $p := .Pages.ByWeight }}
+        <a class="subproject" href="{{ $p.RelPermalink }}">
           <span class="sp-num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
           <div class="sp-body">
-            {{ with $sp.org }}<p class="sp-meta">{{ . }}</p>{{ end }}
-            <h3 class="sp-title">{{ $sp.title }}</h3>
-            {{ with $sp.keywords }}
+            {{ with $p.Params.org }}<p class="sp-meta">{{ . }}</p>{{ end }}
+            <h3 class="sp-title">{{ $p.Title }}</h3>
+            {{ with $p.Params.keywords }}
             <div class="sp-keywords">
               {{ range . }}<span class="sp-chip">{{ . }}</span>{{ end }}
             </div>
             {{ end }}
-            <p class="sp-summary">{{ $sp.summary }}</p>
+            <p class="sp-summary">{{ $p.Params.summary }}</p>
+            <span class="sp-more">자세히 →</span>
           </div>
-        </div>
+        </a>
         {{ end }}
       </div>
     </div>

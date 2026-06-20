@@ -500,10 +500,13 @@ ul { list-style: none; }
 .sp-num { font-size: 2.1rem; font-weight: 800; line-height: 1; color: rgba(30,58,138,.22); font-variant-numeric: tabular-nums; transition: color .2s ease; }
 .subproject:hover .sp-num { color: var(--primary); }
 .sp-meta { margin: 0 0 6px; font-size: .8rem; font-weight: 700; letter-spacing: .02em; color: var(--text-muted); }
-.sp-title { margin: 0 0 12px; font-size: 1.15rem; font-weight: 800; color: var(--ink); line-height: 1.42; }
+.sp-title { margin: 0 0 12px; font-size: 1.15rem; font-weight: 800; color: var(--ink); line-height: 1.42; transition: color .2s ease; }
+.subproject:hover .sp-title { color: var(--primary); }
 .sp-keywords { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-bottom: 12px; }
 .sp-chip { font-size: .74rem; font-weight: 600; color: var(--primary); background: rgba(30,58,138,.06); border-radius: 6px; padding: 3px 9px; }
 .sp-summary { margin: 0; font-size: .94rem; line-height: 1.7; color: var(--text-muted); }
+.sp-more { display: inline-block; margin-top: 12px; font-size: .84rem; font-weight: 700; color: var(--primary); }
+.detail-lead { margin: 16px 0 24px; font-size: 1.05rem; line-height: 1.72; color: var(--text); }
 @media (max-width: 560px) { .subproject { grid-template-columns: 1fr; gap: 6px; padding: 22px 0; } .sp-num { font-size: 1.5rem; } }
 .ach-list { list-style: none; margin: 0; padding: 0; }
 .ach-row { display: grid; grid-template-columns: 58px 64px 1fr; gap: 12px; align-items: baseline; padding: 13px 4px; border-bottom: 1px solid var(--border); }

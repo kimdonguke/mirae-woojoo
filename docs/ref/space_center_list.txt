@@ -1,0 +1,61 @@
+NASA (미국)
+LunaNet — 달 통신·항법의 상호운용성 프레임워크입니다. 특정 위성군이 아니라, 여러 국가·기업이 만든 달 인프라가 서로 호환되도록 하는 규격(LunaNet Interoperability Specification, LNIS)이며, ESA와 공동으로 발전시키고 있습니다. 사실상 "달의 인터넷+GPS 표준" 격이에요.
+
+→ https://www.nasa.gov/communicating-with-missions/space-communications-navigation-program/lunanet/
+LCRNS (Lunar Communications Relay and Navigation Systems) — Goddard 주관으로 LunaNet 호환 서비스를 실제 제공할 중계·항법 위성 인프라 조달 프로그램입니다.
+
+→ https://esc.gsfc.nasa.gov/projects/LCRNS
+LuGRE (Lunar GNSS Receiver Experiment) — NASA와 이탈리아우주국(ASI) 공동 페이로드로, Firefly Blue Ghost Mission 1(2025년 초 착륙)에 실려 지구 GPS/Galileo 신호를 달 거리·달 표면에서 실제 수신·측위에 성공한 이정표 실험입니다. 동욱 님 연구센터의 "Earth GNSS + Lunar GNSS 융합 측위" 주제와 직결됩니다.
+
+→ https://www.nasa.gov/general/lugre/
+ESA (유럽)
+Moonlight Initiative — ESA의 대표 프로그램으로, 달 주변에 통신·항법 위성군(LCNS, Lunar Communication and Navigation System)을 구축하는 사업입니다. Telespazio 주도 컨소시엄과 진행 중이며, 남극 지역 커버리지를 우선하는 점이 제3세부 궤도 설계와 맞닿아 있습니다.
+
+→ https://www.esa.int/Applications/Connectivity_and_Secure_Communications/Moonlight
+Lunar Pathfinder — SSTL 제작 통신 중계위성으로, ESA의 NaviMoon GNSS 수신기를 탑재해 약 40만 km 거리에서 지구 GNSS 약신호 측위를 실증할 예정입니다(LuGRE의 후속·확장 격).
+
+→ https://www.esa.int/Enabling_Support/Preparing_for_the_Future/Discovery_and_Preparation/Lunar_Pathfinder
+국제 협력·표준화
+LunaNet은 NASA–ESA 공동 규격이고, 여기에 JAXA(일본), ASI(이탈리아) 등이 참여합니다. 거버넌스·표준 논의는 다음 두 채널이 핵심입니다.
+
+IOAG (Interagency Operations Advisory Group) — 우주기관 간 통신·항법 아키텍처 조율. https://www.ioag.org/
+ICG (International Committee on GNSS, UN OOSA 산하) — 달 PNT 표준 논의가 여기로 들어오고 있습니다. 제1세부의 "UN OOSA 교류" 항목과 연결됩니다. https://www.unoosa.org/oosa/en/ourwork/icg/icg.html
+
+3. 상업 사업자 (Commercial Lunar PNT)
+최근 가장 빠르게 움직이는 영역으로, 동욱 님의 "유료 도구·산학 연계" 관심사와도 통하는 부분입니다.
+Lockheed Martin / Crescent Space — Parsec이라는 달 통신·항법 위성군을 자체 상업 서비스로 구축 중입니다.
+
+→ https://crescentspace.com/
+Intuitive Machines — NASA의 Near Space Network 중계·항법 서비스 계약을 수주했고, 자체 착륙선(IM 시리즈)도 운용합니다.
+
+→ https://www.intuitivemachines.com/
+Nokia — Intuitive Machines 착륙선을 통해 달 표면 4G/LTE 네트워크를 실증했습니다(측위가 아닌 통신 인프라지만 LunaNet 생태계의 일부).
+
+→ https://www.bell-labs.com/
+4. 신흥·지역 우주국
+대한민국 (KASA / 옛 KARI) — 2022년 다누리(KPLO) 달 궤도선을 성공적으로 운용했고, 2024년 우주항공청(KASA) 출범 이후 후속 달 탐사·KPS(한국형 위성항법)를 추진합니다. 본 연구센터가 정확히 이 흐름 위에 있습니다.
+
+→ https://www.kasa.go.kr/
+인도 (ISRO) — Chandrayaan-3 남극 착륙 성공 이후 달 인프라·후속 임무를 확대하고 있으며, NavIC(지구 항법) 운용 경험을 보유합니다.
+
+→ https://www.isro.gov.in/
+UAE (MBRSC) — 달 로버(Rashid) 등으로 참여하는 신흥 주자입니다.
+
+→ https://www.mbrsc.ae/
+
+1. NASA–ESA 진영 (LunaNet 상호운용 표준)
+앞서 다룬 미국·유럽 외에, 같은 진영 안에서 여러 나라가 페이로드·위성으로 참여합니다.
+이탈리아 (ASI) — LuGRE 페이로드의 공동 개발국이며, 달 통신·항법에 적극적입니다. 제안서에 토리노대 파견이 언급된 것도 이 맥락과 닿아 있어요.
+
+→ https://www.asi.it/en/
+일본 (JAXA) — LunaNet 참여 기관이자 아르테미스 협정 서명국으로, 자체 달 항법(LNSS) 개념 연구와 SLIM 착륙선 등 달 인프라를 추진합니다.
+
+→ https://global.jaxa.jp/projects/aerospace_tech/lnav/
+2. 중국–러시아 진영 (ILRS)
+NASA 진영과 별개로, 국제달연구기지(ILRS) 공동 사업이 독자 표준을 추진 중입니다.
+중국 (CNSA) — 가장 실체가 뚜렷합니다. 달 뒷면 통신용 췌차오(Queqiao-1), 그리고 통신·항법 기능을 갖춘 **췌차오-2(Queqiao-2)**를 이미 운용 중이며, ILRS를 위한 **달 통신·항법 위성군(통팡/췌차오 constellation)**을 단계적으로 구축한다는 계획을 공표했습니다. 사실상 ESA Moonlight의 경쟁 진영입니다.
+
+→ https://www.cnsa.gov.cn/english/
+러시아 (Roscosmos) — 중국과 ILRS를 공동 주도하며 Luna 시리즈로 참여합니다.
+
+→ https://www.roscosmos.ru/

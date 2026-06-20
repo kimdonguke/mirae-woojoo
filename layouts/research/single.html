@@ -1,0 +1,12 @@
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+<section class="section">
+  <div class="container narrow">
+    <p class="post-back"><a href="/research/#fields">← 세부 연구과제</a></p>
+    {{ with .Params.org }}<p class="sp-meta">{{ . }}</p>{{ end }}
+    {{ with .Params.keywords }}<div class="sp-keywords">{{ range . }}<span class="sp-chip">{{ . }}</span>{{ end }}</div>{{ end }}
+    {{ with .Params.summary }}<p class="detail-lead">{{ . }}</p>{{ end }}
+    {{ with .Content }}<div class="prose">{{ . }}</div>{{ else }}<p class="page-empty">세부 내용은 준비 중입니다.</p>{{ end }}
+  </div>
+</section>
+{{ end }}
