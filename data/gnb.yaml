@@ -1,11 +1,33 @@
 # 상단 GNB(글로벌 내비게이션) — 5개 탭. 클릭 시 해당 페이지로 이동.
+# sub: 푸터 사이트맵에 표시되는 하위 링크(상단 헤더는 탭만 노출).
 - name: 소개
   url: "/about/"
+  sub:
+    - { name: 단체 소개, url: "/about/#intro" }
+    - { name: 비전·목표, url: "/about/#vision" }
+    - { name: 연혁, url: "/about/#history" }
+    - { name: 조직·운영진, url: "/about/#org" }
+    - { name: 오시는 길·연락, url: "/about/#contact" }
 - name: 연구
   url: "/research/"
+  sub:
+    - { name: 연구 소개, url: "/research/#fields" }
+    - { name: 연구 실적, url: "/research/#achievements" }
+    - { name: 국제 동향, url: "/research/#trends" }
 - name: 소식
   url: "/notice/"
+  sub:
+    - { name: 공지사항, url: "/notice/" }
+    - { name: 세미나·교육, url: "/seminar/" }
+    - { name: 뉴스, url: "/news/" }
+    - { name: 행사일정, url: "/event/" }
 - name: 갤러리·미디어
   url: "/gallery/"
+  sub:
+    - { name: 사진 갤러리, url: "/gallery/#photos" }
+    - { name: 동영상, url: "/gallery/#videos" }
 - name: 자료실
   url: "/resources/"
+  sub:
+    - { name: 발표자료·문서, url: "/resources/" }
+    - { name: 스터디 아카이브, url: "/resources/" }

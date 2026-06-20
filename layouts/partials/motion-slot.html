@@ -3,7 +3,7 @@
        variant: network(연구) | beacon(국제동향) | orbit(기본) */ -}}
 {{- $variant := .variant | default "orbit" -}}
 <div class="motion-slot" data-variant="{{ $variant }}" aria-hidden="true">
-  <!-- TODO(2.5D): 연구 주제 리스트 확정 후 {{ $variant }} 모션그래픽으로 교체 -->
+  {{- /* TODO(2.5D): 연구 주제 리스트 확정 후 모션그래픽으로 교체(variant: network/beacon/orbit) */ -}}
   <svg viewBox="0 0 220 160" class="motion-ph">
     <ellipse cx="110" cy="84" rx="80" ry="40" fill="none" stroke="currentColor" stroke-dasharray="4 8" opacity=".35"/>
     <ellipse cx="110" cy="84" rx="48" ry="24" fill="none" stroke="currentColor" stroke-dasharray="3 9" opacity=".25"/>
