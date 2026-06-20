@@ -1,0 +1,438 @@
+# 출처: docs/ref/미래우주_논문실적_정리.txt
+# 총 87편
+items:
+  - year: 2022
+    authors: "Jeonghyeon Yun, Cheolsoon Lim, Yongjun Lee, Suyeol Kim, Yongrae Jo, & Byungwoon Park"
+    title: "Practical Approaches to Real-time Position Accuracy Improvement of Android Smartphone Dual-frequency GNSS"
+    venue: "ION GNSS+ 2022"
+    intl: true
+  - year: 2022
+    authors: "Dong-Kyeong Lee, Trey Taylor, Dennis M. Akos, Jeonghyeon Yun, Yongrae Jo, & Byungwoon Park"
+    title: "GNSS Fault Detection and Mitigation using Android IMU"
+    venue: "ION GNSS+ 2022"
+    intl: true
+  - year: 2022
+    authors: "Cheolsoon Lim, & Byungwoon Park"
+    title: "Homogeneous Network RTK for Satellite Based Nationwide High Precision GNSS Positioning Service"
+    venue: "ION GNSS+ 2022"
+    intl: true
+  - year: 2022
+    authors: "김성익, & 박병운"
+    title: "위성간 통신 기반 위성 궤도 결정 시뮬레이션 연구"
+    venue: "2022 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2022
+    authors: "윤정현, 임철순, 이용준, 김수열, 조용래, & 박병운"
+    title: "위성 간 단일 차분 기반 감시 기법을 활용한 안드로이드 스마트폰 위치 신뢰성 향상 기법"
+    venue: "2022 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2022
+    authors: "차윤호, 임철순, 이예빈, & 박병운"
+    title: "SSR 보정정보의 사용자 적용을 통한 QZSS-CLAS 보정정보 성능 분석"
+    venue: "2022 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2022
+    authors: "차윤호, 임철순, & 박병운"
+    title: "간선도로 자율주행 환경을 고려한 Ublox-Pointperfect 서비스 성능 분석"
+    venue: "2022 한국항행학회 종합학술대회"
+    intl: false
+  - year: 2023
+    authors: "차윤호, 임철순, & 박병운"
+    title: "사용자 위치측위 성능 향상을 위한 오픈소스 프로그램 성능 개선 알고리즘에 대한 연구"
+    venue: "2023 통신학회 동계종합학술발표회"
+    intl: false
+  - year: 2023
+    authors: "윤정현, & 박병운"
+    title: "후처리 소프트웨어 적용을 위한 스마트폰의 원시 GNSS 측정치 변환 Toolbox"
+    venue: "2023 항공우주학회 춘계학술대회"
+    intl: false
+  - year: 2023
+    authors: "김경민, 박원우, 임철순, & 박병운"
+    title: "Moving Baseline RTK를 위한 확장 RTCM 메시지 제안 및 실시간 적용"
+    venue: "2023 항공우주학회 춘계학술대회"
+    intl: false
+  - year: 2023
+    authors: "박병운, 김성익, 윤정현, & 주현진"
+    title: "LNSS 미래우주항법 시스템 및 요소기술 소개"
+    venue: "2023 항공우주학회 우주학술대회"
+    intl: false
+  - year: 2023
+    authors: "Sungik Kim, & Byungwoon Park"
+    title: "A Strategy for Initial Orbit Determination of Lunar Navigation Satellite Based on Range and Doppler Measurements"
+    venue: "ION GNSS+ 2023"
+    intl: true
+  - year: 2023
+    authors: "Jeonghyeon Yun, Dong-Kyeong Lee, Dennis M. Akos, & Byungwoon Park"
+    title: "Elevating Android GNSS Raw Measurement Processing: A Universal RINEX Converter for Precise Post-Processing Solution"
+    venue: "ION GNSS+ 2023"
+    intl: true
+  - year: 2023
+    authors: "Yebin Lee, Dong-Kyeong Lee, & Byungwoon Park"
+    title: "Effective Carrier Phase Anomaly Detection using Short-Baseline Double Difference and Machine Learning"
+    venue: "ION GNSS+ 2023"
+    intl: true
+  - year: 2023
+    authors: "Yongjun Lee, & Byungwoon Park"
+    title: "Synergistic Fusion of GNSS Multipath Map and CMC-based Multipath Estimation for Enhanced GNSS Positioning in Urban Canyon"
+    venue: "ION GNSS+ 2023"
+    intl: true
+  - year: 2023
+    authors: "Minhyoung Cho, Jeonghyeon Yun, & Byungwoon Park"
+    title: "Ionospheric Irregularities Signature Correlation on ROT Variation for Earthquake Detection and Epicenter Estimation: A Case Study of Türkiye-Syria Earthquake"
+    venue: "ION GNSS+ 2023"
+    intl: true
+  - year: 2023
+    authors: "Yunho Cha, Cheolsoon Lim, Yebin Lee, Yongrae Jo, Junesol Song, & Byungwoon Park"
+    title: "Homogeneous Network RTK Correction Residual Error Modeling Techniques for Improving the Position Accuracy of Network Internal and External Users"
+    venue: "ION GNSS+ 2023"
+    intl: true
+  - year: 2023
+    authors: "김성익, & 박병운"
+    title: "위성간 거리 및 도플러 측정치 기반 초기 달 항법 위성 궤도 결정 전략"
+    venue: "2023 한국항행학회 종합학술대회"
+    intl: false
+  - year: 2023
+    authors: "윤정현, 김수열, & 박병운"
+    title: "온라인 후처리 프로그램 적용을 위한 안드로이드 스마트폰 RINEX 변환기"
+    venue: "2023 한국항행학회 종합학술대회"
+    intl: false
+  - year: 2023
+    authors: "김수열, 이예빈, & 박병운"
+    title: "스마트폰 단거리 이중 차분을 통한 노이즈 모델링"
+    venue: "2023 한국항행학회 종합학술대회"
+    intl: false
+  - year: 2023
+    authors: "이용준, & 박병운"
+    title: "도심지 GNSS 다중경로 오차 지도 기반 보정정보 위치 영역 투영 기법"
+    venue: "2023 한국항행학회 종합학술대회"
+    intl: false
+  - year: 2023
+    authors: "이예빈, 이동경, & 박병운"
+    title: "단거리 이중차분 및 머신러닝 기법을 이용한 반송파 이상 측정치 검출"
+    venue: "2023 한국항행학회 종합학술대회"
+    intl: false
+  - year: 2023
+    authors: "Sungik Kim, & Byungwoon Park"
+    title: "A Strategy for Initial Orbit Determination of Lunar Navigation Satellite Based on Range and Doppler Measurements from a Lunar Ground Station"
+    venue: "2023 APISAT"
+    intl: true
+  - year: 2023
+    authors: "조민형, 윤정현, & 박병운"
+    title: "지진에 의한 전리층 변동 감시와 ROT의 Inter-Station Cross Correlation을 이용한 진앙지 추정 기법"
+    venue: "2023 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2023
+    authors: "김경민, 박원우, & 박병운"
+    title: "드론용 Moving Baseline RTK 기반 실시간 정밀 상대항법 프로그램 구축"
+    venue: "2023 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2023
+    authors: "윤정현, & 박병운"
+    title: "측위 정확성 및 가용성 향상을 위한 모바일 기기 센서 융합 기술 연구"
+    venue: "2023 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2023
+    authors: "김수열, 윤정현, & 박병운"
+    title: "도시 항법 정확도 향상을 위한 스마트폰 플랫폼 기반 GNSS-INS 및 VPS 결합에 관한 연구"
+    venue: "2023 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2023
+    authors: "이용준, & 박병운"
+    title: "기계 학습 기반 다중경로 추정 모델과 3D 빌딩 모델을 이용한 도심지 다중 해상도 GNSS 다중경로 오차 지도 생성 및 적용"
+    venue: "2023 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2023
+    authors: "김성익, 박슬기, 박상현, & 박병운"
+    title: "한반도 지역 위성항법시스템 측정치 오차 성분 경향성 분석"
+    venue: "2023 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2023
+    authors: "차윤호, 임철순, 이예빈, 조용래, 송준솔, & 박병운"
+    title: "HN-RTK 네트워크 내부 및 외부 사용자의 측위성능 향상을 위한 보정정보 잔여오차 모델링 기법"
+    venue: "2023 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2023
+    authors: "정준환, 이용준, 최헌호, & 박병운"
+    title: "상용 시뮬레이터의 기능 분석을 통한 지역항법시스템의 GNSS Raw Data Generation 설계"
+    venue: "2023 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2024
+    authors: "Gyeongmin Kim, Wonwoo Park, & Byungwoon Park"
+    title: "Moving Baseline RTK-based Ground Vehicle-Drone Combination System"
+    venue: "2024 ION ITM"
+    intl: true
+  - year: 2024
+    authors: "Yunho Cha, Junesol Song, & Byungwoon Park"
+    title: "Enhancing GNSS Precise Positioning Performance by Residual Modeling in Network RTK Corrections"
+    venue: "2024 ION Pacific PNT"
+    intl: true
+  - year: 2024
+    authors: "Suyeol Kim, Jeonghyeon Yun, & Byungwoon Park"
+    title: "Approach to Enhancing Urban Positioning based on Smartphone GNSS-VPS Integration"
+    venue: "2024 ION Pacific PNT"
+    intl: true
+  - year: 2024
+    authors: "Gyeongmin Kim, Wonwoo Park, & Byungwoon Park"
+    title: "Relative Precise Positioning Method for Two Moving Vehicles and UGV-UAV System based on Moving Baseline RTK"
+    venue: "ICMIC"
+    intl: true
+  - year: 2024
+    authors: "김성익, & 박병운"
+    title: "지구 GNSS 신호 기반 달 항법 위성 궤도 결정 시뮬레이션"
+    venue: "2024 항공우주학회 우주학술대회"
+    intl: false
+  - year: 2024
+    authors: "Yunho Cha, Yongrae Jo, Hyunwoo Kim, & Byungwoon Park"
+    title: "Simulation Based Tropospheric Error Estimation Performance Analysis with Low Earth Orbit (LEO) Satellites"
+    venue: "ION GNSS+ 2024"
+    intl: true
+  - year: 2024
+    authors: "Jeonghyeon Yun, Suyeol Kim, Taejin Youn, Gyeongmin Kim, Wonwoo Park, & Byungwoon Park"
+    title: "Third Place Winner of the Smartphone Decimeter Challenge: Improving Smartphone Accuracy with a Two-step Accurate Velocity Estimation"
+    venue: "ION GNSS+ 2024"
+    intl: true
+  - year: 2024
+    authors: "Jeonghyeon Yun"
+    title: "Enhanced Smartphone Positioning in Urban Environments: GNSS Fault Detection and Mitigation through Integrated Navigation System"
+    venue: "ION GNSS+ 2024"
+    intl: true
+  - year: 2024
+    authors: "Yongjun Lee, & Byungwoon Park"
+    title: "Enhanced GNSS Multipath Map in Urban Canyon using User Data Clouding"
+    venue: "ION GNSS+ 2024"
+    intl: true
+  - year: 2024
+    authors: "Dong-Kyeong Lee, Byungwoon Park, & Dennis Akos"
+    title: "Empirical Error Modeling of Android GNSS Using Machine Learning for PVT Improvement"
+    venue: "ION GNSS+ 2024"
+    intl: true
+  - year: 2024
+    authors: "Sungik Kim, & Byungwoon Park"
+    title: "GNSS Signal Tracking Analysis and Satellite Orbit Determination Based on EKF at Cislunar Distance"
+    venue: "2024 APISAT"
+    intl: true
+  - year: 2024
+    authors: "Yongrae Jo, & Byungwoon Park"
+    title: "Modeling of Antenna Phase Center Offset of Low-cost Receiver & Antenna for RTK Vertical Position Accuracy"
+    venue: "2024 APISAT"
+    intl: true
+  - year: 2024
+    authors: "김현우, 김경민, 김수열, & 박병운"
+    title: "GPS 및 QZSS의 위협상황에 관한 사례 연구"
+    venue: "2024 한국항행학회 종합학술대회"
+    intl: false
+  - year: 2024
+    authors: "오지성, 김성익, 박혜원, & 박병운"
+    title: "주요 우주국의 Lunar PNT 시스템 개발 동향"
+    venue: "2024 한국항행학회 종합학술대회"
+    intl: false
+  - year: 2024
+    authors: "김성익, & 박병운"
+    title: "지구 GNSS 기반 달 NRHO 궤도 결정 시뮬레이션"
+    venue: "2024 한국항행학회 종합학술대회"
+    intl: false
+  - year: 2024
+    authors: "박원우, 차윤호, & 박병운"
+    title: "오픈 소스 소프트웨어 GNSS 수신기의 성능 평가 Iono-Free 선형 조합 및 이중차분 기법을 통한 수신기 노이즈 비교"
+    venue: "2024 한국항행학회 종합학술대회"
+    intl: false
+  - year: 2024
+    authors: "김현우, 차윤호, & 박병운"
+    title: "Simulation Doppler 측정치를 이용한 LEO-PNT 가용성 검증"
+    venue: "2024 항공우주학회 추계학술대회"
+    intl: false
+  - year: 2024
+    authors: "오지성, 김성익, & 박병운"
+    title: "NRHO 궤도에서의 달 항법위성에 대한 GNSS 신호 가시성 분석"
+    venue: "2024 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2024
+    authors: "박준교, 이용준, 제현승, 윤영선, 박해성, & 박병운"
+    title: "도심지 보행자의 GNSS 위치 정확도 향상을 위한 위성 가시성 지도 적용 기법(예정)"
+    venue: "2024 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2024
+    authors: "조용래, & 박병운"
+    title: "안테나 위상 중심 오차 모델링을 이용한 정밀 항법에서의 저가형 안테나 정확도 향상 기법"
+    venue: "2024 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2024
+    authors: "이예빈, 조용래, & 박병운"
+    title: "PPP-RTK 위성 위상 바이어스 보정정보 메시지 방송 형식 제안"
+    venue: "2024 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2024
+    authors: "이예빈, 차윤호, & 박병운"
+    title: "네트워크 외부 사용자의 무결성 감시를 위한 네트워크 RTK 보정정보 잔여오차 모델링"
+    venue: "2024 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2024
+    authors: "김성익, & 박병운"
+    title: "Lunar PNT를 위한 달 항법 위성 궤도 결정 시뮬레이션"
+    venue: "2024 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2024
+    authors: "이용준, 박준교, 제현승, 윤영선, 박해성, & 박병운"
+    title: "재귀벡터 기반 다중경로 추정 기법과 고해상도 GNSS 가시성맵 적용을 통한 도심지내 사용자 위치 결정 방법"
+    venue: "2024 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2024
+    authors: "이용준, & 박병운"
+    title: "다중경로 지도 생성 방법론과 사용자 데이터 클라우딩을 이용한 전주기적 도심지 GNSS 다중경로 지도 관리 연구"
+    venue: "2024 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2024
+    authors: "윤정현, & 박병운"
+    title: "스마트폰 위치 정확도 개선을 위한 2단계 속도 추정 방법"
+    venue: "2024 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2025
+    authors: "Yongrae Jo"
+    title: "Design Strategies for RTK Systems for Universal Application in Various Fields"
+    venue: "2025 ION ITM"
+    intl: true
+  - year: 2025
+    authors: "Sungik Kim, & Jisung Oh"
+    title: "Predicted Orbit Determination Performance of a Lunar Navigation System: Utilizing Inter-Satellite Measurements with Batch and EKF Estimation"
+    venue: "2025 ION ITM"
+    intl: true
+  - year: 2025
+    authors: "김성익, & 오지성"
+    title: "EKF와 Full GNSS Constellation 신호를 활용한 달 위성 궤도 결정 시뮬레이션"
+    venue: "2025 한국항공우주학회 우주학술대회"
+    intl: false
+  - year: 2025
+    authors: "오지성, & 김성익"
+    title: "지구 GNSS 위성군의 달 궤도 신호 가시성 분석 및 지역 위성항법 시스템의 기여도 예측"
+    venue: "2025 한국항공우주학회 우주학술대회"
+    intl: false
+  - year: 2025
+    authors: "김현우, & 최헌호"
+    title: "GNSS UERE 경향석 분석: 함수 기반 위협상황 모델링 기법 연구"
+    venue: "2025 한국항공우주학회 우주학술대회"
+    intl: false
+  - year: 2025
+    authors: "김현우, & 차윤호"
+    title: "저궤도 위성 항법(LEO-PNT)의 최신 연구 동향 : 글로벌 현황과 전략적 전망"
+    venue: "2025 통신학회 동계 종합학술대회"
+    intl: false
+  - year: 2025
+    authors: "박원우"
+    title: "Dual-SDR 기반 측정치의 Divergence Free Hatch Filter 기법을 통한 GNSS 측위 성능 향상 방법"
+    venue: "2025 한국항공우주학회 춘계학술대회"
+    intl: false
+  - year: 2025
+    authors: "Jeonghyeon Yun"
+    title: "Design of Adaptive Complementary Filter for Three-Dimensional Attitude Estimation of an Android Smartphone"
+    venue: "ION GNSS+ 2025"
+    intl: true
+  - year: 2025
+    authors: "Byungwoon Park, Yongrae Jo, Sungik Kim, Yebin Lee, & Cheolsoon Lim"
+    title: "A New Paradigm in Nationwide GNSS Precise Positioning: Satellite-Broadcasted OSR Corrections via Homogeneous Network RTK Methodology"
+    venue: "ION GNSS+ 2025"
+    intl: true
+  - year: 2025
+    authors: "Jisung Oh, & Sungik Kim"
+    title: "Analysis of Earth GNSS Signal Visibility in the Lunar Environment"
+    venue: "APISAT 2025"
+    intl: true
+  - year: 2025
+    authors: "Wonwoo Park, & Hyunwoo Kim"
+    title: "Differential Positioning Feasibility Analysis of Low Earth Orbit Satellite Navigation Systems"
+    venue: "APISAT 2025"
+    intl: true
+  - year: 2025
+    authors: "박원우"
+    title: "저궤도 과학 위성 궤도 오차의 정량적 특성 분석"
+    venue: "2025 한국항행학회 종합학술대회"
+    intl: false
+  - year: 2025
+    authors: "김주헌, & 윤정현"
+    title: "기준국 간 ROT 교차상관 분석을 통한 지진 진원지 추정"
+    venue: "2025 한국항행학회 종합학술대회"
+    intl: false
+  - year: 2025
+    authors: "박인경, 윤정현, 이예빈, & 조용래"
+    title: "국내 보정정보별 정밀측위 사용자 성능 분석을 통한 실시간 감시국 체계 필요성"
+    venue: "2025 한국항행학회 종합학술대회"
+    intl: false
+  - year: 2025
+    authors: "윤정현"
+    title: "스마트 웨어러블 기기 제조업체 간 피트니스 애플리케이션 궤적 및 성능 평가"
+    venue: "2025 한국항행학회 종합학술대회"
+    intl: false
+  - year: 2025
+    authors: "김현우, 박원우, & 조용래"
+    title: "Kinemtaic SPP 기반 저궤도 위성 궤도 결정 가용성 분석"
+    venue: "2025 한국항행학회 종합학술대회"
+    intl: false
+  - year: 2025
+    authors: "김성익, & 오지성"
+    title: "Lunar PNT를 위한 달 위성의 궤도 파라미터 추정 방안"
+    venue: "2025 한국항행학회 종합학술대회"
+    intl: false
+  - year: 2025
+    authors: "Yebin Lee"
+    title: "네트워크 경계에서의 QZSS CLAS 사용자 성능 분석"
+    venue: "2025 한국항행학회 종합학술대회"
+    intl: false
+  - year: 2025
+    authors: "박준교, 이용준, & 윤정현"
+    title: "다중 기준 위성과 재귀 벡터를 이용한 도심지 스마트폰 GNSS 다중경로오차 추정 기법"
+    venue: "2025 한국항행학회 종합학술대회"
+    intl: false
+  - year: 2025
+    authors: "김태호"
+    title: "GNSS 전리층 지연 보정을 위한 Klobuchar, NeQuick-G, NTCM-G 모델 비교 분석"
+    venue: "2025 한국항행학회 종합학술대회"
+    intl: false
+  - year: 2025
+    authors: "윤정현"
+    title: "스마트 웨어러블 기기를 활용한 피트니스 앱 사용자의 위치 정확도 향상 연구"
+    venue: "2025 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2025
+    authors: "김현우, & 조용래"
+    title: "저궤도 위성을 활용한 PPP 수렴시간 개선 연구"
+    venue: "2025 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2025
+    authors: "김성익, 조용래, 이예빈, 송재영, 박슬기, & 박상현"
+    title: "부분 구면 조화 함수와 Residual 방식 기반 Homogeneous Network RTK 서비스 방안"
+    venue: "2025 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2025
+    authors: "김성익, & 오지성"
+    title: "Lunar PNT를 위한 다중계층 달 위성군 위성의 궤도 결정"
+    venue: "2025 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2025
+    authors: "Yebin Lee, Yongrae Jo, & Sungik Kim"
+    title: "PPP-RTK 위성 위상 바이어스 전송 효율 최적화를 위한 Common IFPB 포맷 성능 분석"
+    venue: "2025 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2025
+    authors: "박준교, 윤정현, 이용준, 윤영선, & 박해성"
+    title: "재귀벡터와 확률적 가시성 맵 선택을 통한 도심지 스마트폰 측위 정확도 향상 연구"
+    venue: "2025 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2025
+    authors: "김태호, & 윤정현"
+    title: "도심지 환경에서 그래프 기반 RANSAC을 활용한 GNSS 측정 이상치 제거 기법"
+    venue: "2025 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2025
+    authors: "오지성, & 김성익"
+    title: "Augmented Forward Signal과 Inter-Satellite Link를 활용한 Multi-Layered 달 항법 위성 궤도 결정 시뮬레이션"
+    venue: "2025 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2025
+    authors: "조용래"
+    title: "Universal Kriging 기반 HN-RTK 네트워크 외곽 사용자의 대기 오차 모델링 및 불확실성 정량화"
+    venue: "2025 항법시스템학회 정기학술대회"
+    intl: false
+  - year: 2025
+    authors: "김현우, 박원우, & 차윤호"
+    title: "LEO 위성의 고속 이동성을 활용한 PPP 수렴시간 단축"
+    venue: "2025 항공우주학회 추계학술대회"
+    intl: false

@@ -11,7 +11,7 @@
   url: "/research/"
   sub:
     - { name: 연구 소개, url: "/research/#fields" }
-    - { name: 연구 실적, url: "/research/#achievements" }
+    - { name: 연구 실적, url: "/research/publications/" }
     - { name: 국제 동향, url: "/trends/" }
 - name: 소식
   url: "/notice/"

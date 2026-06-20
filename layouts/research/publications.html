@@ -1,0 +1,28 @@
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+<section class="section">
+  <div class="container">
+    {{ $items := sort site.Data.publications.items "year" "desc" }}
+    {{ if $items }}
+    <p class="pub-count">총 {{ len $items }}편</p>
+    {{ $years := slice }}
+    {{ range $items }}{{ $years = $years | append .year }}{{ end }}
+    {{ range $i, $yr := ($years | uniq) }}
+    <div class="pub-group">
+      <h2 class="pub-year">{{ $yr }}</h2>
+      <ul class="pub-list">
+        {{ range where $items "year" $yr }}
+        <li class="pub-item">
+          <span class="pub-title">{{ .title }}</span>
+          <span class="pub-meta">{{ .authors }} · {{ .venue }}</span>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+    {{ else }}
+    <p class="page-empty">등록된 실적이 아직 없습니다.</p>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

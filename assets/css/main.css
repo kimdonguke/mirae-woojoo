@@ -509,13 +509,21 @@ ul { list-style: none; }
 .sp-more { display: inline-block; margin-top: 12px; font-size: .84rem; font-weight: 700; color: var(--primary); }
 .detail-lead { margin: 16px 0 24px; font-size: 1.05rem; line-height: 1.72; color: var(--text); }
 @media (max-width: 560px) { .subproject { grid-template-columns: 1fr; gap: 6px; padding: 22px 0; } .sp-num { font-size: 1.5rem; } }
-.ach-list { list-style: none; margin: 0; padding: 0; }
-.ach-row { display: grid; grid-template-columns: 58px 64px 1fr; gap: 12px; align-items: baseline; padding: 13px 4px; border-bottom: 1px solid var(--border); }
-.ach-year { font-weight: 800; color: var(--primary); font-variant-numeric: tabular-nums; }
-.ach-type { font-size: .78rem; font-weight: 700; color: var(--text-muted); background: var(--bg-alt); border-radius: 999px; padding: 2px 0; text-align: center; }
-.ach-main { color: var(--ink); line-height: 1.5; }
-.ach-venue { color: var(--text-muted); font-size: .9rem; }
-@media (max-width: 560px){ .ach-row { grid-template-columns: 48px 56px 1fr; } }
+/* 연구 실적 요약(연구 페이지) */
+.ach-summary { color: var(--text); margin: 0 0 14px; }
+.ach-recent { list-style: none; margin: 0 0 18px; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+.ach-recent li { color: var(--ink); line-height: 1.5; }
+.ach-ry { font-weight: 800; color: var(--primary); margin-right: 6px; font-variant-numeric: tabular-nums; }
+.ach-rv { color: var(--text-muted); font-size: .9rem; }
+.ach-more { display: inline-block; font-weight: 700; color: var(--primary); }
+.ach-more:hover { text-decoration: underline; }
+/* 논문 실적 페이지 */
+.pub-count { color: var(--text-muted); font-size: .95rem; margin: 0 0 26px; }
+.pub-group { margin-bottom: 30px; }
+.pub-year { font-size: 1.15rem; font-weight: 800; color: var(--primary); margin: 0 0 14px; padding-bottom: 7px; border-bottom: 1px solid var(--border); }
+.pub-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 15px; }
+.pub-title { display: block; color: var(--ink); font-weight: 600; line-height: 1.5; }
+.pub-meta { display: block; color: var(--text-muted); font-size: .86rem; line-height: 1.5; margin-top: 2px; }
 
 /* ── 홈 최근 소식(3열) ── */
 .news-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
@@ -619,7 +627,8 @@ body.lb-lock { overflow: hidden; }
 /* ── 국제 동향 지도 ── */
 .trends-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; letter-spacing: -.02em; color: var(--ink); margin: 0 0 8px; }
 .trends-intro { color: var(--text-muted); margin: 0 0 20px; font-size: .98rem; }
-.worldmap { position: relative; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 14px; padding: 12px; max-width: 112vh; margin-left: auto; margin-right: auto; }
+.worldmap { position: relative; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 14px; padding: 0; max-width: 112vh; margin-left: auto; margin-right: auto; }
+.worldmap-img { border-radius: 13px; overflow: hidden; line-height: 0; }
 .worldmap svg { width: 100%; height: auto; display: block; }
 .worldmap svg path { fill: #c3cee0 !important; stroke: #fff !important; stroke-width: .4 !important; }
 .map-marker { position: absolute; transform: translate(-50%, -50%); z-index: 2; }

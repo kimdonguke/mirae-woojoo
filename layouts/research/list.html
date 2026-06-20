@@ -7,17 +7,12 @@
     <div id="fields" class="page-section">
       <h2 class="page-h2">세부 연구과제</h2>
       <div class="subprojects">
-        {{ range $i, $p := .Pages.ByWeight }}
+        {{ range $i, $p := (where .Pages.ByWeight "Params.kicker" "세부 연구과제") }}
         <a class="subproject" href="{{ $p.RelPermalink }}">
           <span class="sp-num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
           <div class="sp-body">
             {{ with $p.Params.org }}<p class="sp-meta">{{ . }}</p>{{ end }}
             <h3 class="sp-title">{{ $p.Title }}</h3>
-            {{ with $p.Params.keywords }}
-            <div class="sp-keywords">
-              {{ range . }}<span class="sp-chip">{{ . }}</span>{{ end }}
-            </div>
-            {{ end }}
             <p class="sp-summary">{{ $p.Params.summary }}</p>
             <span class="sp-more">자세히 →</span>
           </div>
@@ -28,20 +23,15 @@
 
     <div id="achievements" class="page-section">
       <h2 class="page-h2">연구 실적</h2>
-      {{ $items := sort site.Data.achievements.items "year" "desc" }}
-      {{ if $items }}
-      <ul class="ach-list">
-        {{ range $items }}
-        <li class="ach-row">
-          <span class="ach-year">{{ .year }}</span>
-          <span class="ach-type">{{ .type }}</span>
-          <span class="ach-main">
-            {{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}
-            {{ with .venue }}<span class="ach-venue">· {{ . }}</span>{{ end }}
-          </span>
-        </li>
+      {{ $pubs := sort site.Data.publications.items "year" "desc" }}
+      {{ if $pubs }}
+      <p class="ach-summary">국내외 학술대회·학회 논문 <strong>총 {{ len $pubs }}편</strong></p>
+      <ul class="ach-recent">
+        {{ range first 4 $pubs }}
+        <li><span class="ach-ry">{{ .year }}</span> {{ .title }} <span class="ach-rv">· {{ .venue }}</span></li>
         {{ end }}
       </ul>
+      <a class="ach-more" href="/research/publications/">전체 논문 실적 보기 →</a>
       {{ else }}
       <p class="page-empty">등록된 실적이 아직 없습니다.</p>
       {{ end }}

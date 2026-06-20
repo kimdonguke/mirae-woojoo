@@ -1,24 +1,28 @@
-# 연구 분야 — 홈 "연구 하이라이트" 카드 + /research/ 분야 목록 공용.
-# theme: a~d (카드 색), url: 연구 페이지 내 앵커.
-# url: 현재 모두 /research/#fields 로 통일 — 분야별 세부 페이지가 생기면 교체.
+# 홈 "연구 하이라이트" 카드 — 세부 연구과제 5개와 1:1로 정렬.
+# url: 각 세부과제 상세 페이지. theme: a~d 카드 색(5개째는 a 순환). tag: 주관/참여 대학.
 items:
-  - title: 위성항법(GNSS) 신호처리
-    summary: GNSS 신호 수신·처리와 측위 정확도 향상을 다룹니다.
-    url: /research/#fields
+  - title: 양방향 측위 기법을 활용한 Lunar GNSS 설계
+    summary: 위성 간 통신(ISL) 기반 항법 메시지 설계와 정밀궤도결정(POD), 초소형위성 추진 기술을 연구합니다.
+    url: /research/lunar-gnss-design/
     theme: a
-    tag: GNSS
-  - title: 우주 PNT·심우주 항법
-    summary: 달·심우주 환경의 위치·항법·시각(PNT) 기술을 탐구합니다.
-    url: /research/#fields
+    tag: 세종대학교
+  - title: 초소형위성 시스템 및 테스트베드 개발
+    summary: Lunar GNSS 초소형위성의 시스템 설계·우주환경시험과 지상 HILS 테스트베드를 구축합니다.
+    url: /research/cubesat-testbed/
     theme: b
-    tag: PNT
-  - title: 다중센서 융합 측위
-    summary: GNSS와 관성·영상 센서를 융합한 견고한 측위를 연구합니다.
-    url: /research/#fields
+    tag: 세종대학교
+  - title: 기준 위성 및 항법 위성 궤도 설계
+    summary: 달 중력장과 3체 운동을 고려한 항법·기준 위성의 안정·가시성 궤도를 설계합니다.
+    url: /research/orbit-design/
     theme: c
-    tag: Fusion
-  - title: 무결성·이상검출
-    summary: 항법 신뢰성을 위한 무결성 감시와 이상 검출을 다룹니다.
-    url: /research/#fields
+    tag: 서울대학교
+  - title: 우주 항법용 시각 동기 기술
+    summary: 원자시계(CSAC)와 칼만 필터를 결합해 달 환경의 정밀 시각 동기를 구현합니다.
+    url: /research/time-sync/
     theme: d
-    tag: Integrity
+    tag: 연세대학교
+  - title: Lunar GNSS 활용 측위 기술
+    summary: Lunar·Earth GNSS 융합과 협력 측위로 달 궤도·표면의 정밀 위치추정을 연구합니다.
+    url: /research/positioning/
+    theme: a
+    tag: 홍익대학교
