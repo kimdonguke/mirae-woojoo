@@ -488,6 +488,9 @@ ul { list-style: none; }
 /* ── 국제 동향 ── */
 .section-dark { background: var(--ink); color: #cbd5e6; }
 .section-dark .section-title { color: #fff; }
+.section-dark .section-head { border-bottom-color: rgba(255,255,255,.15); }
+.section-dark .section-num { color: #93b4f5; }
+.section-dark .section-kicker { color: #7e8a9b; }
 .trends-wrap { position: relative; }
 .trends-wrap .motion-slot { position: absolute; top: -70px; right: 6px; width: 180px; opacity: .5; }
 @media (max-width: 900px){ .trends-wrap .motion-slot { display: none; } }

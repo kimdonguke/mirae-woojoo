@@ -1,5 +1,6 @@
 # 연구 분야 — 홈 "연구 하이라이트" 카드 + /research/ 분야 목록 공용.
 # theme: a~d (카드 색), url: 연구 페이지 내 앵커.
+# url: 현재 모두 /research/#fields 로 통일 — 분야별 세부 페이지가 생기면 교체.
 - title: 위성항법(GNSS) 신호처리
   summary: GNSS 신호 수신·처리와 측위 정확도 향상을 다룹니다.
   url: /research/#fields

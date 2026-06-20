@@ -2,6 +2,7 @@
 {{- $limit := .limit | default 0 -}}
 {{- $items := site.Data.trends -}}
 {{- if gt $limit 0 }}{{ $items = first $limit $items }}{{ end -}}
+{{- if $items -}}
 <section class="section trends-section{{ if .background }} section-dark{{ end }}" id="trends">
   <div class="container">
     <header class="section-head reveal">
@@ -29,3 +30,4 @@
     {{ if gt $limit 0 }}<p class="section-foot"><a href="/research/#trends">국제 동향 더보기 →</a></p>{{ end }}
   </div>
 </section>
+{{- end -}}
