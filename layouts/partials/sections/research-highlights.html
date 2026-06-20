@@ -1,26 +1,22 @@
 <section class="section" id="research-highlights">
   <div class="container">
     <header class="section-head reveal">
-      <span class="section-num">·</span>
       <h2 class="section-title">연구 하이라이트</h2>
       <span class="section-kicker">Research</span>
     </header>
 
-    <div class="hl-with-motion reveal">
-      <div class="highlights">
-        {{ range site.Data.research.items }}
-        <a class="hl-card hl-{{ .theme | default "a" }}" href="{{ .url }}">
-          <div class="hl-text">
-            {{ with .tag }}<span class="hl-tag">{{ . }}</span>{{ end }}
-            <h3 class="hl-title">{{ .title }}</h3>
-            <p class="hl-desc">{{ .summary }}</p>
-            <span class="hl-link">자세히</span>
-          </div>
-          <span class="hl-media"></span>
-        </a>
-        {{ end }}
-      </div>
-      {{ partial "motion-slot.html" (dict "variant" "network") }}
+    <div class="highlights reveal">
+      {{ range site.Data.research.items }}
+      <a class="hl-card hl-{{ .theme | default "a" }}" href="{{ .url }}">
+        <div class="hl-text">
+          {{ with .tag }}<span class="hl-tag">{{ . }}</span>{{ end }}
+          <h3 class="hl-title">{{ .title }}</h3>
+          <p class="hl-desc">{{ .summary }}</p>
+          <span class="hl-link">자세히</span>
+        </div>
+        <span class="hl-media"></span>
+      </a>
+      {{ end }}
     </div>
   </div>
 </section>

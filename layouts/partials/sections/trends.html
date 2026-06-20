@@ -6,27 +6,23 @@
 <section class="section trends-section{{ if .background }} section-dark{{ end }}" id="trends">
   <div class="container">
     <header class="section-head reveal">
-      <span class="section-num">·</span>
       <h2 class="section-title">{{ $heading }}</h2>
       <span class="section-kicker">Global · LunaNet</span>
     </header>
 
-    <div class="trends-wrap reveal">
-      {{ partial "motion-slot.html" (dict "variant" "beacon") }}
-      <ul class="trend-cards">
-        {{ range $items }}
-        <li class="trend-card">
-          {{ with .tag }}<span class="trend-tag">{{ . }}</span>{{ end }}
-          <h3 class="trend-title">{{ .title }}</h3>
-          <p class="trend-desc">{{ .summary }}</p>
-          <div class="trend-foot">
-            {{ with .source }}<span class="trend-source">{{ . }}</span>{{ end }}
-            {{ with .url }}<a class="trend-link" href="{{ . }}" target="_blank" rel="noopener">바로가기 ↗</a>{{ end }}
-          </div>
-        </li>
-        {{ end }}
-      </ul>
-    </div>
+    <ul class="trend-cards reveal">
+      {{ range $items }}
+      <li class="trend-card">
+        {{ with .tag }}<span class="trend-tag">{{ . }}</span>{{ end }}
+        <h3 class="trend-title">{{ .title }}</h3>
+        <p class="trend-desc">{{ .summary }}</p>
+        <div class="trend-foot">
+          {{ with .source }}<span class="trend-source">{{ . }}</span>{{ end }}
+          {{ with .url }}<a class="trend-link" href="{{ . }}" target="_blank" rel="noopener">바로가기 ↗</a>{{ end }}
+        </div>
+      </li>
+      {{ end }}
+    </ul>
     {{ if gt $limit 0 }}<p class="section-foot"><a href="/research/#trends">국제 동향 더보기 →</a></p>{{ end }}
   </div>
 </section>

@@ -178,7 +178,6 @@ ul { list-style: none; }
 .section { padding: 96px 0; }
 .section-alt { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .section-head { display: flex; align-items: baseline; gap: 16px; padding-bottom: 18px; margin-bottom: 38px; border-bottom: 1px solid var(--border-strong); }
-.section-num { font-size: .9rem; font-weight: 700; color: var(--primary); font-variant-numeric: tabular-nums; }
 .section-title { font-size: clamp(1.5rem, 3.4vw, 2rem); font-weight: 800; letter-spacing: -0.02em; color: var(--ink); margin: 0; margin-right: auto; }
 .section-kicker { font-size: .76rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted); }
 
@@ -466,34 +465,14 @@ ul { list-style: none; }
 .footer-social a:hover { color: #fff; border-color: rgba(255, 255, 255, .45); }
 .footer-social svg { width: 18px; height: 18px; }
 
-/* ── 모션 슬롯 (정적 플레이스홀더 · 후속 2.5D 교체) ── */
-.motion-slot { color: #3b82f6; display: flex; align-items: center; justify-content: center; pointer-events: none; }
-.motion-slot .motion-ph { width: 100%; max-width: 260px; height: auto; }
-.section-dark .motion-slot { color: #93b4f5; }
-@media (prefers-reduced-motion: reduce) { .motion-slot { opacity: .8; } }
-
-/* ── 연구 하이라이트 보강(태그 + 모션 동반 배치) ── */
+/* ── 연구 하이라이트 태그 ── */
 .hl-tag { align-self: flex-start; font-size: .72rem; font-weight: 700; color: var(--primary); background: var(--bg-alt); border: 1px solid var(--border); border-radius: 999px; padding: 2px 10px; margin-bottom: 4px; }
-.hl-with-motion { position: relative; }
-.hl-with-motion .motion-slot { position: absolute; top: -84px; right: 0; width: 200px; opacity: .55; }
-@media (max-width: 900px) { .hl-with-motion .motion-slot { display: none; } }
-
-/* ── 실적 지표 스트립 ── */
-.section-tight { padding: 30px 0; }
-.stats-strip { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 14px; }
-.stat { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 18px 12px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 14px; }
-.stat-num { font-size: 1.9rem; font-weight: 800; color: var(--primary); font-variant-numeric: tabular-nums; }
-.stat-label { font-size: .85rem; color: var(--text-muted); font-weight: 600; }
 
 /* ── 국제 동향 ── */
 .section-dark { background: var(--ink); color: #cbd5e6; }
 .section-dark .section-title { color: #fff; }
 .section-dark .section-head { border-bottom-color: rgba(255,255,255,.15); }
-.section-dark .section-num { color: #93b4f5; }
 .section-dark .section-kicker { color: #7e8a9b; }
-.trends-wrap { position: relative; }
-.trends-wrap .motion-slot { position: absolute; top: -70px; right: 6px; width: 180px; opacity: .5; }
-@media (max-width: 900px){ .trends-wrap .motion-slot { display: none; } }
 .trend-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
 .trend-card { display: flex; flex-direction: column; gap: 10px; padding: 22px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; }
 .section:not(.section-dark) .trend-card { background: #fff; border-color: var(--border); }
