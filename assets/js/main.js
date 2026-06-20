@@ -290,7 +290,16 @@
         var open = m.classList.contains('is-open');
         closeMarkers(m); closeReport(); clearCountry();
         m.classList.toggle('is-open', !open);
-        if (!open) activateCountry(parseInt(m.getAttribute('data-agency'), 10));
+        if (!open) {
+          activateCountry(parseInt(m.getAttribute('data-agency'), 10));
+          if (pop) {
+            pop.style.setProperty('--pop-shift', '0px');
+            var mr = map.getBoundingClientRect(), pr = pop.getBoundingClientRect(), pad = 8, shift = 0;
+            if (pr.right > mr.right - pad) shift = (mr.right - pad) - pr.right;
+            else if (pr.left < mr.left + pad) shift = (mr.left + pad) - pr.left;
+            pop.style.setProperty('--pop-shift', Math.round(shift) + 'px');
+          }
+        }
       });
       if (pop) pop.addEventListener('click', function (e) { e.stopPropagation(); });
     });

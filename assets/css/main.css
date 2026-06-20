@@ -668,8 +668,15 @@ body.lb-lock { overflow: hidden; }
 .map-report-body a { color: var(--primary); font-weight: 600; white-space: nowrap; }
 .map-report-body a:hover { text-decoration: underline; }
 @media (max-width: 640px) {
-  .map-report-overlay { padding: 0; }
-  .map-report { max-width: none; height: 100%; border-radius: 14px; }
+  .map-report-overlay { position: fixed; inset: 0; z-index: 200; padding: 0; }
+  .map-report { max-width: none; height: 100%; border-radius: 0; }
   .map-report-body { grid-template-columns: 1fr; gap: 0; }
   .mi-block + .mi-block, .mi-full + .mi-block { margin-top: 18px; }
+  .map-popup { width: 290px; max-width: calc(100vw - 28px); }
 }
+/* ── 모바일 가로 오버플로/줄바꿈 보정 ── */
+body { overflow-x: clip; }
+.subproject, .sp-body, .pub-item, .hl-text, .map-report-body, .trend-card { min-width: 0; }
+.sp-summary, .sp-title, .sp-meta, .pub-title, .pub-meta, .detail-lead, .prose, .ach-recent li, .trend-title, .trend-desc, .ad-desc, .map-report-body p, .map-report-body li, .mi-h, .hl-title, .hl-desc, .trends-intro, .post-title { overflow-wrap: anywhere; }
+/* 마커 말풍선: JS가 가장자리에서 화면 안쪽으로 클램프(가변 오프셋) */
+.map-popup { transform: translateX(calc(-50% + var(--pop-shift, 0px))); }
