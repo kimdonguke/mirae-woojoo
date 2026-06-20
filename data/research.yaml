@@ -6,6 +6,7 @@ items:
     url: /research/lunar-gnss-design/
     theme: a
     tag: 세종대학교
+    image: research/main_research1.png
   - title: 초소형위성 시스템 및 테스트베드 개발
     summary: Lunar GNSS 초소형위성의 시스템 설계·우주환경시험과 지상 HILS 테스트베드를 구축합니다.
     url: /research/cubesat-testbed/

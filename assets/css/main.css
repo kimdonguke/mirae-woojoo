@@ -307,29 +307,24 @@ ul { list-style: none; }
 }
 .hl-card:hover { box-shadow: var(--shadow); }
 .hl-card:nth-child(even) { flex-direction: row-reverse; }
-.hl-text { flex: 1; padding: 36px 42px; display: flex; flex-direction: column; justify-content: center; gap: 12px; }
+.hl-text { flex: 1; padding: 36px 42px; display: flex; flex-direction: column; justify-content: center; gap: 12px; position: relative; z-index: 2; }
 .hl-title { font-size: clamp(1.3rem, 2.6vw, 1.6rem); font-weight: 800; color: var(--ink); margin: 0; }
 .hl-desc { color: var(--text-muted); margin: 0; font-size: 1rem; line-height: 1.65; }
 .hl-link { margin-top: 6px; font-weight: 700; color: var(--primary); }
 .hl-link::after { content: "→"; display: inline-block; margin-left: 6px; transition: transform .15s ease; }
 .hl-card:hover .hl-link::after { transform: translateX(4px); }
 .hl-media {
-  flex: 1.6; min-height: 200px; background-size: cover; background-position: center;
-  /* 컬러 영역의 안쪽 모서리를 사선으로 (홀수 "/") */
-  -webkit-clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
-          clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
-  /* 페이드를 사선에 수직으로 (슬랜트를 따라 강하게 녹아듦) */
-  -webkit-mask-image: linear-gradient(295deg, #000 58%, transparent 84%);
-          mask-image: linear-gradient(295deg, #000 58%, transparent 84%);
-  /* 컬러: 바깥(불투명)쪽이 어둡게, 안쪽(페이드)이 밝게 → 흰 카드로 매끄럽게 녹아듦 */
+  flex: 1.6; min-height: 200px; background-size: cover; background-position: center; position: relative; z-index: 1; margin-left: -30%;
+  /* 수평 페이드(위·아래 균일) + 다중 stop으로 비선형 감소(바깥은 또렷, 안쪽으로 빠르게→완만한 옅은 꼬리) */
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,.04) 18%, rgba(0,0,0,.13) 30%, rgba(0,0,0,.30) 40%, rgba(0,0,0,.58) 49%, rgba(0,0,0,.85) 57%, #000 65%);
+          mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,.04) 18%, rgba(0,0,0,.13) 30%, rgba(0,0,0,.30) 40%, rgba(0,0,0,.58) 49%, rgba(0,0,0,.85) 57%, #000 65%);
   background-image: linear-gradient(to right, var(--c2, #3b82f6), var(--c1, #1e3a8a));
 }
 .hl-card:nth-child(even) .hl-media {
-  /* 짝수는 사선·페이드·그라데이션 전부 미러링 (왼쪽이 바깥 → to left) */
-  -webkit-clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
-          clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
-  -webkit-mask-image: linear-gradient(65deg, #000 58%, transparent 84%);
-          mask-image: linear-gradient(65deg, #000 58%, transparent 84%);
+  margin-left: 0; margin-right: -30%;
+  /* 짝수는 미러링(오른쪽이 안쪽) */
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,.04) 18%, rgba(0,0,0,.13) 30%, rgba(0,0,0,.30) 40%, rgba(0,0,0,.58) 49%, rgba(0,0,0,.85) 57%, #000 65%);
+          mask-image: linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,.04) 18%, rgba(0,0,0,.13) 30%, rgba(0,0,0,.30) 40%, rgba(0,0,0,.58) 49%, rgba(0,0,0,.85) 57%, #000 65%);
   background-image: linear-gradient(to left, var(--c2, #3b82f6), var(--c1, #1e3a8a));
 }
 .hl-a { --c1: #1e3a8a; --c2: #3b82f6; }
@@ -342,6 +337,7 @@ ul { list-style: none; }
   .hl-text { padding: 26px 24px; }
   .hl-media {
     min-height: 140px;
+    margin-left: 0; margin-right: 0;
     -webkit-clip-path: none; clip-path: none;
     -webkit-mask-image: linear-gradient(to top, #000 55%, transparent);
             mask-image: linear-gradient(to top, #000 55%, transparent);

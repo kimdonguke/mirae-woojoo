@@ -1,17 +1,22 @@
-# 국제 동향 — 우주 PNT 국제 프로그램 카드.
+# 국제 동향 — 홈·연구 페이지 요약 카드. /trends/ 상세(우주국·진영·상업·표준)와 일관되게 정리.
 items:
-  - title: "LunaNet — 달 통신·항법 아키텍처"
-    summary: 달 표면·궤도에서의 PNT·통신 상호운용 프레임워크.
-    source: NASA / ESA
-    url: "https://www.nasa.gov/communicating-with-missions/lunanet/"
-    tag: 달 PNT
-  - title: "Moonlight — 달 통신·항법 이니셔티브"
-    summary: 달 임무를 위한 통신·항법 인프라 구축 프로그램.
-    source: ESA
-    url: "https://www.esa.int"
-    tag: 달 인프라
-  - title: "고궤도 GNSS 활용(SSV)"
-    summary: 정지궤도 이상 고도에서의 GNSS 신호 활용 표준화 동향.
-    source: 국제 표준
-    url: ""
-    tag: 우주 GNSS
+  - title: "LunaNet — 달 통신·항법 상호운용 표준"
+    summary: NASA·ESA가 달 PNT의 국제 상호운용 규격을 공동으로 주도하며, JAXA·ASI 등이 참여합니다.
+    source: NASA·ESA
+    url: "https://esc.gsfc.nasa.gov/projects/lunanet"
+    tag: 상호운용 표준
+  - title: "통신·항법 위성군 구축"
+    summary: ESA는 Moonlight로 달 주변 통신·항법 위성군을 구축하고, 중국·러시아는 ILRS를 위한 독자 위성군을 추진합니다.
+    source: ESA · CNSA · Roscosmos
+    url: "https://www.esa.int/Applications/Connectivity_and_Secure_Communications/Moonlight"
+    tag: 위성 인프라
+  - title: "상업 Lunar PNT 부상"
+    summary: Crescent Space·Intuitive Machines 등 민간 사업자가 달 통신·항법 서비스에 진입하고 있습니다.
+    source: Commercial
+    url: "https://crescentspace.com/"
+    tag: 상업 PNT
+  - title: "신흥·지역 우주국 확대"
+    summary: 한국(KASA)·인도(ISRO)·UAE(MBRSC) 등이 후속 달 탐사와 위성항법을 추진합니다.
+    source: KASA · ISRO · MBRSC
+    url: "https://www.kasa.go.kr/"
+    tag: 신흥 우주국

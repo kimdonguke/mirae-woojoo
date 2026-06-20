@@ -14,7 +14,9 @@
           <p class="hl-desc">{{ .summary }}</p>
           <span class="hl-link">자세히</span>
         </div>
-        <span class="hl-media"></span>
+        {{ $style := "" }}
+        {{ with .image }}{{ with resources.Get (printf "img/%s" .) }}{{ $img := .Resize "1100x webp q85" }}{{ $style = printf "background-image:url('%s')" $img.RelPermalink }}{{ end }}{{ end }}
+        <span class="hl-media"{{ with $style }} style="{{ . | safeCSS }}"{{ end }}></span>
       </a>
       {{ end }}
     </div>
