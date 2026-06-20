@@ -265,18 +265,24 @@
     });
   })();
 
-  // 국제 동향 지도: 우주국 마커 클릭 → 설명 패널
+  // 국제 동향 지도: 마커 클릭 → 말풍선 팝업
   (function () {
     var map = document.getElementById('agencyMap');
     if (!map) return;
     var markers = [].slice.call(map.querySelectorAll('.map-marker'));
-    var details = [].slice.call(map.querySelectorAll('.agency-detail'));
-    function activate(idx) {
-      markers.forEach(function (m) { m.classList.toggle('is-active', m.dataset.agency === idx); });
-      details.forEach(function (d) { d.classList.toggle('is-active', d.dataset.agency === idx); });
-    }
+    function closeAll(except) { markers.forEach(function (m) { if (m !== except) m.classList.remove('is-open'); }); }
     markers.forEach(function (m) {
-      m.addEventListener('click', function () { activate(m.dataset.agency); });
+      var btn = m.querySelector('.marker-btn');
+      var pop = m.querySelector('.map-popup');
+      if (btn) btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var open = m.classList.contains('is-open');
+        closeAll(m);
+        m.classList.toggle('is-open', !open);
+      });
+      if (pop) pop.addEventListener('click', function (e) { e.stopPropagation(); });
     });
+    document.addEventListener('click', function () { closeAll(null); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAll(null); });
   })();
 })();

@@ -4,18 +4,13 @@
   <div class="container">
     <p class="trends-intro">달 통신·항법(PNT)을 둘러싼 주요 우주국·진영의 동향입니다. 지도의 마커를 클릭하면 상세 내용이 표시됩니다.</p>
 
-    <div class="trends-map-wrap" id="agencyMap">
-      <div class="worldmap reveal">
-        {{ with resources.Get "img/world.svg" }}{{ .Content | safeHTML }}{{ end }}
-        {{ range $i, $a := site.Data.agencies.items }}
-        <button class="map-marker{{ if eq $i 0 }} is-active{{ end }}" type="button" data-agency="{{ $i }}" style="left:{{ $a.x }}%;top:{{ $a.y }}%" aria-label="{{ $a.name }} ({{ $a.country }})">
-          <span class="marker-dot"></span><span class="marker-name">{{ $a.name }}</span>
-        </button>
-        {{ end }}
-      </div>
-      <aside class="map-panel">
-        {{ range $i, $a := site.Data.agencies.items }}
-        <div class="agency-detail{{ if eq $i 0 }} is-active{{ end }}" data-agency="{{ $i }}">
+    <div class="worldmap reveal" id="agencyMap">
+      {{ with resources.Get "img/world.svg" }}{{ .Content | safeHTML }}{{ end }}
+      {{ range $i, $a := site.Data.agencies.items }}
+      <div class="map-marker" data-agency="{{ $i }}" style="left:{{ $a.x }}%;top:{{ $a.y }}%">
+        <button class="marker-btn" type="button" aria-label="{{ $a.name }} ({{ $a.country }})"></button>
+        <span class="marker-name">{{ $a.name }}</span>
+        <div class="map-popup">
           {{ with $a.tag }}<span class="ad-tag">{{ . }}</span>{{ end }}
           <h3 class="ad-name">{{ $a.name }}<span class="ad-country"> · {{ $a.country }}</span></h3>
           <p class="ad-desc">{{ $a.desc }}</p>
@@ -25,8 +20,8 @@
           </ul>
           {{ end }}
         </div>
-        {{ end }}
-      </aside>
+      </div>
+      {{ end }}
     </div>
 
     <div class="trends-extra">
