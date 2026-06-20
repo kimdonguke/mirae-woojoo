@@ -1,1 +1,35 @@
-{{/* placeholder — Task 11에서 구현 */}}
+{{- $heading := .heading | default "동영상" -}}
+{{- $items := site.Data.videos -}}
+{{- if $items -}}
+<section class="section" id="videos">
+  <div class="container">
+    <header class="section-head reveal">
+      <span class="section-num">·</span>
+      <h2 class="section-title">{{ $heading }}</h2>
+      <span class="section-kicker">Media</span>
+    </header>
+    <div class="video-grid reveal">
+      {{ range $items }}
+      <figure class="video-item">
+        {{ if eq .kind "embed" }}
+        {{ $embed := "" }}
+        {{ if eq .provider "vimeo" }}{{ $embed = printf "https://player.vimeo.com/video/%s?autoplay=1" .id }}{{ else }}{{ $embed = printf "https://www.youtube-nocookie.com/embed/%s?autoplay=1&rel=0" .id }}{{ end }}
+        <button class="video-facade" type="button" data-embed="{{ $embed }}" aria-label="{{ .title }} 재생"
+                {{ with .poster }}style="background-image:url('{{ . }}')"{{ end }}>
+          <span class="video-play" aria-hidden="true">▶</span>
+        </button>
+        {{ else }}
+        <video controls preload="none" {{ with .poster }}poster="{{ . }}"{{ end }} class="video-self">
+          <source src="{{ .file }}" type="video/mp4">
+        </video>
+        {{ end }}
+        <figcaption class="video-cap">
+          <strong>{{ .title }}</strong>
+          {{ with .desc }}<span>{{ . }}</span>{{ end }}
+        </figcaption>
+      </figure>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{- end -}}

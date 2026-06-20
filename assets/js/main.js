@@ -238,4 +238,21 @@
       else if (e.key === 'ArrowRight') go(1);
     });
   })();
+
+  // 동영상 임베드 facade (클릭 시 iframe 로드 — 성능)
+  (function () {
+    document.querySelectorAll('.video-facade').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var url = btn.getAttribute('data-embed');
+        if (!url) return;
+        var f = document.createElement('iframe');
+        f.src = url;
+        f.title = btn.getAttribute('aria-label') || '동영상';
+        f.allow = 'autoplay; encrypted-media; fullscreen; picture-in-picture';
+        f.setAttribute('allowfullscreen', '');
+        f.className = 'video-frame';
+        btn.replaceWith(f);
+      });
+    });
+  })();
 })();

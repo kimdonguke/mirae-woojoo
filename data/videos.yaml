@@ -1,0 +1,18 @@
+# 동영상(혼합) — kind: embed(YouTube/Vimeo) | self(mp4)
+- title: 연구실 소개 영상
+  kind: embed
+  provider: youtube
+  id: ScMzIvxBSi4         # 예시 ID — 실제 영상 ID로 교체
+  poster: /uploads/videos/intro.jpg
+  desc: 연구실 전반 소개.
+- title: 세미나 하이라이트
+  kind: embed
+  provider: youtube
+  id: aqz-KE-bpKQ         # 예시 ID — 실제 영상 ID로 교체
+  poster: /uploads/videos/seminar.jpg
+  desc: 최근 세미나 요약.
+- title: 현장 실습 짧은 클립
+  kind: self
+  file: /uploads/clips/field-loop.mp4
+  poster: /uploads/videos/field.jpg
+  desc: 현장 실습 루프 영상.
