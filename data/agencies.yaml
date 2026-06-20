@@ -14,8 +14,8 @@ items:
   - name: ESA
     country: 유럽
     tag: NASA·ESA 진영
-    x: 48
-    y: 28
+    x: 47
+    y: 30
     desc: "달 주변에 통신·항법 위성군을 구축하는 Moonlight 프로그램을 추진하며 남극 지역 커버리지를 우선합니다. Lunar Pathfinder 위성의 NaviMoon 수신기로 약 40만 km 거리에서 지구 GNSS 약신호 측위를 실증합니다."
     links:
       - { label: Moonlight, url: "https://www.esa.int/Applications/Connectivity_and_Secure_Communications/Moonlight" }
@@ -31,7 +31,7 @@ items:
   - name: JAXA
     country: 일본
     tag: NASA·ESA 진영
-    x: 84
+    x: 83.5
     y: 37
     desc: "LunaNet 참여 기관이자 아르테미스 협정 서명국으로, 자체 달 항법(LNSS) 개념 연구와 SLIM 착륙선 등 달 인프라를 추진합니다."
     links:
@@ -39,7 +39,7 @@ items:
   - name: KASA
     country: 대한민국
     tag: 신흥·지역 우주국
-    x: 80
+    x: 82
     y: 38
     desc: "다누리(KPLO) 달 궤도선 운용에 이어, 우주항공청(KASA) 출범 후 후속 달 탐사와 한국형 위성항법(KPS)을 추진하고 있습니다."
     links:
@@ -47,16 +47,16 @@ items:
   - name: ISRO
     country: 인도
     tag: 신흥·지역 우주국
-    x: 69
-    y: 47
+    x: 68
+    y: 48
     desc: "Chandrayaan-3의 달 남극 착륙 성공 이후 달 인프라와 후속 임무를 확대하고 있으며, 지구 항법 시스템 NavIC 운용 경험을 보유합니다."
     links:
       - { label: ISRO, url: "https://www.isro.gov.in/" }
   - name: MBRSC
     country: UAE
     tag: 신흥·지역 우주국
-    x: 60
-    y: 43
+    x: 62
+    y: 44
     desc: "달 로버 라시드(Rashid) 등으로 달 탐사에 참여하는 신흥 우주개발 주자입니다."
     links:
       - { label: MBRSC, url: "https://www.mbrsc.ae/" }
