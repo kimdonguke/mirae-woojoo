@@ -140,5 +140,5 @@ collections:
                 label: 사진
                 widget: list
                 fields:
-                  - { name: src, label: 이미지, widget: image }
+                  - { name: src, label: 이미지, widget: image, media_folder: "/assets/uploads/gallery", public_folder: "gallery" }
                   - { name: caption, label: 캡션, widget: string, required: false }

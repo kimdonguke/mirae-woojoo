@@ -8,13 +8,7 @@
       <span class="section-kicker">Gallery</span>
     </header>
     <div class="gallery-grid reveal">
-      {{ range first 6 $photos }}
-      <figure class="gallery-figure">
-        <a class="js-lightbox" href="{{ .src }}" data-caption="{{ .caption }}">
-          <img src="{{ .src }}" alt="{{ .caption }}" loading="lazy">
-        </a>
-      </figure>
-      {{ end }}
+      {{ range first 6 $photos }}{{ partial "gallery-figure.html" . }}{{ end }}
     </div>
     <p class="section-foot"><a href="/gallery/">갤러리 더보기 →</a></p>
   </div>

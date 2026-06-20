@@ -1,0 +1,15 @@
+{{- /* 갤러리 사진 1장. assets/uploads/<src> 를 Hugo가 리사이즈·webp로 처리(썸네일+큰이미지).
+       이미지가 없으면 플레이스홀더로 폴백(빌드 안전). 인자: .src, .caption */ -}}
+{{- $img := resources.Get (printf "uploads/%s" .src) -}}
+<figure class="gallery-figure">
+  {{- if $img }}
+  {{- $thumb := $img.Fill "600x450 webp q82" -}}
+  {{- $full := $img.Resize "1600x webp q85" -}}
+  <a class="js-lightbox" href="{{ $full.RelPermalink }}" data-caption="{{ .caption }}">
+    <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{ .caption }}" loading="lazy">
+  </a>
+  {{- else }}
+  <span class="gallery-ph" aria-hidden="true"></span>
+  {{- end }}
+  {{- with .caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>

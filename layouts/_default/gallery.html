@@ -9,14 +9,7 @@
       <div class="album">
         <h2 class="page-h2">{{ .title }} <span class="album-date">{{ .date }}</span></h2>
         <div class="gallery-grid">
-          {{ range .photos }}
-          <figure class="gallery-figure">
-            <a class="js-lightbox" href="{{ .src }}" data-caption="{{ .caption }}">
-              <img src="{{ .src }}" alt="{{ .caption }}" loading="lazy">
-            </a>
-            {{ with .caption }}<figcaption>{{ . }}</figcaption>{{ end }}
-          </figure>
-          {{ end }}
+          {{ range .photos }}{{ partial "gallery-figure.html" . }}{{ end }}
         </div>
       </div>
       {{ end }}
