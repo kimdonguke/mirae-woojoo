@@ -7,11 +7,14 @@
     <div id="fields" class="page-section">
       <h2 class="page-h2">연구 분야</h2>
       <div class="field-grid">
-        {{ range site.Data.research.items }}
+        {{ range $i, $f := site.Data.research.items }}
         <div class="field-card">
-          {{ with .tag }}<span class="field-tag">{{ . }}</span>{{ end }}
-          <h3 class="field-title">{{ .title }}</h3>
-          <p class="field-desc">{{ .summary }}</p>
+          <div class="field-head">
+            <span class="field-num">{{ printf "%02d" (add $i 1) }}</span>
+            {{ with $f.tag }}<span class="field-tag">{{ . }}</span>{{ end }}
+          </div>
+          <h3 class="field-title">{{ $f.title }}</h3>
+          <p class="field-desc">{{ $f.summary }}</p>
         </div>
         {{ end }}
       </div>
