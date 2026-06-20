@@ -22,23 +22,41 @@
       </div>
       {{ end }}
       <div class="map-info" id="mapInfo">
-        <button class="map-info-btn" type="button" aria-expanded="false" aria-controls="mapInfoPanel">국제 협력 · 상업 동향</button>
-        <div class="map-info-panel" id="mapInfoPanel" role="region" aria-label="국제 협력 및 상업 동향">
-          <div class="mi-block">
-            <h3 class="mi-h">국제 협력·표준화</h3>
-            <p>LunaNet은 NASA–ESA 공동 규격이며 JAXA(일본)·ASI(이탈리아) 등이 참여합니다. 거버넌스·표준 논의는 다음 두 채널이 핵심입니다.</p>
-            <ul>
-              <li><strong>IOAG</strong> (Interagency Operations Advisory Group) — 우주기관 간 통신·항법 아키텍처를 조율합니다. <a href="https://www.ioag.org/" target="_blank" rel="noopener">ioag.org ↗</a></li>
-              <li><strong>ICG</strong> (International Committee on GNSS, UN OOSA 산하) — 달 PNT 표준을 논의합니다. <a href="https://www.unoosa.org/oosa/en/ourwork/icg/icg.html" target="_blank" rel="noopener">unoosa.org ↗</a></li>
-            </ul>
+        <button class="map-info-btn" type="button" aria-expanded="false" aria-controls="mapReport">국제 협력 · 상업 동향</button>
+      </div>
+      <div class="map-report-overlay" id="mapReport" role="dialog" aria-modal="true" aria-label="국제 협력 및 상업 동향">
+        <div class="map-report">
+          <div class="map-report-head">
+            <h3 class="map-report-title">국제 협력 · 상업 동향</h3>
+            <button class="map-report-close" type="button" aria-label="닫기">✕</button>
           </div>
-          <div class="mi-block">
-            <h3 class="mi-h">상업 사업자 (Commercial Lunar PNT)</h3>
-            <ul>
-              <li><strong>Crescent Space</strong> (Lockheed Martin) — Parsec 달 통신·항법 위성군을 상업 서비스로 구축합니다. <a href="https://crescentspace.com/" target="_blank" rel="noopener">crescentspace.com ↗</a></li>
-              <li><strong>Intuitive Machines</strong> — NASA Near Space Network 중계·항법 계약을 수주했고, 자체 착륙선(IM 시리즈)을 운용합니다. <a href="https://www.intuitivemachines.com/" target="_blank" rel="noopener">intuitivemachines.com ↗</a></li>
-              <li><strong>Nokia</strong> — 달 표면 4G/LTE 네트워크를 실증했습니다(통신 인프라로, LunaNet 생태계의 일부). <a href="https://www.bell-labs.com/" target="_blank" rel="noopener">bell-labs.com ↗</a></li>
-            </ul>
+          <div class="map-report-body">
+            <section class="mi-block mi-full">
+              <h4 class="mi-h">국외 우주 개발 현황</h4>
+              <p>New Space 시대에 달 탐사는 우주 진출의 교두보이자 새로운 거주 공간 창출의 의미를 가집니다. 달 탐사는 우주기술 패권의 핵심으로 작용하며, 착륙선 증가·달기지 건설·심우주 탐사에 따라 달 지역 항법기술의 필요성이 커지고 있습니다.</p>
+              <ul>
+                <li><strong>미국</strong> — 유인 탐사 계획 Artemis(NASA·ESA·JAXA·대한민국 등 참여)와 달 저궤도 정거장 Lunar Gateway(NASA·CSA·ESA·JAXA)를 개발합니다.</li>
+                <li><strong>유럽</strong> — 태양 궤도선·목성 탐사·암흑물질 연구와 함께 달 통신·항법 프로그램 Moonlight를 추진합니다.</li>
+                <li><strong>중국</strong> — 창어 6·7·8호로 달 탐사를 이어가며, 10년 내 달 남극 탐사와 국제달연구기지(ILRS) 건설을 목표로 합니다.</li>
+                <li><strong>러시아</strong> — 달 표본 회수 임무 루나 28호 발사를 추진합니다(2027년 예정).</li>
+              </ul>
+            </section>
+            <section class="mi-block">
+              <h4 class="mi-h">국제 협력·표준화</h4>
+              <p>LunaNet은 NASA–ESA 공동 규격이며 JAXA(일본)·ASI(이탈리아) 등이 참여합니다. 거버넌스·표준 논의는 다음 두 채널이 핵심입니다.</p>
+              <ul>
+                <li><strong>IOAG</strong> (Interagency Operations Advisory Group) — 우주기관 간 통신·항법 아키텍처를 조율합니다. <a href="https://www.ioag.org/" target="_blank" rel="noopener">ioag.org ↗</a></li>
+                <li><strong>ICG</strong> (International Committee on GNSS, UN OOSA 산하) — 달 PNT 표준을 논의합니다. <a href="https://www.unoosa.org/oosa/en/ourwork/icg/icg.html" target="_blank" rel="noopener">unoosa.org ↗</a></li>
+              </ul>
+            </section>
+            <section class="mi-block">
+              <h4 class="mi-h">상업 사업자 (Commercial Lunar PNT)</h4>
+              <ul>
+                <li><strong>Crescent Space</strong> (Lockheed Martin) — Parsec 달 통신·항법 위성군을 상업 서비스로 구축합니다. <a href="https://crescentspace.com/" target="_blank" rel="noopener">crescentspace.com ↗</a></li>
+                <li><strong>Intuitive Machines</strong> — NASA Near Space Network 중계·항법 계약을 수주했고, 자체 착륙선(IM 시리즈)을 운용합니다. <a href="https://www.intuitivemachines.com/" target="_blank" rel="noopener">intuitivemachines.com ↗</a></li>
+                <li><strong>Nokia</strong> — 달 표면 4G/LTE 네트워크를 실증했습니다(통신 인프라로, LunaNet 생태계의 일부). <a href="https://www.bell-labs.com/" target="_blank" rel="noopener">bell-labs.com ↗</a></li>
+              </ul>
+            </section>
           </div>
         </div>
       </div>
