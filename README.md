@@ -28,13 +28,13 @@ hugo --gc --minify   # 프로덕션 빌드 → public/
 1. 개발 서버 실행: `hugo server`
 2. **Chrome 또는 Edge**로 `http://localhost:1313/admin/` 접속
 3. **"Work with Local Repository"** 클릭 → 이 프로젝트 폴더 선택
-4. 왼쪽 분류(공지사항 / 뉴스·활동소식 / 활동·연구 / 행사일정) 선택 → **New** → 제목·날짜·본문 작성 → 저장
+4. 왼쪽 분류(공지사항 / 뉴스·활동소식 / 세미나·교육 / 행사일정) 선택 → **New** → 제목·날짜·본문 작성 → 저장
    - 저장하면 `content/<분류>/…md` 파일이 자동 생성되고, 홈 "소식" 보드와 분류 목록 페이지에 자동 반영됩니다.
 5. 작성이 끝나면 변경 파일을 **커밋·푸시** → 자동 배포
 
 > 배포된 사이트에서 **여러 명(산학 협력체 등)이 온라인으로 작성**하려면, GitHub OAuth 앱 + 인증 Worker를 설정해 온라인 모드로 전환하면 됩니다. (지금은 로컬 모드)
 
-글이 저장되는 위치: `content/notice` · `content/news` · `content/activity` · `content/event`
+글이 저장되는 위치: `content/notice` · `content/seminar` · `content/news` · `content/event`
 
 ## 폴더 구조
 
@@ -70,10 +70,14 @@ hugo --gc --minify   # 프로덕션 빌드 → public/
 | 검색엔진 노출 차단 해제 | `hugo.toml` `noindex = false` (+ `static/_headers` 정리) |
 | 상단 메뉴(GNB) | `data/gnb.yaml` |
 | 히어로 슬라이드 | `data/hero.yaml` |
-| 둘러보기 카드(홈) | `data/highlights.yaml` |
-| 소개 본문 | `content/about.md` |
-| 공지·뉴스·활동·행사 글 | `/admin` (CMS) 또는 `content/<분류>/*.md` |
+| 연구 분야 카드(홈·연구) | `data/research.yaml` |
+| 연구 실적 | `data/achievements.yaml` |
+| 국제 동향(LunaNet 등) | `data/trends.yaml` |
+| 사진 앨범 | `data/albums.yaml` (이미지: `static/uploads/gallery/`) |
+| 동영상 | `data/videos.yaml` |
+| 공지·세미나·뉴스·행사 글 | `/admin` (CMS) 또는 `content/<분류>/*.md` |
 | 색상·디자인 | `assets/css/main.css` (상단 `:root`) |
+| 모션그래픽(연구·국제동향) | `layouts/partials/motion-slot.html` (현재 플레이스홀더, 2.5D 후속) |
 
 ## 배포 — Cloudflare Pages (Git 연동)
 

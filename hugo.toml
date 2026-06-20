@@ -24,10 +24,14 @@ buildFuture = true
   nameEn = "Future Space"   # 푸터 영문 병기 (필요 없으면 비우세요)
   # familySites = [{ name = "GNSS LAB", url = "https://..." }]  # 푸터 패밀리사이트 (비우면 자동 숨김)
 
-# 상단 메뉴(GNB)·히어로 슬라이드·소식 보드는 data/ 폴더에서 관리합니다.
-#   - data/gnb.yaml   : 상단 메뉴 + 하위 메뉴
-#   - data/hero.yaml  : 메인 슬라이더
-#   - data/board.yaml : 공지/뉴스/일정 보드
+# 데이터는 data/ 폴더에서 관리합니다.
+#   - data/gnb.yaml          : 상단 메뉴(5탭)
+#   - data/hero.yaml         : 메인 슬라이더
+#   - data/research.yaml     : 연구 분야 카드
+#   - data/achievements.yaml : 연구 실적
+#   - data/trends.yaml       : 국제 동향(LunaNet)
+#   - data/albums.yaml       : 사진 앨범
+#   - data/videos.yaml       : 동영상
 
 [markup.goldmark.renderer]
   unsafe = true
