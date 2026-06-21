@@ -339,6 +339,10 @@ ul { list-style: none; }
     min-height: 140px;
     margin-left: 0; margin-right: 0;
     -webkit-clip-path: none; clip-path: none;
+  }
+  /* 모바일: 그라데이션·페이드 전부 수직 방향으로 통일(홀·짝 동일) */
+  .hl-media, .hl-card:nth-child(even) .hl-media {
+    background-image: linear-gradient(to bottom, var(--c2, #3b82f6), var(--c1, #1e3a8a));
     -webkit-mask-image: linear-gradient(to top, #000 55%, transparent);
             mask-image: linear-gradient(to top, #000 55%, transparent);
   }
