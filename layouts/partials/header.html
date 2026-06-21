@@ -26,7 +26,7 @@
   <div class="main-bar">
     <div class="container main-inner">
       <a class="brand" href="/">
-        <span class="brand-mark" aria-hidden="true">◉</span>
+        {{ with resources.Get "img/logo.png" }}<img class="brand-logo" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="" aria-hidden="true">{{ end }}
         <span class="brand-text">{{ .Site.Title }}</span>
       </a>
 

@@ -1,8 +1,8 @@
 <footer class="site-footer">
+  {{ with resources.Get "img/logo.png" }}<img class="footer-watermark" src="{{ .RelPermalink }}" alt="" aria-hidden="true">{{ end }}
   <div class="container footer-top">
     <div class="footer-brand">
       <div class="footer-logo">
-        <span class="brand-mark" aria-hidden="true">◉</span>
         <span>{{ .Site.Title }}</span>
       </div>
       {{ with .Site.Params.nameEn }}<p class="footer-en">{{ . }}</p>{{ end }}
