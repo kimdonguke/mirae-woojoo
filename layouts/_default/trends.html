@@ -4,10 +4,11 @@
     <h1 class="trends-title">국제 동향</h1>
     <p class="trends-intro">달 통신·항법(PNT)을 둘러싼 주요 우주국·진영의 동향입니다. 지도의 마커를 클릭하면 상세 내용이 표시됩니다.</p>
 
+    <style>{{ range $i, $a := site.Data.agencies.items }}#agencyMap .map-marker[data-agency="{{ $i }}"]{left:{{ $a.x }}%;top:{{ $a.y }}%}{{ end }}</style>
     <div class="worldmap reveal" id="agencyMap">
       <div class="worldmap-img">{{ with resources.Get "img/world.svg" }}{{ .Content | safeHTML }}{{ end }}</div>
       {{ range $i, $a := site.Data.agencies.items }}
-      <div class="map-marker" data-agency="{{ $i }}" style="left:{{ $a.x }}%;top:{{ $a.y }}%">
+      <div class="map-marker" data-agency="{{ $i }}">
         <button class="marker-btn" type="button" aria-label="{{ $a.name }} ({{ $a.country }})"></button>
         <span class="marker-name">{{ $a.name }}</span>
         <div class="map-popup">
