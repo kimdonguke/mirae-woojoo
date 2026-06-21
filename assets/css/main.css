@@ -421,7 +421,7 @@ ul { list-style: none; }
   body.nav-open .gnb { transform: none; opacity: 1; visibility: visible; }
   .gnb > ul { flex-direction: column; height: auto; }
   .gnb-item { height: auto; border-bottom: 1px solid var(--border); }
-  .gnb-item > a { height: auto; padding: 15px 28px; }
+  .gnb-item > a { display: flex; height: auto; padding: 15px 28px; }
   .gnb-item > a::after { display: none; }
   .gnb-panel {
     position: static; min-width: 0; border: none; border-top: none; box-shadow: none; padding: 0;
