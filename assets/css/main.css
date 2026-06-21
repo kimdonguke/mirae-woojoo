@@ -181,6 +181,8 @@ ul { list-style: none; }
 /* ── 섹션 공통 ── */
 .section { padding: 96px 0; }
 .section-tight { padding: 16px 0 40px; }
+/* 인접한 일반(흰색) 섹션끼리는 상단 패딩 제거 — 섹션 패딩이 두 번 겹쳐 과도한 공백이 생기는 것 방지(재발 방지 규칙) */
+.section:not(.section-dark):not(.section-alt):not(.section-tight) + .section:not(.section-dark):not(.section-alt) { padding-top: 0; }
 .section-alt { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .section-head { display: flex; align-items: baseline; gap: 16px; padding-bottom: 18px; margin-bottom: 38px; border-bottom: 1px solid var(--border-strong); }
 .section-title { font-size: clamp(1.5rem, 3.4vw, 2rem); font-weight: 800; letter-spacing: -0.02em; color: var(--ink); margin: 0; margin-right: auto; }

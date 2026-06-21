@@ -13,7 +13,7 @@
   <div class="hero-viewport">
     {{ range $i, $s := $slides }}
     {{ if eq ($s.type | default "text") "photo" }}
-    {{ $img := (resources.Get (print "img/" $s.image)).Fill "1920x1000 webp q80" }}
+    {{ $img := (resources.Get (print "img/" $s.image)).Resize "1920x webp q82" }}
     <div class="hero-slide hero-photo{{ if eq $i 0 }} is-active{{ end }}"
          role="group" aria-roledescription="슬라이드" aria-label="{{ add $i 1 }} / {{ $total }}"
          style="background-image:url('{{ $img.RelPermalink }}')">
