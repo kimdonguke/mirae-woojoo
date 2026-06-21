@@ -4,7 +4,7 @@
     <h1 class="trends-title">국제 동향</h1>
     <p class="trends-intro">달 통신·항법(PNT)을 둘러싼 주요 우주국·진영의 동향입니다. 지도의 마커를 클릭하면 상세 내용이 표시됩니다.</p>
 
-    {{ $mc := "" }}{{ range $i, $a := site.Data.agencies.items }}{{ $mc = printf "%s#agencyMap .map-marker[data-agency=\"%d\"]{left:%v%%;top:%v%%}" $mc $i $a.x $a.y }}{{ end }}
+    {{ $mc := "" }}{{ range $i, $a := site.Data.agencies.items }}{{ $mc = print $mc "#agencyMap .map-marker[data-agency=\"" $i "\"]{left:" $a.x "%;top:" $a.y "%}" }}{{ end }}
     {{ $mr := $mc | resources.FromString "css/markers.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $mr.RelPermalink }}">
     <div class="worldmap reveal" id="agencyMap">
