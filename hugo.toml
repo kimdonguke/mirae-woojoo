@@ -13,6 +13,11 @@ disableKinds = ["taxonomy", "term"]
 # 미래 날짜 글(예: 예정된 행사일정)도 빌드에 포함
 buildFuture = true
 
+# 이미지 처리 — 다운스케일 선명도·압축 품질 (전역 기본값)
+[imaging]
+  resampleFilter = "Lanczos"   # 기본 Box(소프트) → Lanczos(샤프)
+  quality = 90                 # 기본 75 → 90 (스펙에 q 미지정 시 적용)
+
 [params]
   # 검색엔진 노출 차단 (공개 준비되면 false 로 바꾸고 static/_headers 도 함께 정리)
   noindex = true

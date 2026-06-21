@@ -3,8 +3,8 @@
 {{- $img := resources.Get (printf "uploads/%s" .src) -}}
 <figure class="gallery-figure">
   {{- if $img }}
-  {{- $thumb := $img.Fill "600x450 webp q82" -}}
-  {{- $full := $img.Resize "1600x webp q85" -}}
+  {{- $thumb := $img.Fill "600x450 webp q86" -}}
+  {{- $full := $img.Resize "1920x webp q88" -}}
   <a class="js-lightbox" href="{{ $full.RelPermalink }}" data-caption="{{ .caption }}">
     <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{ .caption }}" loading="lazy">
   </a>
