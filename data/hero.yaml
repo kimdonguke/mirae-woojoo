@@ -1,6 +1,6 @@
 # 메인 히어로 슬라이더 — 글(text) ↔ 사진(photo) 번갈아 배치.
 # type: text | photo
-#  - text : theme(a/b/c) 그라데이션 위에 title/desc
+#  - text : theme(a/b/c) 그라데이션 위에 title/desc. bg(선택): 배경 사진(assets/img/ 기준), 테마 색으로 어둡게 덮어 글씨가 잘 보이게 함.
 #  - photo: 전체 배경 사진. image 는 assets/img/ 기준 경로(예: hero/hero-1.jpg). caption(선택).
 # ※ image 파일이 아직 없으면 해당 사진 슬라이드는 자동으로 건너뜁니다(글 슬라이드만 표시).
 #   사진을 assets/img/hero/ 에 넣으면 6슬라이드(글·사진 번갈아)로 켜집니다.
@@ -8,6 +8,7 @@
   title: 우주를 향한 미래, 미래우주
   desc: 우주를 향한 호기심을 함께 현실로 만들어 갑니다.
   theme: a
+  bg: hero/earth.jpg
 - type: photo
   image: hero/hero-1.jpg
   caption: ""

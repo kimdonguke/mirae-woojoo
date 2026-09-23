@@ -20,8 +20,12 @@
       {{ with $s.caption }}<div class="container hero-inner hero-inner-photo"><p class="hero-caption">{{ . }}</p></div>{{ end }}
     </div>
     {{ else }}
-    <div class="hero-slide hero-theme-{{ $s.theme | default "a" }}{{ if eq $i 0 }} is-active{{ end }}"
-         role="group" aria-roledescription="슬라이드" aria-label="{{ add $i 1 }} / {{ $total }}">
+    {{ $bg := "" }}
+    {{ with $s.bg }}{{ with resources.Get (print "img/" .) }}{{ $bg = .Resize (printf "%dx webp q88" (cond (gt .Width 2560) 2560 .Width)) }}{{ end }}{{ end }}
+    <div class="hero-slide hero-theme-{{ $s.theme | default "a" }}{{ with $bg }} hero-has-bg{{ end }}{{ if eq $i 0 }} is-active{{ end }}"
+         role="group" aria-roledescription="슬라이드" aria-label="{{ add $i 1 }} / {{ $total }}"
+         {{- with $bg }} style="background-image:url('{{ .RelPermalink }}')"{{ end }}>
+      {{ with $bg }}<div class="hero-shade" aria-hidden="true"></div>{{ end }}
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="container hero-inner">
         <p class="hero-eyebrow">미래우주 · FUTURE SPACE</p>

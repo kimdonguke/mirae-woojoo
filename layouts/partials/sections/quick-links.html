@@ -1,0 +1,36 @@
+{{- /* 히어로 바로 아래: 왼쪽 바로가기 링크 + 오른쪽 최근 소식 카드(소식 게시판 4곳을 합쳐 최신 3개) */ -}}
+{{ $links := slice
+  (dict "title" "센터 소개" "url" "/about/")
+  (dict "title" "최근 소식" "url" "/news/")
+  (dict "title" "국제 동향" "url" "/trends/")
+}}
+{{ $posts := where site.RegularPages "Section" "in" (slice "notice" "seminar" "news" "event") }}
+<section class="quick" id="quick" aria-labelledby="quick-title">
+  <div class="container quick-inner reveal">
+    <h2 class="sr-only" id="quick-title">바로가기·최근 소식</h2>
+    <nav class="quick-links" aria-label="바로가기">
+      <ul>
+        {{ range $links }}
+        <li>
+          <a href="{{ .url }}">{{ .title }}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+        </li>
+        {{ end }}
+      </ul>
+    </nav>
+    <ul class="quick-cards" aria-label="최근 소식">
+      {{ range first 3 $posts.ByDate.Reverse }}
+      <li>
+        <a class="quick-card" href="{{ .RelPermalink }}">
+          <h3 class="quick-card-title">{{ .Title }}</h3>
+          <time class="quick-card-date" datetime="{{ .Date.Format "2006-01-02" }}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            {{ .Date.Format "2006.01.02" }}
+          </time>
+        </a>
+      </li>
+      {{ else }}
+      <li class="quick-empty">아직 등록된 소식이 없습니다.</li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
