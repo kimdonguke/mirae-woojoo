@@ -3,7 +3,7 @@
 <section class="section">
   <div class="container narrow">
     <div id="intro" class="page-section">
-      <h2 class="page-h2">단체 소개</h2>
+      <h2 class="page-h2">센터 소개</h2>
       <div class="prose">{{ .Content }}</div>
     </div>
 
@@ -27,61 +27,16 @@
       </ul>
     </div>
 
-    <div id="org" class="page-section">
-      <h2 class="page-h2">연구팀 편성</h2>
-      <div class="org-tree">
-        <div class="org-lead">
-          <div class="org-card org-card-lead">
-            <span class="org-role">주관기관</span>
-            <h3 class="org-name">세종대학교 산학협력단</h3>
-            <p class="org-pi">총괄책임자 <strong>박병운</strong> 외 44명</p>
-            <ul class="org-tasks">
-              <li>양방향 측위 기법을 활용한 Lunar GNSS 정밀 궤도 결정</li>
-              <li>Lunar GNSS를 위한 초소형 위성시스템 및 세부시스템 개발</li>
-              <li>기술패권과 협력의 제도적 동형화 관점에서의 국제우주개발정책</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="org-branch" aria-hidden="true"></div>
-
-        <div class="org-children">
-          <div class="org-node">
-            <div class="org-card">
-              <span class="org-role">공동연구기관</span>
-              <h3 class="org-name">서울대학교 산학협력단</h3>
-              <p class="org-pi">책임자 <strong>기창돈</strong> 외 4명</p>
-              <p class="org-period">수행기간 22.04.01 ~ 24.12.31</p>
-              <ul class="org-tasks">
-                <li>달 환경의 특수성을 고려한 Lunar GNSS 위성의 궤도 설계</li>
-              </ul>
-            </div>
-          </div>
-          <div class="org-node">
-            <div class="org-card">
-              <span class="org-role">공동연구기관</span>
-              <h3 class="org-name">연세대학교 산학협력단</h3>
-              <p class="org-pi">책임자 <strong>서지원</strong> 외 5명</p>
-              <p class="org-period">수행기간 22.04.01 ~ 26.12.31</p>
-              <ul class="org-tasks">
-                <li>우주 환경에서의 시각 동기 기술 개발</li>
-              </ul>
-            </div>
-          </div>
-          <div class="org-node">
-            <div class="org-card">
-              <span class="org-role">공동연구기관</span>
-              <h3 class="org-name">홍익대학교 산학협력단</h3>
-              <p class="org-pi">책임자 <strong>김의호</strong> 외 6명</p>
-              <p class="org-period">수행기간 22.04.01 ~ 26.12.31</p>
-              <ul class="org-tasks">
-                <li>Lunar GNSS를 활용한 달 표면에서의 측위 기술 개발</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+    {{/* 인력 양성·연구 개발 체계도 (그림 교체: assets/img/about/intro.jpg 덮어쓰기) */}}
+    {{ with resources.Get "img/about/intro.jpg" }}
+    {{ $img := .Process "webp q90" }}
+    <div id="overview" class="page-section">
+      <figure class="page-figure">
+        <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy"
+             alt="Lunar GNSS(LNSS) 연구와 역량을 갖춘 미래우주분야 고급전문인력 양성 체계도. 인력 양성: 미래 우주 신기술 핵심 → 미래 우주 신기술 심화(우주 항법·위성 기술·우주 항공) → 현장 실무 교육(산학연 인턴십, 현장실무교육, 산학공동연구 PBL). 연구 개발: LNSS 구성 요소 개념 설계 → LNSS 핵심 알고리즘 연구 → LNSS 시험 평가 및 시스템 통합.">
+      </figure>
     </div>
+    {{ end }}
   </div>
 </section>
 {{ end }}

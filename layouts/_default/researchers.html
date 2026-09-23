@@ -1,0 +1,27 @@
+{{- /* 센터 안내 > 참여 연구진 — 세부별 연구진 카드(학교 로고·학과·이름). 내용은 data/researchers.yaml */ -}}
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+<section class="section">
+  <div class="container">
+    {{ with .Content }}<div class="prose" style="margin-bottom:28px">{{ . }}</div>{{ end }}
+    <h2 class="sr-only">참여 연구진 명단</h2>
+    {{ $schools := site.Data.researchers.schools }}
+    <ul class="people-grid">
+      {{ range $p := site.Data.researchers.people }}
+      {{ $school := index $schools $p.school }}
+      <li class="person">
+        <span class="org-role person-role">{{ $p.role }}</span>
+        <div class="person-info">
+          {{ with $school }}{{ with resources.Get .logo }}
+          {{ $logo := .Process "webp q92 drawing" }}
+          <img class="person-school" src="{{ $logo.RelPermalink }}" width="{{ $logo.Width }}" height="{{ $logo.Height }}" alt="{{ $school.name }}" loading="lazy">
+          {{ end }}{{ end }}
+          <p class="person-dept">{{ $p.dept }}</p>
+          <h3 class="person-name">{{ $p.name }} <span>{{ $p.title }}</span></h3>
+        </div>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}

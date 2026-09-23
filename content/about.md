@@ -1,5 +1,5 @@
 ---
-title: "소개"
+title: "센터 소개"
 kicker: "ABOUT"
 layout: about
 ---

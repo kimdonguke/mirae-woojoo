@@ -1,0 +1,95 @@
+{{- /* 센터 안내 > 참여기관 — 전문·주관·공동·위탁연구기관 트리 + 오른쪽 협력기관 로고(data/partners.yaml) */ -}}
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+<section class="section">
+  <div class="container">
+    {{ with .Content }}<div class="prose" style="margin-bottom:28px">{{ . }}</div>{{ end }}
+    <div id="org" class="page-section">
+      <h2 class="sr-only">참여기관 구성</h2>
+      <div class="org-layout">
+        <div class="org-tree">
+          {{/* 위: 전문기관·주관기관(같은 폭, 가운데) + 오른쪽에 위탁연구기관(공동연구기관 칸과 같은 폭) */}}
+          <div class="org-head">
+            <div class="org-top">
+            <div class="org-card org-card-lead org-card-agency">
+              <span class="org-role">전문기관</span>
+              <h3 class="org-name">우주항공청</h3>
+            </div>
+            <div class="org-card org-card-lead">
+              <span class="org-role">주관기관</span>
+              <h3 class="org-name">세종대학교</h3>
+              <p class="org-pi">과제 책임자 <strong>박병운</strong></p>
+              <ul class="org-tasks">
+                <li>양방향 측위 기법을 활용한 Lunar GNSS 정밀 궤도 결정</li>
+                <li>Lunar GNSS를 위한 초소형 위성시스템 및 세부시스템 개발</li>
+                <li>기술패권과 협력의 제도적 동형화 관점에서의 국제우주개발정책</li>
+              </ul>
+            </div>
+            </div>
+
+            <div class="org-trust">
+              <div class="org-card">
+                <span class="org-role">위탁연구기관</span>
+                <h3 class="org-name">한국과학기술원(KAIST)</h3>
+                <p class="org-pi">책임자 <strong>박경렬</strong></p>
+                <ul class="org-tasks">
+                  <li>국제 우주개발 정책 연구 및 수립</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="org-branch" aria-hidden="true"></div>
+
+          <div class="org-children">
+            <div class="org-node">
+              <div class="org-card">
+                <span class="org-role">공동연구기관</span>
+                <h3 class="org-name">서울대학교</h3>
+                <p class="org-pi">책임자 <strong>기창돈</strong></p>
+                <ul class="org-tasks">
+                  <li>달 환경의 특수성을 고려한 Lunar GNSS 위성의 궤도 설계</li>
+                </ul>
+              </div>
+            </div>
+            <div class="org-node">
+              <div class="org-card">
+                <span class="org-role">공동연구기관</span>
+                <h3 class="org-name">연세대학교</h3>
+                <p class="org-pi">책임자 <strong>서지원</strong></p>
+                <ul class="org-tasks">
+                  <li>우주 환경에서의 시각 동기 기술 개발</li>
+                </ul>
+              </div>
+            </div>
+            <div class="org-node">
+              <div class="org-card">
+                <span class="org-role">공동연구기관</span>
+                <h3 class="org-name">홍익대학교</h3>
+                <p class="org-pi">책임자 <strong>김의호</strong></p>
+                <ul class="org-tasks">
+                  <li>Lunar GNSS를 활용한 달 표면에서의 측위 기술 개발</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {{ with site.Data.partners.items }}
+        <aside class="org-partners" aria-labelledby="partners-title">
+          <h3 class="org-role org-partners-badge" id="partners-title">협력기관</h3>
+          <ul class="partner-logos">
+            {{ range $p := . }}
+            {{ with resources.Get $p.logo }}
+            {{ $img := .Process "webp q92 drawing" }}
+            <li class="partner{{ if $p.wide }} is-wide{{ end }}"><img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $p.name }}" loading="lazy"></li>
+            {{ end }}
+            {{ end }}
+          </ul>
+        </aside>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

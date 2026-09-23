@@ -1,0 +1,15 @@
+{{- /* 인사말: 본문(content/greeting.md) 아래에 직함·이름(같은 파일의 role·name)을 두 줄로 표시 */ -}}
+{{ define "main" }}
+{{ partial "page-hero.html" . }}
+<section class="section">
+  <div class="container greeting">
+    <div class="prose greeting-body">{{ .Content }}</div>
+    {{ if or .Params.role .Params.name }}
+    <p class="greeting-sign">
+      {{ with .Params.role }}<span class="greeting-role">{{ . }}</span>{{ end }}
+      {{ with .Params.name }}<strong class="greeting-name">{{ . }}</strong>{{ end }}
+    </p>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

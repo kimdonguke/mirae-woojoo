@@ -645,41 +645,119 @@ body.lb-lock { overflow: hidden; }
 .aim-list li { counter-increment: aim; position: relative; padding: 16px 18px 16px 54px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 12px; line-height: 1.62; color: var(--text); }
 .aim-list li::before { content: counter(aim); position: absolute; left: 16px; top: 14px; width: 26px; height: 26px; display: grid; place-items: center; background: var(--primary); color: #fff; border-radius: 50%; font-size: .82rem; font-weight: 800; }
 
-/* ── 소개: 연구팀 편성(트리) ── */
-.org-tree { margin-top: 10px; }
-.org-lead { display: flex; justify-content: center; }
+/* ── 페이지 안 그림(체계도 등): 본문 폭에 맞춰 비율 유지 ── */
+.page-figure { margin: 0; }
+.page-figure img { width: 100%; height: auto; }
+
+/* ── 인사말: 본문 + 그 아래 직함·이름(두 줄) ── */
+/* keep-all: 한글이 단어 중간(예: "연/세대")에서 줄바꿈되지 않고 띄어쓰기 단위로 넘어가게 */
+.greeting-body { word-break: keep-all; }
+/* 첫 문단(환영 문구)은 크고 굵게 */
+.greeting-body > p:first-child { font-size: clamp(1.15rem, 2.2vw, 1.35rem); font-weight: 800; line-height: 1.55; letter-spacing: -.01em; color: var(--ink); margin-bottom: 1.6rem; }
+.greeting-sign { display: flex; flex-direction: column; gap: 2px; margin: 34px 0 0; }
+.greeting-role { font-size: .95rem; font-weight: 700; color: var(--text-muted); }
+.greeting-name { font-size: 1.2rem; font-weight: 800; letter-spacing: -.01em; color: var(--ink); }
+
+/* ── 센터 안내 > 참여기관: 기관 트리(전문·주관·공동·위탁) + 오른쪽 협력기관 로고 ── */
+.org-layout { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 32px; align-items: stretch; margin-top: 10px; }
+/* 윗줄: [전문기관·주관기관] + 오른쪽 [위탁연구기관] 을 통째로 가운데 정렬 */
+.org-head { display: flex; align-items: flex-end; justify-content: center; gap: var(--child-gap, 14px); }
+/* 전문기관·주관기관 틀: 폭 = 주관기관 칸의 가장 긴 글줄(fit-content), 두 칸이 이 폭을 똑같이 채움 */
+.org-top { position: relative; display: grid; gap: 16px; width: fit-content; max-width: 100%; }
+/* 주관기관 칸 가운데에서 아래 공동연구기관 줄로 내려가는 세로선 */
+.org-top::after { content: ""; position: absolute; left: 50%; top: 100%; width: 2px; height: 26px; background: var(--border-strong); transform: translateX(-50%); }
+/* 위탁연구기관: 아래 공동연구기관 칸(3칸)과 같은 폭, 주관기관과 짧은 가로선으로 연결 */
+.org-trust { position: relative; flex: 0 0 calc((100% - 2 * var(--child-gap, 14px)) / 3); }
+.org-trust::before { content: ""; position: absolute; right: 100%; top: 50%; width: var(--child-gap, 14px); height: 2px; background: var(--border-strong); }
 .org-card { background: #fff; border: 2px solid var(--border); border-radius: 14px; padding: 18px 20px; }
-.org-card-lead { border: 2px solid var(--primary); max-width: 560px; width: 100%; }
+.org-card-lead { border: 2px solid var(--primary); }
 .org-role { display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .04em; color: var(--primary); background: var(--bg-alt); border-radius: 999px; padding: 3px 11px; margin-bottom: 9px; }
 .org-card-lead .org-role { color: #fff; background: var(--primary); }
 .org-name { margin: 0 0 6px; font-size: 1.06rem; font-weight: 800; color: var(--ink); }
+.org-card-agency .org-name { margin-bottom: 0; }
+/* 공동·위탁연구기관 카드는 폭이 좁아 기관명을 조금 작게(네 칸 모두 동일) */
+.org-children .org-name, .org-trust .org-name { font-size: 1rem; }
 .org-pi { margin: 0; color: var(--text); font-size: .94rem; }
 .org-pi strong { color: var(--primary); }
-.org-period { margin: 6px 0 0; font-size: .82rem; color: var(--text-muted); font-variant-numeric: tabular-nums; }
 .org-tasks { list-style: none; margin: 10px 0 0; padding: 10px 0 0; border-top: 1px solid var(--border); display: grid; gap: 6px; }
 .org-tasks li { position: relative; padding-left: 14px; font-size: .9rem; line-height: 1.55; color: var(--text); }
 .org-tasks li::before { content: ""; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--primary); }
-.org-branch { height: 26px; position: relative; }
-.org-branch::before { content: ""; position: absolute; left: 50%; top: 0; width: 2px; height: 100%; background: var(--border-strong); transform: translateX(-50%); }
-.org-children { display: flex; gap: 18px; position: relative; }
+.org-branch { height: 26px; position: relative; } /* 세로선은 .org-top::after 가 그림(좁은 화면에서는 아래 규칙) */
+.org-children { display: flex; gap: var(--child-gap, 14px); position: relative; }
 .org-node { flex: 1 1 0; min-width: 0; position: relative; padding-top: 26px; }
 .org-node .org-card { height: 100%; }
 /* 가로 버스: 각 노드가 양옆 간격의 절반까지 선을 그어 이웃과 이어짐(간격 무관하게 연결) */
-.org-node::before { content: ""; position: absolute; top: 0; left: -9px; right: -9px; height: 2px; background: var(--border-strong); }
+.org-node::before { content: ""; position: absolute; top: 0; left: -7px; right: -7px; height: 2px; background: var(--border-strong); }
 .org-node:first-child::before { left: 50%; }
 .org-node:last-child::before { right: 50%; }
-/* 세로 드롭(바깥 카드): 버스에서 각 카드로 */
+/* 세로 드롭: 버스에서 각 카드로 (카드가 4개라 가운데 선은 2·3번째 카드 사이 버스에 닿음) */
 .org-node::after { content: ""; position: absolute; top: 0; left: 50%; width: 2px; height: 26px; background: var(--border-strong); transform: translateX(-50%); }
-/* 가운데 세로선은 컨테이너 기준 50%로 그려 주관기관 세로선과 완전 일직선(노드폭 반올림에 의한 단차 제거) */
-.org-node:nth-child(2)::after { display: none; }
-.org-children::after { content: ""; position: absolute; top: 0; left: 50%; width: 2px; height: 26px; background: var(--border-strong); transform: translateX(-50%); }
-@media (max-width: 760px) {
+/* 협력기관: 연한 파란 테두리 상자 + 테두리에 걸친 배지, 로고 2칸 격자(가로로 긴 로고는 한 줄 전체) */
+.org-partners { position: relative; background: #fff; border: 2px solid #c3d3ec; border-radius: 14px; padding: 30px 16px 20px; }
+.org-partners-badge { position: absolute; top: -13px; left: 16px; margin: 0; color: #fff; background: var(--primary); }
+.partner-logos { list-style: none; margin: 0; padding: 0; height: 100%; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: space-around; gap: 16px 12px; }
+.partner { display: flex; align-items: center; justify-content: center; }
+.partner.is-wide { grid-column: 1 / -1; }
+/* 칸마다 (칸 폭 90% × 높이 41.4px) 상자 안에 로고를 비율 유지로 맞춤 — 처음(100% × 46px)보다 10% 작게. 로딩 전에도 자리가 잡혀 화면이 밀리지 않음 */
+.partner img { width: 90%; height: 41.4px; object-fit: contain; }
+/* 좁은 화면: 협력기관을 트리 아래로, 로고는 여러 칸 격자 */
+@media (max-width: 1099px) {
+  .org-layout { grid-template-columns: minmax(0, 1fr); gap: 44px; }
+  .partner-logos { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 20px 18px; }
+  .partner.is-wide { grid-column: auto; }
+}
+/* 태블릿·모바일: 기관 카드를 세로로 쌓고, 가운데 세로선으로 위아래 카드를 이어 줌 */
+@media (max-width: 860px) {
+  .org-head { flex-direction: column; align-items: stretch; gap: 16px; }
+  .org-top { width: auto; }
+  .org-top::after { display: none; } /* 세로로 쌓이면 주관기관 바로 아래가 위탁 칸이라 선을 숨김 */
+  .org-trust { flex: 0 0 auto; }
+  .org-trust::before { display: none; }
+  .org-branch::before { content: ""; position: absolute; left: 50%; top: 0; width: 2px; height: 100%; background: var(--border-strong); transform: translateX(-50%); }
   .org-children { flex-direction: column; gap: 30px; }
   .org-node { padding-top: 20px; }
   .org-node::before { display: none; }
   .org-node::after { height: 20px; }
-  .org-node:nth-child(2)::after { display: block; }
-  .org-children::after { display: none; }
+  .org-node + .org-node::after { top: -30px; height: 50px; }
+}
+
+/* ── 센터 안내 > 참여 연구진: 카드(역할 배지 · 학교 로고/학과/이름) ── */
+/* PC: 3줄씩 세로로 채움 → [1~3세부] [4~5세부·위탁] [전임 행정 연구원] 3열 */
+.people-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(3, auto); grid-auto-flow: column; gap: 20px 24px; }
+.person { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px 20px; }
+/* 역할 배지(1세부·위탁 등): 참여기관 페이지 배지보다 10% 크게 */
+.person-role { margin-bottom: 14px; font-size: calc(.72rem * 1.1); padding: calc(3px * 1.1) calc(11px * 1.1); }
+.person-info { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 3px; }
+.person-school { width: auto; max-width: 100%; height: 40px; margin-bottom: 10px; }
+.person-dept { margin: 0; font-size: .9rem; color: var(--text-muted); }
+.person-name { margin: 0; font-size: 1.2rem; font-weight: 800; letter-spacing: -.01em; color: var(--ink); }
+.person-name span { margin-left: 2px; font-size: .95rem; font-weight: 700; color: var(--text); }
+/* 태블릿: 2열(순서대로 가로로 채움), 모바일: 1열 */
+@media (max-width: 1024px) {
+  .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-auto-flow: row; }
+}
+@media (max-width: 640px) {
+  .people-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+}
+
+/* ── 센터 안내 > 오시는 길: 지도(누르면 Google 지도) + 주소·전화·이메일·운영시간 줄 ── */
+.location { border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: #fff; }
+.location-map { position: relative; display: block; }
+.location-map:focus-visible { outline-offset: -3px; }
+/* 좁은 화면에서도 지도 높이를 확보하고, 표시(충무관)가 가운데 오도록 잘라 보여줌 */
+.location-map img { width: 100%; height: auto; min-height: 240px; object-fit: cover; object-position: 50% 42%; }
+.location-map-hint { position: absolute; left: 16px; bottom: 16px; display: inline-flex; align-items: center; padding: 8px 14px; border-radius: 999px; background: rgba(255, 255, 255, .95); border: 1px solid var(--border-strong); box-shadow: 0 6px 16px -8px rgba(15, 23, 42, .35); font-size: .85rem; font-weight: 700; color: var(--ink); transition: color .15s ease, border-color .15s ease; }
+.location-map:hover .location-map-hint { color: var(--primary); border-color: var(--primary); }
+/* 지도 출처 표시(카카오맵 화면 캡처) — 그림에 kakao 로고가 없어 항상 표시 */
+.location-map-credit { position: absolute; right: 8px; bottom: 6px; padding: 1px 6px; border-radius: 4px; background: rgba(255, 255, 255, .85); font-size: .68rem; color: var(--text-muted); }
+.location-info { list-style: none; margin: 0; padding: 22px 24px; display: flex; flex-wrap: wrap; gap: 12px 24px; background: var(--bg-alt); border-top: 1px solid var(--border); }
+.location-info li { display: inline-flex; align-items: center; gap: 8px; font-size: .88rem; color: var(--text); word-break: keep-all; }
+.location-info svg { width: 18px; height: 18px; flex: none; color: var(--text-muted); }
+.location-info a:hover { color: var(--primary); text-decoration: underline; }
+@media (max-width: 640px) {
+  .location-info { flex-direction: column; padding: 18px 20px; }
+  .location-info li { align-items: flex-start; }
+  .location-info svg { margin-top: 3px; }
 }
 
 /* ── 국제 동향 지도 ── */

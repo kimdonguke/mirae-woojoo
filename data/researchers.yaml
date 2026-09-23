@@ -1,0 +1,17 @@
+# 센터 안내 > 참여 연구진 — people 순서대로 카드가 표시됩니다.
+# PC(넓은 화면)에서는 3개씩 세로로 채워져 [1~3세부] [4~5세부·위탁] [전임 행정 연구원] 3열이 됩니다(prof.jpg 배치).
+# school: 아래 schools 의 키(로고 표시)
+schools:
+  sejong: { name: "세종대학교", logo: "img/schools/sejong.png" }
+  snu:    { name: "서울대학교", logo: "img/schools/snu.png" }
+  yonsei: { name: "연세대학교", logo: "img/schools/yonsei.png" }
+  hongik: { name: "홍익대학교", logo: "img/schools/hongik.png" }
+  kaist:  { name: "한국과학기술원(KAIST)", logo: "img/schools/kaist.png" }
+people:
+  - { role: "1세부", name: "박병운", title: "교수", dept: "항공우주공학", school: sejong }
+  - { role: "2세부", name: "김오종", title: "교수", dept: "항공우주공학", school: sejong }
+  - { role: "3세부", name: "기창돈", title: "교수", dept: "항공우주공학", school: snu }
+  - { role: "4세부", name: "서지원", title: "교수", dept: "첨단융합공학", school: yonsei }
+  - { role: "5세부", name: "김의호", title: "교수", dept: "기계공학", school: hongik }
+  - { role: "위탁", name: "박경렬", title: "교수", dept: "과학기술정책대학원", school: kaist }
+  - { role: "전임 행정 연구원", name: "주현진", title: "연구원", dept: "항공우주공학", school: sejong }

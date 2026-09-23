@@ -1,0 +1,17 @@
+# 참여기관 페이지 오른쪽 '협력기관' 로고 목록 — 위에서부터 이 순서대로 2칸씩 채워집니다.
+# name: 기관 이름(로고 대체 텍스트), logo: assets/ 기준 이미지 경로
+# wide: true 이면 가로로 긴 로고라 한 줄(2칸)을 통째로 씁니다.
+# 기관 추가: 로고 이미지를 assets/img/partners/ 에 넣고 아래에 한 줄 추가
+items:
+  - { name: "LIG D&A", logo: "img/partners/lig-dna.png", wide: true }
+  - { name: "한화에어로스페이스", logo: "img/partners/hanwha-aerospace.png", wide: true }
+  - { name: "한국전자통신연구원(ETRI)", logo: "img/partners/etri.png" }
+  - { name: "한국항공우주연구원(KARI)", logo: "img/partners/kari.png" }
+  - { name: "MBC", logo: "img/partners/mbc.png" }
+  - { name: "한국표준과학연구원(KRISS)", logo: "img/partners/kriss.png" }
+  - { name: "KASS (Korea Augmentation Satellite System)", logo: "img/partners/kass.png" }
+  - { name: "SOLETOP", logo: "img/partners/soletop.png" }
+  - { name: "DANAM SYSTEMS", logo: "img/partners/danam-systems.png", wide: true }
+  - { name: "HANCOM InSpace", logo: "img/partners/hancom-inspace.png", wide: true }
+  - { name: "Stanford University", logo: "img/partners/stanford.png", wide: true }
+  - { name: "Colorado State University", logo: "img/partners/colorado-state.png", wide: true }
