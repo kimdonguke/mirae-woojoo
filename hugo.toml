@@ -5,7 +5,7 @@
 baseURL = "https://mirae-woojoo.pages.dev/"
 locale = "ko-KR"
 defaultContentLanguage = "ko"
-title = "미래우주"
+title = "미래우주 교육센터"
 enableRobotsTXT = true
 enableEmoji = true
 # 사용하지 않는 분류(taxonomy) 페이지 생성 비활성화
@@ -23,14 +23,15 @@ buildFuture = true
   noindex = true
 
   # 사이트 전역 정보 (이 값들만 바꿔도 대부분 수정됩니다)
-  description = "다양한 활동과 연구로 우주 기술에 도전하는 미래우주 공식 홈페이지"
+  # description·nameEn 안의 \n 은 푸터에서 줄이 바뀌는 자리입니다(검색 설명·저작권 줄에서는 띄어쓰기로 바뀜).
+  description = "다양한 활동과 연구로 우주 기술에 도전하는\n미래우주 교육센터 공식 홈페이지"
   email = "contact@miraewooju.org"
   github = ""          # 예: "https://github.com/your-org"
-  nameEn = "Future Space"   # 푸터 영문 병기 (필요 없으면 비우세요)
+  nameEn = "Future Space Navigation and\nSatellite Research Center"   # 푸터 영문 병기 (필요 없으면 비우세요)
   # familySites = [{ name = "GNSS LAB", url = "https://..." }]  # 푸터 패밀리사이트 (비우면 자동 숨김)
 
 # 데이터는 data/ 폴더에서 관리합니다.
-#   - data/gnb.yaml          : 상단 메뉴(5탭)
+#   - data/gnb.yaml          : 상단 메뉴(6개 메뉴 + 하위 메뉴)
 #   - data/hero.yaml         : 메인 슬라이더
 #   - data/research.yaml     : 연구 분야 카드
 #   - data/achievements.yaml : 연구 실적

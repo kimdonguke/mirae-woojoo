@@ -1,27 +1,38 @@
-# 상단 GNB(글로벌 내비게이션) — 5개 탭. 클릭 시 해당 페이지로 이동.
-# sub: 푸터 사이트맵에 표시되는 하위 링크(상단 헤더는 탭만 노출).
-- name: 소개
+# 상단 GNB(글로벌 내비게이션) — 6개 메뉴.
+# 메뉴에 마우스를 올리면 모든 메뉴의 하위 메뉴(sub)가 각 메뉴 아래 열로 한꺼번에 펼쳐집니다(메가 메뉴).
+# sub 가 없는 메뉴(인사말·Lunar PNT)는 누르면 바로 해당 페이지로 이동합니다.
+# 푸터 사이트맵도 이 파일을 그대로 따라갑니다.
+- name: 인사말
+  url: "/greeting/"
+- name: 센터 안내
   url: "/about/"
   sub:
-    - { name: 단체 소개, url: "/about/#intro" }
-    - { name: 비전·목표, url: "/about/#vision" }
-    - { name: 추진전략, url: "/about/#strategy" }
-    - { name: 연구팀 편성, url: "/about/#org" }
-- name: 연구
+    - { name: 센터 소개, url: "/about/" }
+    - { name: 참여기관, url: "/about/members/" }
+    - { name: 참여 연구진, url: "/about/researchers/" }
+    - { name: 오시는 길, url: "/contact/" }
+- name: 연구 내용
   url: "/research/"
   sub:
-    - { name: 연구 소개, url: "/research/#fields" }
-    - { name: 연구 실적, url: "/research/publications/" }
-    - { name: 국제 동향, url: "/trends/" }
-- name: 소식
+    - { name: 전체 개요, url: "/research/" }
+    - { name: 1세부, url: "/research/lunar-gnss-design/" }
+    - { name: 2세부, url: "/research/cubesat-testbed/" }
+    - { name: 3세부, url: "/research/orbit-design/" }
+    - { name: 4세부, url: "/research/time-sync/" }
+    - { name: 5세부, url: "/research/positioning/" }
+- name: 연구 실적
+  url: "/research/publications/"
+  sub:
+    - { name: 논문, url: "/research/publications/" }
+    - { name: 학회 발표, url: "/research/presentations/" }
+    - { name: 배출 인력, url: "/research/graduates/" }
+    - { name: 세미나, url: "/research/seminars/" }
+    - { name: 활동, url: "/research/activities/" }
+- name: 게시판
   url: "/notice/"
   sub:
     - { name: 공지사항, url: "/notice/" }
-    - { name: 세미나·교육, url: "/seminar/" }
-    - { name: 뉴스, url: "/news/" }
-    - { name: 행사일정, url: "/event/" }
-- name: 갤러리·미디어
-  url: "/gallery/"
-  sub:
-    - { name: 사진 갤러리, url: "/gallery/#photos" }
-    - { name: 동영상, url: "/gallery/#videos" }
+    - { name: 최근 소식, url: "/news/" }
+    - { name: 국제 동향, url: "/trends/" }
+- name: Lunar PNT
+  url: "/lunanet/"

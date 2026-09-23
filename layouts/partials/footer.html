@@ -1,22 +1,25 @@
 <footer class="site-footer">
-  {{ with resources.Get "img/logo.png" }}<img class="footer-watermark" src="{{ .RelPermalink }}" alt="" aria-hidden="true">{{ end }}
+  {{ with resources.Get "img/logo.png" }}{{ $wm := .Resize "880x webp q85" }}<img class="footer-watermark" src="{{ $wm.RelPermalink }}" width="{{ $wm.Width }}" height="{{ $wm.Height }}" alt="" aria-hidden="true">{{ end }}
   <div class="container footer-top">
     <div class="footer-brand">
       <div class="footer-logo">
         <span>{{ .Site.Title }}</span>
       </div>
-      {{ with .Site.Params.nameEn }}<p class="footer-en">{{ . }}</p>{{ end }}
-      <p class="footer-desc">{{ .Site.Params.description }}</p>
+      {{/* 설정값의 \n 자리에서 줄바꿈 */}}
+      {{ with .Site.Params.nameEn }}<p class="footer-en">{{ range $i, $l := split . "\n" }}{{ if $i }}<br>{{ end }}{{ $l }}{{ end }}</p>{{ end }}
+      <p class="footer-desc">{{ range $i, $l := split .Site.Params.description "\n" }}{{ if $i }}<br>{{ end }}{{ $l }}{{ end }}</p>
       <p class="footer-contact">이메일 <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></p>
     </div>
 
     <nav class="footer-sitemap" aria-label="사이트맵">
       {{ range site.Data.gnb }}
       <div class="footer-col">
-        <h3 class="footer-h">{{ .name }}</h3>
+        <h3 class="footer-h"><a href="{{ .url }}">{{ .name }}</a></h3>
+        {{ with .sub }}
         <ul>
-          {{ range .sub }}<li><a href="{{ .url }}">{{ .name }}</a></li>{{ end }}
+          {{ range . }}<li><a href="{{ .url }}">{{ .name }}</a></li>{{ end }}
         </ul>
+        {{ end }}
       </div>
       {{ end }}
     </nav>
@@ -24,7 +27,7 @@
 
   <div class="footer-bar">
     <div class="container footer-bar-inner">
-      <span>© {{ now.Year }} {{ .Site.Title }}{{ with .Site.Params.nameEn }} ({{ . }}){{ end }}. All rights reserved.</span>
+      <span>© {{ now.Year }} {{ .Site.Title }}{{ with .Site.Params.nameEn }} ({{ replace . "\n" " " }}){{ end }}. All rights reserved.</span>
     </div>
   </div>
 </footer>

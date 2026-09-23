@@ -6,12 +6,12 @@
 {{ $title := .Site.Title }}
 {{ if not .IsHome }}{{ $title = printf "%s · %s" .Title .Site.Title }}{{ end }}
 <title>{{ $title }}</title>
-<meta name="description" content="{{ .Site.Params.description }}">
+<meta name="description" content="{{ replace .Site.Params.description "\n" " " }}">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{ $title }}">
-<meta property="og:description" content="{{ .Site.Params.description }}">
+<meta property="og:description" content="{{ replace .Site.Params.description "\n" " " }}">
 <meta property="og:locale" content="ko_KR">
 
 {{ with resources.Get "img/logo.png" }}

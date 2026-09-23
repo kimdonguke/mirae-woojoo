@@ -28,7 +28,7 @@ collections:
       - { name: body, label: 본문, widget: markdown }
 
   - name: news
-    label: 뉴스·활동소식
+    label: 최근 소식
     label_singular: 뉴스
     folder: content/news
     create: true

@@ -26,19 +26,29 @@
   <div class="main-bar">
     <div class="container main-inner">
       <a class="brand" href="/">
-        {{ with resources.Get "img/logo.png" }}<img class="brand-logo" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="" aria-hidden="true">{{ end }}
-        <span class="brand-text">{{ .Site.Title }}</span>
+        {{ with resources.Get "img/logo.png" }}{{ $logo := .Resize "120x webp q90" }}<img class="brand-logo" src="{{ $logo.RelPermalink }}" width="{{ $logo.Width }}" height="{{ $logo.Height }}" alt="" aria-hidden="true">{{ end }}
+        <span class="brand-text">{{ .Site.Params.brand | default .Site.Title }}</span>
       </a>
 
       <button class="nav-toggle" type="button" aria-label="전체 메뉴" aria-expanded="false" aria-controls="primary-nav">
         <span></span><span></span><span></span>
       </button>
 
-      <nav class="gnb" id="primary-nav" aria-label="주 메뉴">
+      {{/* 메가 메뉴 흰 배경 높이 = 가장 긴 하위 메뉴 줄 수 */}}
+      {{ $rows := 0 }}
+      {{ range site.Data.gnb }}{{ with .sub }}{{ if gt (len .) $rows }}{{ $rows = len . }}{{ end }}{{ end }}{{ end }}
+      <nav class="gnb" id="primary-nav" aria-label="주 메뉴" style="--gnb-rows: {{ $rows }}">
         <ul>
           {{ range site.Data.gnb }}
-          <li class="gnb-item">
+          <li class="gnb-item{{ with .sub }} has-sub{{ end }}">
             <a href="{{ .url }}">{{ .name }}</a>
+            {{ with .sub }}
+            <div class="gnb-panel">
+              <ul>
+                {{ range . }}<li><a href="{{ .url }}">{{ .name }}</a></li>{{ end }}
+              </ul>
+            </div>
+            {{ end }}
           </li>
           {{ end }}
         </ul>
