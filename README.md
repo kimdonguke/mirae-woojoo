@@ -28,7 +28,7 @@ hugo --gc --minify   # 프로덕션 빌드 → public/
 1. 개발 서버 실행: `hugo server`
 2. **Chrome 또는 Edge**로 `http://localhost:1313/admin/` 접속
 3. **"Work with Local Repository"** 클릭 → 이 프로젝트 폴더 선택
-4. 왼쪽 분류(공지사항 / 뉴스·활동소식 / 세미나·교육 / 행사일정) 선택 → **New** → 제목·날짜·본문 작성 → 저장
+4. 왼쪽 분류(공지사항 / 최근 소식 / 세미나·교육 / 행사일정) 선택 → **New** → 제목·날짜·본문 작성 → 저장
    - 저장하면 `content/<분류>/…md` 파일이 자동 생성되고, 홈 "소식" 보드와 분류 목록 페이지에 자동 반영됩니다.
 5. 작성이 끝나면 변경 파일을 **커밋·푸시** → 자동 배포
 
@@ -43,7 +43,7 @@ hugo --gc --minify   # 프로덕션 빌드 → public/
 ├── hugo.toml                 # 사이트 설정 (제목·설명·연락처·noindex 등)
 ├── data/
 │   ├── gnb.yaml · hero.yaml  # 상단 메뉴 · 히어로 슬라이더
-│   └── research · achievements · trends · albums · videos.yaml  # 연구·실적·동향·갤러리·동영상
+│   └── research · achievements · presentations · trends · albums · videos.yaml  # 연구·실적·학회 발표·동향·갤러리·동영상
 ├── content/
 │   ├── _index.md             # 홈 "소개" 본문
 │   ├── notice/ seminar/ news/ event/   # 분류별 글(.md)
@@ -52,7 +52,7 @@ hugo --gc --minify   # 프로덕션 빌드 → public/
 │   ├── _default/baseof.html · list.html · single.html
 │   └── partials/
 │       ├── head · header · footer · floating · icon
-│       └── sections/         # hero · research-highlights · stats-strip · trends · gallery-preview · videos · news-latest
+│       └── sections/         # hero · quick-links · research-highlights · stats-strip · trends · gallery-preview · videos · news-latest
 ├── assets/css/main.css       # 스타일 (:root 변수)
 ├── assets/js/main.js         # 인터랙션 (슬라이더·탭·메뉴)
 ├── static/
@@ -68,12 +68,21 @@ hugo --gc --minify   # 프로덕션 빌드 → public/
 | --- | --- |
 | 사이트 제목·설명·이메일·영문명 | `hugo.toml` `[params]` |
 | 검색엔진 노출 차단 해제 | `hugo.toml` `noindex = false` (+ `static/_headers` 정리) |
-| 상단 메뉴(GNB) | `data/gnb.yaml` |
+| 상단 메뉴(GNB)·푸터 사이트맵 | `data/gnb.yaml` |
+| 인사말(본문·직함·이름) | `content/greeting.md` |
+| 논문·배출 인력·세미나·Lunar PNT 본문 | `content/research/publications.md` · `content/research/graduates.md` · `content/research/seminars.md` · `content/lunanet.md` (본문이 비어 있으면 "내용을 준비 중입니다." 표시) |
+| 참여기관(전문·주관·공동·위탁연구기관 카드) | `layouts/_default/members.html` |
+| 참여기관 페이지의 협력기관 로고 | `data/partners.yaml` (로고 이미지: `assets/img/partners/`) |
+| 참여 연구진(역할·학교·학과·이름) | `data/researchers.yaml` (학교 로고: `assets/img/schools/`) |
 | 히어로 슬라이드 | `data/hero.yaml` |
+| 히어로 아래 바로가기 링크(센터 소개·최근 소식·국제 동향) | `layouts/partials/sections/quick-links.html` 맨 위 `$links` |
 | 연구 분야 카드(홈·연구) | `data/research.yaml` |
+| 연구 내용 > 전체 개요의 연구개요·연구계획 | `data/research_overview.yaml` (연구계획 그림: `assets/img/research/plan/`) |
+| 세부 연구과제 자세히 페이지(글머리·그림) | `content/research/<과제>.md` 본문과 앞부분 `figure` (그림: `assets/img/research/detail/`) |
 | 연구 실적 | `data/achievements.yaml` |
+| 학회 발표 목록(연도별 자동 정렬) | `data/presentations.yaml` |
 | 국제 동향(LunaNet 등) | `data/trends.yaml` |
-| 사진 앨범 | `data/albums.yaml` (이미지: `static/uploads/gallery/`) |
+| 사진 앨범(연구 실적 > 활동 페이지) | `data/albums.yaml` (이미지: `static/uploads/gallery/`) |
 | 동영상 | `data/videos.yaml` |
 | 공지·세미나·뉴스·행사 글 | `/admin` (CMS) 또는 `content/<분류>/*.md` |
 | 색상·디자인 | `assets/css/main.css` (상단 `:root`) |
