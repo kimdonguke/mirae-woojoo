@@ -1,7 +1,7 @@
 ---
-title: "연구 실적"
+title: "논문"
 kicker: "PUBLICATIONS"
-layout: publications
-summary: "미래우주 연구진의 국내외 학술대회·학회 논문 실적입니다."
+layout: basic
 aliases: ["/publications/"]
+# 아래 --- 다음 줄부터 논문 목록을 쓰면 "내용을 준비 중입니다." 대신 표시됩니다.
 ---

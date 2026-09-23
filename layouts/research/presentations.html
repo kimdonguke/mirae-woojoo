@@ -2,7 +2,7 @@
 {{ partial "page-hero.html" . }}
 <section class="section">
   <div class="container">
-    {{ $items := sort site.Data.publications.items "year" "desc" }}
+    {{ $items := sort site.Data.presentations.items "year" "desc" }}
     {{ if $items }}
     <p class="pub-count">총 {{ len $items }}편</p>
     {{ $years := slice }}
