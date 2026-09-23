@@ -1,12 +1,35 @@
+{{- /* 연구 내용 > N세부 '자세히' — 위: 과제 요약(기관·키워드·요약), 아래: N세부 연구내용
+       (글머리 = content/research/*.md 본문, 그림 = 앞부분 figure·figureTitle·figureNotes·figureAlt) */ -}}
 {{ define "main" }}
 {{ partial "page-hero.html" . }}
 <section class="section">
-  <div class="container narrow">
-    <p class="post-back"><a href="/research/#fields">← 세부 연구과제</a></p>
-    {{ with .Params.org }}<p class="sp-meta">{{ . }}</p>{{ end }}
-    {{ with .Params.keywords }}<div class="sp-keywords">{{ range . }}<span class="sp-chip">{{ . }}</span>{{ end }}</div>{{ end }}
-    {{ with .Params.summary }}<p class="detail-lead">{{ . }}</p>{{ end }}
-    {{ with .Content }}<div class="prose">{{ . }}</div>{{ else }}<p class="page-empty">세부 내용은 준비 중입니다.</p>{{ end }}
+  <div class="container">
+    <div class="detail-intro">
+      <p class="post-back"><a href="/research/#fields">← 세부 연구과제</a></p>
+      {{ with .Params.org }}<p class="sp-meta">{{ . }}</p>{{ end }}
+      {{ with .Params.keywords }}<div class="sp-keywords">{{ range . }}<span class="sp-chip">{{ . }}</span>{{ end }}</div>{{ end }}
+      {{ with .Params.summary }}<p class="detail-lead">{{ . }}</p>{{ end }}
+    </div>
+    {{ if or .Content .Params.figure }}
+    <div class="page-section detail-body">
+      <h2 class="page-h2">{{ with .Params.part }}{{ . }}세부 {{ end }}연구내용</h2>
+      {{ with .Content }}<div class="prose detail-points">{{ . }}</div>{{ end }}
+      {{ with .Params.figure }}{{ with resources.Get . }}
+      {{ $full := .Process "webp q86" }}
+      {{ $img := $full }}{{ if gt .Width 2250 }}{{ $img = .Resize "2250x webp q86" }}{{ end }}
+      <figure class="detail-figure">
+        {{ with $.Params.figureTitle }}<figcaption class="detail-figure-title">{{ . }}</figcaption>{{ end }}
+        <a class="detail-figure-link" href="{{ $full.RelPermalink }}" target="_blank" rel="noopener">
+          <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $.Params.figureAlt }} (누르면 원본 크기 그림이 새 창으로 열립니다)" loading="lazy">
+          <span class="detail-figure-hint" aria-hidden="true">크게 보기 ↗</span>
+        </a>
+        {{ with $.Params.figureNotes }}<ul class="detail-figure-notes">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+      </figure>
+      {{ end }}{{ end }}
+    </div>
+    {{ else }}
+    <p class="page-empty">세부 내용은 준비 중입니다.</p>
+    {{ end }}
   </div>
 </section>
 {{ end }}

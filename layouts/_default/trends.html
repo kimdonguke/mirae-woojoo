@@ -68,4 +68,7 @@
     {{ with .Content }}<div class="prose" style="margin-top:24px">{{ . }}</div>{{ end }}
   </div>
 </section>
+
+{{/* 지도 아래: 국제 동향 카드(예전 연구 내용 > 전체 개요 페이지에 있던 것, data/trends.yaml) */}}
+{{ partial "sections/trends.html" (dict "heading" "주요 동향" "background" false "morelink" false) }}
 {{ end }}

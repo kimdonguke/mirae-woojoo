@@ -567,14 +567,78 @@ ul { list-style: none; }
 .sp-more { display: inline-block; margin-top: 12px; font-size: .84rem; font-weight: 700; color: var(--primary); }
 .detail-lead { margin: 16px 0 24px; font-size: 1.05rem; line-height: 1.72; color: var(--text); }
 @media (max-width: 560px) { .subproject { grid-template-columns: 1fr; gap: 6px; padding: 22px 0; } .sp-num { font-size: 1.5rem; } }
-/* 연구 실적 요약(연구 페이지) */
-.ach-summary { color: var(--text); margin: 0 0 14px; }
-.ach-recent { list-style: none; margin: 0 0 18px; padding: 0; display: flex; flex-direction: column; gap: 9px; }
-.ach-recent li { color: var(--ink); line-height: 1.5; }
-.ach-ry { font-weight: 800; color: var(--primary); margin-right: 6px; font-variant-numeric: tabular-nums; }
-.ach-rv { color: var(--text-muted); font-size: .9rem; }
-.ach-more { display: inline-block; font-weight: 700; color: var(--primary); }
-.ach-more:hover { text-decoration: underline; }
+/* ── 연구 내용 > 전체 개요: 연구개요(비스듬한 이름 칸 + 내용) ── */
+.rs-summary { margin: 0; display: grid; gap: 14px; }
+.rs-row { display: grid; grid-template-columns: 190px minmax(0, 1fr); align-items: center; gap: 32px; }
+.rs-label { position: relative; display: grid; place-items: center; min-height: 54px; margin: 0 0 0 10px; font-weight: 800; color: var(--ink); }
+/* 칸만 비스듬하게(글자는 똑바로): 테두리를 가진 배경 조각만 기울임 */
+.rs-label::before { content: ""; position: absolute; inset: 0; border: 2px solid #9fbbe6; border-radius: 12px; background: #f5f8fd; transform: skewX(-14deg); }
+.rs-label span { position: relative; }
+.rs-value { margin: 0; font-size: 1.08rem; font-weight: 700; color: var(--ink); word-break: keep-all; overflow-wrap: anywhere; }
+.rs-value small { display: block; margin-top: 4px; font-size: .9rem; font-weight: 500; color: var(--text-muted); }
+
+/* ── 연구 내용 > 전체 개요: 연구계획(연차 카드가 계단처럼 올라감 + 아래 단계 화살표) ── */
+/* 카드를 모두 같은 높이(align-items: stretch)로 만든 뒤, 칸 전체를 --i 만큼 52px씩 올려 계단 모양.
+   위로 올라간 만큼 위쪽 여백을 미리 확보 */
+.rs-steps { list-style: none; margin: 0; padding: calc((var(--steps, 3) - 1) * 52px) 0 0; display: grid; grid-template-columns: repeat(var(--steps, 3), minmax(0, 1fr)); align-items: stretch; }
+.rs-step { display: flex; flex-direction: column; transform: translateY(calc(var(--i, 0) * -52px)); }
+.rs-step:nth-child(1) { --c: #5b8fd6; --c-dark: #3f6fb3; }
+.rs-step:nth-child(2) { --c: #2f5fb7; --c-dark: #1f4690; }
+.rs-step:nth-child(3) { --c: #1e3a8a; --c-dark: #142a66; }
+.rs-card { flex: 1; margin: 0 10px 14px; background: #fff; border: 2px solid var(--c, var(--primary)); border-radius: 14px; overflow: hidden; }
+.rs-card-title { margin: 0; padding: 14px 16px; background: var(--ink); color: #fff; font-size: 1rem; font-weight: 800; line-height: 1.45; text-align: center; word-break: keep-all; }
+.rs-card-list { list-style: none; margin: 0; padding: 14px 16px 16px; display: grid; gap: 6px; }
+.rs-card-list li { position: relative; padding-left: 13px; font-size: .88rem; line-height: 1.55; color: var(--text); word-break: keep-all; }
+.rs-card-list li::before { content: ""; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--c, var(--primary)); }
+.rs-card-img { display: block; width: auto; height: auto; max-width: calc(100% - 32px); max-height: 150px; margin: 0 auto 16px; }
+/* 계단 띠: 연차 이름 + 왼쪽 아래 짙은 턱(바로 앞 낮은 띠와 이어짐) */
+.rs-bar { position: relative; height: 46px; display: grid; place-items: center; background: var(--c, var(--primary)); color: #fff; font-weight: 800; letter-spacing: .02em; }
+.rs-step + .rs-step .rs-bar::before { content: ""; position: absolute; left: 0; top: 100%; width: 22px; height: 52px; background: var(--c-dark); }
+.rs-bar-phase { display: none; }
+/* 단계 화살표(1단계·2단계): 양 끝 세로선 + 가로 화살표 */
+.rs-phases { display: grid; grid-template-columns: repeat(var(--steps, 3), minmax(0, 1fr)); margin-top: 18px; }
+.rs-phase { position: relative; padding: 0 12px 20px; text-align: center; font-weight: 800; color: var(--ink); border-left: 2px solid currentColor; }
+.rs-phase:last-child { border-right: 2px solid currentColor; }
+.rs-phase + .rs-phase { color: var(--primary); }
+.rs-phase::after { content: ""; position: absolute; left: 10px; right: 10px; bottom: 8px; height: 2px; background: currentColor; }
+.rs-phase i::before, .rs-phase i::after { content: ""; position: absolute; bottom: 4px; border: 5px solid transparent; }
+.rs-phase i::before { left: 4px; border-right: 8px solid currentColor; border-left: 0; }
+.rs-phase i::after { right: 4px; border-left: 8px solid currentColor; border-right: 0; }
+/* 좁은 화면: 연차별 카드를 세로로 쌓고, 띠를 카드 위 제목줄로(단계 이름 함께 표시) */
+@media (max-width: 900px) {
+  .rs-steps { grid-template-columns: minmax(0, 1fr); gap: 18px; padding-top: 0; }
+  .rs-step { transform: none; }
+  .rs-bar { order: -1; height: 40px; margin: 0 10px; border-radius: 12px 12px 0 0; }
+  .rs-step + .rs-step .rs-bar::before { display: none; }
+  .rs-bar-phase { display: inline; font-weight: 600; opacity: .85; }
+  .rs-card { margin-bottom: 0; border-radius: 0 0 14px 14px; }
+  .rs-phases { display: none; }
+}
+@media (max-width: 640px) {
+  .rs-row { grid-template-columns: 104px minmax(0, 1fr); gap: 16px; }
+  .rs-label { min-height: 46px; margin-left: 6px; font-size: .9rem; }
+  .rs-value { font-size: .98rem; }
+}
+
+/* ── 연구 내용 > N세부 자세히: 과제 요약 + 연구내용(글머리) + 그림 카드 ── */
+.detail-intro { max-width: 860px; }
+.detail-intro .detail-lead { margin-bottom: 0; }
+.detail-body { margin-top: 40px; }
+.detail-points { max-width: 900px; margin-bottom: 26px; }
+.detail-figure { margin: 0; padding: 22px; background: #fff; border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 16px 34px -28px rgba(15, 23, 42, .35); }
+.detail-figure-title { display: inline-block; margin: 0 0 16px; padding: 8px 18px; border-radius: 10px; background: var(--ink); color: #fff; font-size: 1rem; font-weight: 800; }
+.detail-figure-link { position: relative; display: block; }
+.detail-figure-link img { width: 100%; height: auto; }
+.detail-figure-hint { position: absolute; right: 8px; bottom: 8px; padding: 6px 12px; border-radius: 999px; background: rgba(255, 255, 255, .94); border: 1px solid var(--border-strong); font-size: .8rem; font-weight: 700; color: var(--ink); opacity: 0; transition: opacity .15s ease; }
+.detail-figure-link:hover .detail-figure-hint, .detail-figure-link:focus-visible .detail-figure-hint { opacity: 1; color: var(--primary); border-color: var(--primary); }
+.detail-figure-notes { list-style: none; margin: 18px 0 0; padding: 16px 4px 0; border-top: 1px solid var(--border); display: grid; gap: 8px; }
+.detail-figure-notes li { position: relative; padding-left: 18px; font-size: 1rem; line-height: 1.6; color: var(--text); }
+.detail-figure-notes li::before { content: ""; position: absolute; left: 2px; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); }
+@media (hover: none) { .detail-figure-hint { opacity: 1; } } /* 터치 화면은 마우스 올림이 없으니 항상 표시 */
+@media (max-width: 640px) { .detail-figure { padding: 12px; border-radius: 12px; } }
+
+/* 국제 동향 페이지: 지도 바로 아래 '주요 동향' 카드 — 위 여백을 줄여 지도와 이어지게 */
+.section-tight + .trends-section { padding-top: 24px; }
 /* 논문 실적 페이지 */
 .pub-count { color: var(--text-muted); font-size: .95rem; margin: 0 0 26px; }
 .pub-group { margin-bottom: 30px; }

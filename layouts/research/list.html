@@ -3,6 +3,51 @@
 <section class="section">
   <div class="container">
     {{ with .Content }}<div class="prose" style="margin-bottom:28px">{{ . }}</div>{{ end }}
+    {{ $o := site.Data.research_overview }}
+
+    {{/* 연구개요: 왼쪽 비스듬한 이름 칸 + 오른쪽 내용 (data/research_overview.yaml 의 summary) */}}
+    {{ with $o.summary }}
+    <div id="overview" class="page-section">
+      <h2 class="page-h2">연구개요</h2>
+      <dl class="rs-summary">
+        {{ range . }}
+        <div class="rs-row">
+          <dt class="rs-label"><span>{{ .label }}</span></dt>
+          <dd class="rs-value">{{ .value }}{{ with .note }}<small>{{ . }}</small>{{ end }}</dd>
+        </div>
+        {{ end }}
+      </dl>
+    </div>
+    {{ end }}
+
+    {{/* 연구계획: 연차별 카드가 계단처럼 올라가고, 아래 화살표로 단계(1단계·2단계)를 묶음 (plan) */}}
+    {{ with $o.plan }}
+    {{ $phases := slice }}{{ $cur := "" }}{{ $span := 0 }}
+    {{ range . }}{{ if eq .phase $cur }}{{ $span = add $span 1 }}{{ else }}{{ if $cur }}{{ $phases = $phases | append (dict "name" $cur "span" $span) }}{{ end }}{{ $cur = .phase }}{{ $span = 1 }}{{ end }}{{ end }}
+    {{ if $cur }}{{ $phases = $phases | append (dict "name" $cur "span" $span) }}{{ end }}
+    <div id="plan" class="page-section">
+      <h2 class="page-h2">연구계획</h2>
+      <div class="rs-plan" style="--steps: {{ len . }}">
+        <ol class="rs-steps">
+          {{ range $i, $s := . }}
+          <li class="rs-step" style="--i: {{ $i }}">
+            <div class="rs-card">
+              <h3 class="rs-card-title">{{ $s.title }}</h3>
+              <ul class="rs-card-list">{{ range $s.items }}<li>{{ . }}</li>{{ end }}</ul>
+              {{ with $s.image }}{{ with resources.Get . }}{{ $img := .Process "webp q88" }}
+              <img class="rs-card-img" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $s.imageAlt }}" loading="lazy">
+              {{ end }}{{ end }}
+            </div>
+            <div class="rs-bar">{{ $s.period }}<span class="rs-bar-phase"> · {{ $s.phase }}</span></div>
+          </li>
+          {{ end }}
+        </ol>
+        <div class="rs-phases" aria-hidden="true">
+          {{ range $phases }}<div class="rs-phase" style="grid-column: span {{ .span }}"><span>{{ .name }}</span><i></i></div>{{ end }}
+        </div>
+      </div>
+    </div>
+    {{ end }}
 
     <div id="fields" class="page-section">
       <h2 class="page-h2">세부 연구과제</h2>
@@ -20,24 +65,6 @@
         {{ end }}
       </div>
     </div>
-
-    <div id="achievements" class="page-section">
-      <h2 class="page-h2">연구 실적</h2>
-      {{ $pubs := sort site.Data.publications.items "year" "desc" }}
-      {{ if $pubs }}
-      <p class="ach-summary">국내외 학술대회·학회 논문 <strong>총 {{ len $pubs }}편</strong></p>
-      <ul class="ach-recent">
-        {{ range first 4 $pubs }}
-        <li><span class="ach-ry">{{ .year }}</span> {{ .title }} <span class="ach-rv">· {{ .venue }}</span></li>
-        {{ end }}
-      </ul>
-      <a class="ach-more" href="/research/publications/">전체 논문 실적 보기 →</a>
-      {{ else }}
-      <p class="page-empty">등록된 실적이 아직 없습니다.</p>
-      {{ end }}
-    </div>
   </div>
 </section>
-
-{{ partial "sections/trends.html" (dict "heading" "국제 동향" "background" false "morelink" true) }}
 {{ end }}
